@@ -1,6 +1,9 @@
 package com.simply407.patpat.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.ActivitySplashBinding
+import com.simply407.patpat.ui.onboarding.OnboardingActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -31,5 +35,16 @@ class SplashActivity : AppCompatActivity() {
                 // 뒤로 가기 버튼을 눌렀을 때 아무 동작도 하지 않음
             }
         })
+
+        moveToOnboarding()
+    }
+
+    private fun moveToOnboarding() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, OnboardingActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }, 2000)
     }
 }

@@ -1,30 +1,36 @@
 package com.simply407.patpat.ui.onboarding
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.simply407.patpat.R
+import com.simply407.patpat.data.model.SharedPreferencesManager
+import com.simply407.patpat.databinding.ItemOnboardingOneBinding
+import com.simply407.patpat.databinding.ItemOnboardingTwoBinding
 
-class OnboardingAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class OnboardingAdapter(private val clickListener: OnboardingClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    inner class OnboardingViewHolderTypeOne(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class OnboardingViewHolderTypeOne(binding: ItemOnboardingOneBinding) : RecyclerView.ViewHolder(binding.root) {
 
     }
 
-    inner class OnboardingViewHolderTypeTwo(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    inner class OnboardingViewHolderTypeTwo(private val binding: ItemOnboardingTwoBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind() {
+            binding.buttonItemOnboardingTwo.setOnClickListener {
+                SharedPreferencesManager.setOnboardingShown(true)
+                clickListener.onOnboardingButtonClick()
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType) {
             TYPE_ONE -> {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_onboarding_one, parent, false)
-                OnboardingViewHolderTypeOne(view)
+                val binding = ItemOnboardingOneBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                OnboardingViewHolderTypeOne(binding)
             }
             TYPE_TWO -> {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_onboarding_two, parent, false)
-                OnboardingViewHolderTypeTwo(view)
+                val binding = ItemOnboardingTwoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                OnboardingViewHolderTypeTwo(binding)
             }
             else -> throw IllegalArgumentException("Invalid view type")
         }
@@ -48,7 +54,7 @@ class OnboardingAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
             }
             TYPE_TWO -> {
-
+                (holder as OnboardingViewHolderTypeTwo).bind()
             }
         }
     }
@@ -56,6 +62,10 @@ class OnboardingAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         const val TYPE_ONE = 1
         const val TYPE_TWO = 2
+    }
+
+    interface OnboardingClickListener {
+        fun onOnboardingButtonClick()
     }
 
 }

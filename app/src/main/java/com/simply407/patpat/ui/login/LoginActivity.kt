@@ -13,6 +13,7 @@ import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.simply407.patpat.MainActivity
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -28,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
         } else if (token != null) {
             // 카카오계정으로 로그인 성공
             Log.d(TAG, "카카오계정으로 로그인 성공 ${token.accessToken}")
+
+            SharedPreferencesManager.setUserIsLoggedIn(true)
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -74,6 +77,8 @@ class LoginActivity : AppCompatActivity() {
                     } else if (token != null) {
                         // 카카오톡으로 로그인 성공
                         Log.d(TAG, "카카오톡으로 로그인 성공 ${token.accessToken}")
+
+                        SharedPreferencesManager.setUserIsLoggedIn(true)
 
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)

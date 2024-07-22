@@ -24,8 +24,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        SharedPreferencesManager.init(this)
-
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -73,9 +71,17 @@ class SplashActivity : AppCompatActivity() {
 
     private fun checkOnboardingShown() {
         if (SharedPreferencesManager.isOnboardingShown()) {
-            moveToMain()
+            checkIsUserLoggedIn()
         } else {
             moveToOnboarding()
+        }
+    }
+
+    private fun checkIsUserLoggedIn() {
+        if (SharedPreferencesManager.isUserLoggedIn()) {
+            moveToMain()
+        } else {
+            moveToLogin()
         }
     }
 

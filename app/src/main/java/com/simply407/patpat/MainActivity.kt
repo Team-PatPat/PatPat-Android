@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         val transaction=manager.beginTransaction()
-        val fragment1 = ChattingFragment()
+        val fragmentChat = ChattingFragment()
 
-        transaction.replace(R.id.mainfragment,fragment1)
+        transaction.replace(R.id.mainfragment,fragmentChat)
         transaction.addToBackStack(null)
         transaction.commit()
 

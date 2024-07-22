@@ -13,6 +13,7 @@ import com.simply407.patpat.MainActivity
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivitySplashBinding
+import com.simply407.patpat.ui.login.LoginActivity
 import com.simply407.patpat.ui.onboarding.OnboardingActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -55,6 +56,15 @@ class SplashActivity : AppCompatActivity() {
     private fun moveToMain() {
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }, 2000)
+    }
+
+    private fun moveToLogin() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
 
             finish()

@@ -1,13 +1,19 @@
 package com.simply407.patpat.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.simply407.patpat.MainActivity
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivitySplashBinding
+import com.simply407.patpat.ui.onboarding.OnboardingActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -16,6 +22,8 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        SharedPreferencesManager.init(this)
 
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -31,5 +39,34 @@ class SplashActivity : AppCompatActivity() {
                 // 뒤로 가기 버튼을 눌렀을 때 아무 동작도 하지 않음
             }
         })
+
+        checkOnboardingShown()
     }
+
+    private fun moveToOnboarding() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, OnboardingActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }, 2000)
+    }
+
+    private fun moveToMain() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }, 2000)
+    }
+
+    private fun checkOnboardingShown() {
+        if (SharedPreferencesManager.isOnboardingShown()) {
+            moveToMain()
+        } else {
+            moveToOnboarding()
+        }
+    }
+
 }

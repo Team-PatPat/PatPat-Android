@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.PatPat" parent="Base.Theme.PatPat" />
+
+    <style name="Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

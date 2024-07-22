@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-34:\\layout\\item_chatto_ai.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-37:\\layout\\item_chatto_ai.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-34:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-37:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-34:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-37:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-34:\\layout\\fragment_chatting.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-37:\\layout\\fragment_chatting.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-34:\\layout\\item_chatfrom_ai.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-37:\\layout\\item_chatfrom_ai.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-mergeDebugResources-34:/layout/fragment_chatting.xml",
+        "source": "com.simply407.patpat.app-main-37:/layout/fragment_chatting.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-34:\\layout\\custom_appbar_chatting.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-37:\\layout\\custom_appbar_chatting.xml"
+    }
+]

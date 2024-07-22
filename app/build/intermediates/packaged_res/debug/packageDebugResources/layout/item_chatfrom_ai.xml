@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                              
+                                                        
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" android:tag="layout/item_chatfrom_ai_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:id="@+id/item_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/tmp_profile"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="5dp"/>
+        <!---54dp-->
+        <TextView
+            android:id="@+id/item_chatfromme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="200dp"
+            android:text="정준c2x정준c2x"
+            app:layout_constraintStart_toEndOf="@+id/item_profile"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="5dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         

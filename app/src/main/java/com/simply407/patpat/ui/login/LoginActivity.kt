@@ -15,6 +15,7 @@ import com.simply407.patpat.MainActivity
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivityLoginBinding
+import com.simply407.patpat.ui.join.JoinCompleteActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -31,10 +32,7 @@ class LoginActivity : AppCompatActivity() {
             Log.d(TAG, "카카오계정으로 로그인 성공 ${token.accessToken}")
 
             SharedPreferencesManager.setUserIsLoggedIn(true)
-
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            checkFirstJoinComplete()
         }
     }
 
@@ -53,10 +51,10 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        moveToMain()
+        kakaoLogin()
     }
 
-    private fun moveToMain() {
+    private fun kakaoLogin() {
         binding.buttonKakaoLogin.setOnClickListener {
 
             // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
@@ -79,17 +77,25 @@ class LoginActivity : AppCompatActivity() {
                         Log.d(TAG, "카카오톡으로 로그인 성공 ${token.accessToken}")
 
                         SharedPreferencesManager.setUserIsLoggedIn(true)
-
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-
-                        finish()
+                        checkFirstJoinComplete()
                     }
                 }
             } else {
                 // 카카오계정으로 로그인
                 UserApiClient.instance.loginWithKakaoAccount(this, callback = callback)
             }
+        }
+    }
+
+    private fun checkFirstJoinComplete() {
+        if (SharedPreferencesManager.isFirstJoinComplete()) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            val intent = Intent(this, JoinCompleteActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

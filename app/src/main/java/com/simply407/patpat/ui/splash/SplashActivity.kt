@@ -78,7 +78,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkIsUserLoggedIn() {
-        if (SharedPreferencesManager.isUserLoggedIn()) {
+        if (SharedPreferencesManager.isUserLoggedIn() && SharedPreferencesManager.isFirstJoinComplete()) {
             moveToMain()
         } else {
             moveToLogin()

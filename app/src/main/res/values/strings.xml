@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PatPat</string>
+    <string name="title_onboarding_one">고민이 있나요?</string>
+    <string name="next">다음</string>
+    <string name="title_onboarding_two">시원한 해결책과\n따뜻한 위로를 주는\n친구들을 만나보세요!</string>
+    <string name="start">시작하기</string>
 </resources>

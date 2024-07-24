@@ -9,15 +9,19 @@ import com.simply407.patpat.databinding.ItemOnboardingTwoBinding
 
 class OnboardingAdapter(private val clickListener: OnboardingClickListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    inner class OnboardingViewHolderTypeOne(binding: ItemOnboardingOneBinding) : RecyclerView.ViewHolder(binding.root) {
-
+    inner class OnboardingViewHolderTypeOne(private val binding: ItemOnboardingOneBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind() {
+            binding.buttonNextOnboardingOne.setOnClickListener {
+                clickListener.onOnboardingNextButtonClick()
+            }
+        }
     }
 
     inner class OnboardingViewHolderTypeTwo(private val binding: ItemOnboardingTwoBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-            binding.buttonItemOnboardingTwo.setOnClickListener {
+            binding.buttonStartOnboardingTwo.setOnClickListener {
                 SharedPreferencesManager.setOnboardingShown(true)
-                clickListener.onOnboardingButtonClick()
+                clickListener.onOnboardingStartButtonClick()
             }
         }
     }
@@ -51,7 +55,7 @@ class OnboardingAdapter(private val clickListener: OnboardingClickListener): Rec
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder.itemViewType) {
             TYPE_ONE -> {
-
+                (holder as OnboardingViewHolderTypeOne).bind()
             }
             TYPE_TWO -> {
                 (holder as OnboardingViewHolderTypeTwo).bind()
@@ -65,7 +69,8 @@ class OnboardingAdapter(private val clickListener: OnboardingClickListener): Rec
     }
 
     interface OnboardingClickListener {
-        fun onOnboardingButtonClick()
+        fun onOnboardingNextButtonClick()
+        fun onOnboardingStartButtonClick()
     }
 
 }

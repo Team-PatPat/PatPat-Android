@@ -35,7 +35,11 @@ class OnboardingActivity : AppCompatActivity() {
             viewPagerOnboarding.run {
                 viewPagerOnboarding.orientation = ViewPager2.ORIENTATION_HORIZONTAL
                 adapter = OnboardingAdapter(object : OnboardingAdapter.OnboardingClickListener {
-                    override fun onOnboardingButtonClick() {
+                    override fun onOnboardingNextButtonClick() {
+                        viewPagerOnboarding.currentItem = 1
+                    }
+
+                    override fun onOnboardingStartButtonClick() {
                         val intent = Intent(this@OnboardingActivity, LoginActivity::class.java)
                         startActivity(intent)
                         finish()

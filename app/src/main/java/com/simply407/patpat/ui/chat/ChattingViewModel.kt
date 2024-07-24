@@ -7,6 +7,7 @@ import com.simply407.patpat.data.Ui_chat
 
 class ChattingViewModel : ViewModel() {
 
+
     private val currentItems: MutableList<Ui_chat> = mutableListOf()
 
     private val _items = MutableLiveData<List<Ui_chat>>(currentItems)

@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable frame_47
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable temp_icon_backbtn
@@ -14,6 +15,8 @@ id appbar
 id appbar_chat_backBtn
 id appbar_chat_store
 id appbar_chat_title
+id button_item_onboarding_two
+id button_kakao_login
 id chat_input
 id chat_rv
 id chat_sendbtn
@@ -23,15 +26,21 @@ id item_profile
 id linearLayout
 id main
 id mainfragment
+id viewPager_onboarding
+layout activity_login
 layout activity_main
+layout activity_onboarding
 layout activity_splash
 layout custom_appbar_chatting
 layout fragment_chatting
 layout item_chatfrom_ai
 layout item_chatto_ai
+layout item_onboarding_one
+layout item_onboarding_two
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string kakao_oauth_host
 style Base.Theme.PatPat
 style Splash
 style Theme.PatPat

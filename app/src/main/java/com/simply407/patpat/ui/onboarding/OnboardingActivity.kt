@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.simply407.patpat.MainActivity
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.ActivityOnboardingBinding
+import com.simply407.patpat.ui.login.LoginActivity
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -36,7 +36,7 @@ class OnboardingActivity : AppCompatActivity() {
                 viewPagerOnboarding.orientation = ViewPager2.ORIENTATION_HORIZONTAL
                 adapter = OnboardingAdapter(object : OnboardingAdapter.OnboardingClickListener {
                     override fun onOnboardingButtonClick() {
-                        val intent = Intent(this@OnboardingActivity, MainActivity::class.java)
+                        val intent = Intent(this@OnboardingActivity, LoginActivity::class.java)
                         startActivity(intent)
                         finish()
                     }

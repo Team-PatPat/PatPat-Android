@@ -11,7 +11,7 @@ import com.simply407.patpat.data.Ui_chat
 import com.simply407.patpat.databinding.ItemChatfromAiBinding
 import com.simply407.patpat.databinding.ItemChattoAiBinding
 
-class ChattingAdapter(val context: Context, val items: MutableList<Ui_chat>) :
+class ChattingAdapter(val context: Context, private val items: MutableList<Ui_chat>) :
     RecyclerView.Adapter<ChattingAdapter.ViewHolder>() {
     companion object {
         private const val FROM = 1

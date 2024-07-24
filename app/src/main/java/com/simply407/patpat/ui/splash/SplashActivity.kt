@@ -13,6 +13,7 @@ import com.simply407.patpat.MainActivity
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivitySplashBinding
+import com.simply407.patpat.ui.login.LoginActivity
 import com.simply407.patpat.ui.onboarding.OnboardingActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -22,8 +23,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        SharedPreferencesManager.init(this)
 
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -61,11 +60,28 @@ class SplashActivity : AppCompatActivity() {
         }, 2000)
     }
 
+    private fun moveToLogin() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }, 2000)
+    }
+
     private fun checkOnboardingShown() {
         if (SharedPreferencesManager.isOnboardingShown()) {
-            moveToMain()
+            checkIsUserLoggedIn()
         } else {
             moveToOnboarding()
+        }
+    }
+
+    private fun checkIsUserLoggedIn() {
+        if (SharedPreferencesManager.isUserLoggedIn()) {
+            moveToMain()
+        } else {
+            moveToLogin()
         }
     }
 

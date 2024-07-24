@@ -8,132 +8,292 @@
 8        android:minSdkVersion="28"
 9        android:targetSdkVersion="34" />
 10
-11    <permission
-11-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\0254f7270d7bfa87f45efc67994ab11b\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
-12        android:name="com.simply407.patpat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-12-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\0254f7270d7bfa87f45efc67994ab11b\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
-13        android:protectionLevel="signature" />
-13-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\0254f7270d7bfa87f45efc67994ab11b\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
-14
-15    <uses-permission android:name="com.simply407.patpat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-15-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\0254f7270d7bfa87f45efc67994ab11b\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
-15-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\0254f7270d7bfa87f45efc67994ab11b\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
-16
-17    <application
-17-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:5:5-32:19
-18        android:allowBackup="true"
-18-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:6:9-35
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\0254f7270d7bfa87f45efc67994ab11b\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
-20        android:dataExtractionRules="@xml/data_extraction_rules"
-20-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:7:9-65
-21        android:debuggable="true"
-22        android:extractNativeLibs="false"
-23        android:fullBackupContent="@xml/backup_rules"
-23-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:8:9-54
-24        android:icon="@mipmap/ic_launcher"
-24-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:9:9-43
-25        android:label="@string/app_name"
-25-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:10:9-41
-26        android:roundIcon="@mipmap/ic_launcher_round"
-26-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:11:9-54
-27        android:supportsRtl="true"
-27-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:12:9-35
-28        android:testOnly="true"
-29        android:theme="@style/Theme.PatPat" >
-29-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:13:9-44
-30        <activity
-30-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:15:9-24:20
-31            android:name="com.simply407.patpat.MainActivity"
-31-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:16:13-41
-32            android:exported="true" >
-32-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:17:13-36
-33            <intent-filter>
-33-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:19:13-23:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:20:17-69
-34-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:20:25-66
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <queries>
+13-->[com.kakao.sdk:v2-navi:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\55a174a4ea2ea3939c3b94583cff25fa\transformed\v2-navi-2.20.3\AndroidManifest.xml:9:5-12:15
+14        <package android:name="com.locnall.KimGiSa" />
+14-->[com.kakao.sdk:v2-navi:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\55a174a4ea2ea3939c3b94583cff25fa\transformed\v2-navi-2.20.3\AndroidManifest.xml:10:9-55
+14-->[com.kakao.sdk:v2-navi:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\55a174a4ea2ea3939c3b94583cff25fa\transformed\v2-navi-2.20.3\AndroidManifest.xml:10:18-52
+15        <package android:name="com.lguplus.navi" />
+15-->[com.kakao.sdk:v2-navi:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\55a174a4ea2ea3939c3b94583cff25fa\transformed\v2-navi-2.20.3\AndroidManifest.xml:11:9-52
+15-->[com.kakao.sdk:v2-navi:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\55a174a4ea2ea3939c3b94583cff25fa\transformed\v2-navi-2.20.3\AndroidManifest.xml:11:18-49
+16        <package android:name="com.kakao.talk" />
+16-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:10:9-50
+16-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:10:18-47
+17        <package android:name="com.kakao.talk.alpha" />
+17-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:11:9-56
+17-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:11:18-53
+18        <package android:name="com.kakao.talk.sandbox" />
+18-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:12:9-58
+18-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:12:18-55
+19        <package android:name="com.kakao.onetalk" />
+19-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:13:9-53
+19-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:13:18-50
+20
+21        <intent>
+21-->[com.kakao.sdk:v2-common:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\62315cfa611269f41e66ee5d6ce16b40\transformed\v2-common-2.20.3\AndroidManifest.xml:15:9-21:18
+22            <action android:name="android.intent.action.VIEW" />
+22-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:48:17-69
+22-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:48:25-66
+23
+24            <category android:name="android.intent.category.BROWSABLE" />
+24-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:50:17-78
+24-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:50:27-75
+25
+26            <data android:scheme="https" />
+26-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:53:17-54:65
+26-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:54:21-62
+27        </intent>
+28    </queries>
+29
+30    <permission
+30-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\69ef08743f667dc360b0a16a09f24e15\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+31        android:name="com.simply407.patpat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\69ef08743f667dc360b0a16a09f24e15\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\69ef08743f667dc360b0a16a09f24e15\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+33
+34    <uses-permission android:name="com.simply407.patpat.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+34-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\69ef08743f667dc360b0a16a09f24e15\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\69ef08743f667dc360b0a16a09f24e15\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:22:17-77
-36-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:22:27-74
-37            </intent-filter>
-38        </activity>
-39        <activity
-39-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:26:9-31:20
-40            android:name="com.simply407.patpat.ui.splash.SplashActivity"
-40-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:27:13-53
-41            android:exported="true"
-41-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:28:13-36
-42            android:theme="@style/Splash" >
-42-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:29:13-42
-43        </activity>
-44
-45        <provider
-45-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\da2acb84a5876858670be0863b9ca140\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-46            android:name="androidx.startup.InitializationProvider"
-46-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\da2acb84a5876858670be0863b9ca140\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-47            android:authorities="com.simply407.patpat.androidx-startup"
-47-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\da2acb84a5876858670be0863b9ca140\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-48            android:exported="false" >
-48-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\da2acb84a5876858670be0863b9ca140\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-49            <meta-data
-49-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\da2acb84a5876858670be0863b9ca140\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-50                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-50-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\da2acb84a5876858670be0863b9ca140\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-51                android:value="androidx.startup" />
-51-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\da2acb84a5876858670be0863b9ca140\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-52            <meta-data
-52-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\1____\.gradle\caches\transforms-4\54db6d6d7615dca44d084719bd0b7b73\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
-53                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-53-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\1____\.gradle\caches\transforms-4\54db6d6d7615dca44d084719bd0b7b73\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
-54                android:value="androidx.startup" />
-54-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\1____\.gradle\caches\transforms-4\54db6d6d7615dca44d084719bd0b7b73\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
-55            <meta-data
-55-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-56                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-56-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-57                android:value="androidx.startup" />
-57-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-58        </provider>
-59
-60        <receiver
-60-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-61            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-61-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-62            android:directBootAware="false"
-62-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-63            android:enabled="true"
-63-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-64            android:exported="true"
-64-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-65            android:permission="android.permission.DUMP" >
-65-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-66            <intent-filter>
-66-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-67                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-67-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-67-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-68            </intent-filter>
-69            <intent-filter>
-69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-70                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-71            </intent-filter>
-72            <intent-filter>
-72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-73                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-74            </intent-filter>
-75            <intent-filter>
-75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-76                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\9c2365d5e0813b8332bff5a24d3cf4b6\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-77            </intent-filter>
-78        </receiver>
-79    </application>
-80
-81</manifest>
+36    <application
+36-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:7:5-57:19
+37        android:name="com.simply407.patpat.app.GlobalApplication"
+37-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:9:9-46
+38        android:allowBackup="true"
+38-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:8:9-35
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.13.1] C:\Users\1____\.gradle\caches\transforms-4\69ef08743f667dc360b0a16a09f24e15\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+40        android:dataExtractionRules="@xml/data_extraction_rules"
+40-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:10:9-65
+41        android:debuggable="true"
+42        android:extractNativeLibs="false"
+43        android:fullBackupContent="@xml/backup_rules"
+43-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:11:9-54
+44        android:icon="@mipmap/ic_launcher"
+44-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:12:9-43
+45        android:label="@string/app_name"
+45-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:13:9-41
+46        android:roundIcon="@mipmap/ic_launcher_round"
+46-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:14:9-54
+47        android:supportsRtl="true"
+47-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:15:9-35
+48        android:testOnly="true"
+49        android:theme="@style/Theme.PatPat"
+49-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:16:9-44
+50        android:usesCleartextTraffic="true" >
+50-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:10:18-53
+51        <activity
+51-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:18:9-20:40
+52            android:name="com.simply407.patpat.ui.login.LoginActivity"
+52-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:19:13-51
+53            android:exported="false" />
+53-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:20:13-37
+54        <activity
+54-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:21:9-23:40
+55            android:name="com.simply407.patpat.ui.onboarding.OnboardingActivity"
+55-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:22:13-61
+56            android:exported="false" />
+56-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:23:13-37
+57        <activity
+57-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:24:9-35:20
+58            android:name="com.simply407.patpat.MainActivity"
+58-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:25:13-41
+59            android:exported="true"
+59-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:27:13-36
+60            android:windowSoftInputMode="adjustResize" >
+60-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:26:13-55
+61            <intent-filter>
+61-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:29:13-33:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:30:17-69
+62-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:30:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:32:17-77
+64-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:32:27-74
+65            </intent-filter>
+66        </activity>
+67        <activity
+67-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:37:9-42:20
+68            android:name="com.simply407.patpat.ui.splash.SplashActivity"
+68-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:38:13-53
+69            android:exported="true"
+69-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:39:13-36
+70            android:theme="@style/Splash" >
+70-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:40:13-42
+71        </activity>
+72        <activity
+72-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:44:9-56:20
+73            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+73-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:45:13-70
+74            android:exported="true"
+74-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:46:13-36
+75            android:launchMode="singleTask"
+75-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:18:13-44
+76            android:theme="@style/TransparentCompat" >
+76-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:19:13-53
+77            <intent-filter>
+77-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:47:13-55:29
+78                <action android:name="android.intent.action.VIEW" />
+78-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:48:17-69
+78-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:48:25-66
+79
+80                <category android:name="android.intent.category.DEFAULT" />
+80-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:49:17-76
+80-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:49:27-73
+81                <category android:name="android.intent.category.BROWSABLE" />
+81-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:50:17-78
+81-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:50:27-75
+82
+83                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+84                <data
+84-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:53:17-54:65
+85                    android:host="oauth"
+85-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:53:23-43
+86                    android:scheme="@string/kakao_oauth_host" />
+86-->C:\Users\1____\githubRepo\potenday\app\src\main\AndroidManifest.xml:54:21-62
+87            </intent-filter>
+88        </activity>
+89        <activity
+89-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:11:9-14:59
+90            android:name="com.kakao.sdk.friend.view.FullPickerActivity"
+90-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:12:13-72
+91            android:theme="@style/DayNightFull"
+91-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:13:13-48
+92            android:windowSoftInputMode="adjustNothing" />
+92-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:14:13-56
+93        <activity
+93-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:15:9-17:52
+94            android:name="com.kakao.sdk.friend.view.PopupPickerActivity"
+94-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:16:13-73
+95            android:theme="@style/DayNightPopup" />
+95-->[com.kakao.sdk:v2-friend:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\3f0d01125a868ae23703a26ef5945a17\transformed\v2-friend-2.20.3\AndroidManifest.xml:17:13-49
+96        <activity
+96-->[com.kakao.sdk:v2-talk:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\9bc7a2ee20b36c6742f52af534e1bfcf\transformed\v2-talk-2.20.3\AndroidManifest.xml:10:9-13:56
+97            android:name="com.kakao.sdk.talk.FollowChannelHandlerActivity"
+97-->[com.kakao.sdk:v2-talk:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\9bc7a2ee20b36c6742f52af534e1bfcf\transformed\v2-talk-2.20.3\AndroidManifest.xml:11:13-75
+98            android:launchMode="singleTask"
+98-->[com.kakao.sdk:v2-talk:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\9bc7a2ee20b36c6742f52af534e1bfcf\transformed\v2-talk-2.20.3\AndroidManifest.xml:12:13-44
+99            android:theme="@style/TransparentCompat" />
+99-->[com.kakao.sdk:v2-talk:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\9bc7a2ee20b36c6742f52af534e1bfcf\transformed\v2-talk-2.20.3\AndroidManifest.xml:13:13-53
+100        <activity
+100-->[com.kakao.sdk:v2-cert:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\96c71b33e3d9c93694c2064182e9b5b6\transformed\v2-cert-2.20.3\AndroidManifest.xml:10:9-14:56
+101            android:name="com.kakao.sdk.cert.CertServiceHandlerActivity"
+101-->[com.kakao.sdk:v2-cert:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\96c71b33e3d9c93694c2064182e9b5b6\transformed\v2-cert-2.20.3\AndroidManifest.xml:11:13-73
+102            android:exported="true"
+102-->[com.kakao.sdk:v2-cert:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\96c71b33e3d9c93694c2064182e9b5b6\transformed\v2-cert-2.20.3\AndroidManifest.xml:12:13-36
+103            android:launchMode="singleTask"
+103-->[com.kakao.sdk:v2-cert:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\96c71b33e3d9c93694c2064182e9b5b6\transformed\v2-cert-2.20.3\AndroidManifest.xml:13:13-44
+104            android:theme="@style/TransparentCompat" />
+104-->[com.kakao.sdk:v2-cert:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\96c71b33e3d9c93694c2064182e9b5b6\transformed\v2-cert-2.20.3\AndroidManifest.xml:14:13-53
+105        <activity
+105-->[com.kakao.sdk:v2-user:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\41e993f26a9e823f4d5fa000168693ac\transformed\v2-user-2.20.3\AndroidManifest.xml:10:9-13:56
+106            android:name="com.kakao.sdk.user.ShippingAddressesHandlerActivity"
+106-->[com.kakao.sdk:v2-user:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\41e993f26a9e823f4d5fa000168693ac\transformed\v2-user-2.20.3\AndroidManifest.xml:11:13-79
+107            android:launchMode="singleTask"
+107-->[com.kakao.sdk:v2-user:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\41e993f26a9e823f4d5fa000168693ac\transformed\v2-user-2.20.3\AndroidManifest.xml:12:13-44
+108            android:theme="@style/TransparentCompat" />
+108-->[com.kakao.sdk:v2-user:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\41e993f26a9e823f4d5fa000168693ac\transformed\v2-user-2.20.3\AndroidManifest.xml:13:13-53
+109        <activity
+109-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:10:9-15:56
+110            android:name="com.kakao.sdk.auth.TalkAuthCodeActivity"
+110-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:11:13-67
+111            android:configChanges="orientation|screenSize|keyboardHidden"
+111-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:12:13-74
+112            android:exported="false"
+112-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:13:13-37
+113            android:launchMode="singleTask"
+113-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:14:13-44
+114            android:theme="@style/TransparentCompat" />
+114-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:15:13-53
+115        <activity
+115-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:20:9-23:56
+116            android:name="com.kakao.sdk.auth.AppsHandlerActivity"
+116-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:21:13-66
+117            android:launchMode="singleTask"
+117-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:22:13-44
+118            android:theme="@style/TransparentCompat" />
+118-->[com.kakao.sdk:v2-auth:2.20.3] C:\Users\1____\.gradle\caches\transforms-4\6ac93fc5b122aad6912a3ea89267c29f\transformed\v2-auth-2.20.3\AndroidManifest.xml:23:13-53
+119
+120        <provider
+120-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\aaa0c318829035b7fdaec4529ec57c5e\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+121            android:name="androidx.startup.InitializationProvider"
+121-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\aaa0c318829035b7fdaec4529ec57c5e\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+122            android:authorities="com.simply407.patpat.androidx-startup"
+122-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\aaa0c318829035b7fdaec4529ec57c5e\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+123            android:exported="false" >
+123-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\aaa0c318829035b7fdaec4529ec57c5e\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+124            <meta-data
+124-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\aaa0c318829035b7fdaec4529ec57c5e\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+125                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+125-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\aaa0c318829035b7fdaec4529ec57c5e\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+126                android:value="androidx.startup" />
+126-->[androidx.emoji2:emoji2:1.3.0] C:\Users\1____\.gradle\caches\transforms-4\aaa0c318829035b7fdaec4529ec57c5e\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+127            <meta-data
+127-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\1____\.gradle\caches\transforms-4\b392c4b2902f0bd2a08b683f402425a2\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+128                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+128-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\1____\.gradle\caches\transforms-4\b392c4b2902f0bd2a08b683f402425a2\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+129                android:value="androidx.startup" />
+129-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\1____\.gradle\caches\transforms-4\b392c4b2902f0bd2a08b683f402425a2\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+130            <meta-data
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+131                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+132                android:value="androidx.startup" />
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+133        </provider>
+134
+135        <service
+135-->[androidx.room:room-runtime:2.6.1] C:\Users\1____\.gradle\caches\transforms-4\c0e75c2b36415cdf6fc6c7264893a00b\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+136            android:name="androidx.room.MultiInstanceInvalidationService"
+136-->[androidx.room:room-runtime:2.6.1] C:\Users\1____\.gradle\caches\transforms-4\c0e75c2b36415cdf6fc6c7264893a00b\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+137            android:directBootAware="true"
+137-->[androidx.room:room-runtime:2.6.1] C:\Users\1____\.gradle\caches\transforms-4\c0e75c2b36415cdf6fc6c7264893a00b\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+138            android:exported="false" />
+138-->[androidx.room:room-runtime:2.6.1] C:\Users\1____\.gradle\caches\transforms-4\c0e75c2b36415cdf6fc6c7264893a00b\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+139
+140        <receiver
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+141            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+142            android:directBootAware="false"
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+143            android:enabled="true"
+143-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+144            android:exported="true"
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+145            android:permission="android.permission.DUMP" >
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+146            <intent-filter>
+146-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+147                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+148            </intent-filter>
+149            <intent-filter>
+149-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+150                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+151            </intent-filter>
+152            <intent-filter>
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+153                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+154            </intent-filter>
+155            <intent-filter>
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+156                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\1____\.gradle\caches\transforms-4\296be934661090d0f5557bf8665a152a\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+157            </intent-filter>
+158        </receiver>
+159    </application>
+160
+161</manifest>

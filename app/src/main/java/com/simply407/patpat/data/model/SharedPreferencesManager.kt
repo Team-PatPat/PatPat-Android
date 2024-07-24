@@ -5,8 +5,9 @@ import android.content.SharedPreferences
 
 object SharedPreferencesManager {
 
-    private const val FILE_NAME = "user_info"
+    const val FILE_NAME = "user_info"
     private const val KEY_ONBOARDING_SHOWN = "onboarding_shown"
+    private const val KEY_USER_IS_LOGGED_IN = "user_is_logged_in"
 
     private lateinit var sharedPref: SharedPreferences
 
@@ -20,6 +21,14 @@ object SharedPreferencesManager {
 
     fun isOnboardingShown(): Boolean {
         return sharedPref.getBoolean(KEY_ONBOARDING_SHOWN, false)
+    }
+
+    fun setUserIsLoggedIn(shown: Boolean) {
+        sharedPref.edit().putBoolean(KEY_USER_IS_LOGGED_IN, shown).apply()
+    }
+
+    fun isUserLoggedIn(): Boolean {
+        return sharedPref.getBoolean(KEY_USER_IS_LOGGED_IN, false)
     }
 
 }

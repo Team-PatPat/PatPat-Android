@@ -1,5 +1,6 @@
 package com.simply407.patpat.ui.join
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +31,10 @@ class JoinCompleteActivity : AppCompatActivity() {
 
     private fun onClickButton() {
         binding.buttonCheckJoinComplete.setOnClickListener {
-            SharedPreferencesManager.setFirstJoinComplete(true)
+            // SharedPreferencesManager.setFirstJoinComplete(true)
+            val intent = Intent(this, JoinInfoActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

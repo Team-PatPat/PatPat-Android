@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.simply407.patpat.databinding.ActivityChattingBindingImpl;
 import com.simply407.patpat.databinding.FragmentChattingBindingImpl;
 import com.simply407.patpat.databinding.ItemChatfromAiBindingImpl;
 import com.simply407.patpat.databinding.ItemChattoAiBindingImpl;
@@ -20,15 +21,18 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_FRAGMENTCHATTING = 1;
+  private static final int LAYOUT_ACTIVITYCHATTING = 1;
 
-  private static final int LAYOUT_ITEMCHATFROMAI = 2;
+  private static final int LAYOUT_FRAGMENTCHATTING = 2;
 
-  private static final int LAYOUT_ITEMCHATTOAI = 3;
+  private static final int LAYOUT_ITEMCHATFROMAI = 3;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
+  private static final int LAYOUT_ITEMCHATTOAI = 4;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(4);
 
   static {
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.simply407.patpat.R.layout.activity_chatting, LAYOUT_ACTIVITYCHATTING);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.simply407.patpat.R.layout.fragment_chatting, LAYOUT_FRAGMENTCHATTING);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.simply407.patpat.R.layout.item_chatfrom_ai, LAYOUT_ITEMCHATFROMAI);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.simply407.patpat.R.layout.item_chatto_ai, LAYOUT_ITEMCHATTOAI);
@@ -43,6 +47,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
+        case  LAYOUT_ACTIVITYCHATTING: {
+          if ("layout/activity_chatting_0".equals(tag)) {
+            return new ActivityChattingBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_chatting is invalid. Received: " + tag);
+        }
         case  LAYOUT_FRAGMENTCHATTING: {
           if ("layout/fragment_chatting_0".equals(tag)) {
             return new FragmentChattingBindingImpl(component, view);
@@ -114,9 +124,10 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
 
     static {
+      sKeys.put("layout/activity_chatting_0", com.simply407.patpat.R.layout.activity_chatting);
       sKeys.put("layout/fragment_chatting_0", com.simply407.patpat.R.layout.fragment_chatting);
       sKeys.put("layout/item_chatfrom_ai_0", com.simply407.patpat.R.layout.item_chatfrom_ai);
       sKeys.put("layout/item_chatto_ai_0", com.simply407.patpat.R.layout.item_chatto_ai);

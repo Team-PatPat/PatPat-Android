@@ -44,18 +44,25 @@ public final class OnboardingAdapter extends androidx.recyclerview.widget.Recycl
         }
     }
     
-    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&\u00a8\u0006\u0004"}, d2 = {"Lcom/simply407/patpat/ui/onboarding/OnboardingAdapter$OnboardingClickListener;", "", "onOnboardingButtonClick", "", "app_debug"})
+    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&\u00a8\u0006\u0005"}, d2 = {"Lcom/simply407/patpat/ui/onboarding/OnboardingAdapter$OnboardingClickListener;", "", "onOnboardingNextButtonClick", "", "onOnboardingStartButtonClick", "app_debug"})
     public static abstract interface OnboardingClickListener {
         
-        public abstract void onOnboardingButtonClick();
+        public abstract void onOnboardingNextButtonClick();
+        
+        public abstract void onOnboardingStartButtonClick();
     }
     
-    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004\u00a8\u0006\u0005"}, d2 = {"Lcom/simply407/patpat/ui/onboarding/OnboardingAdapter$OnboardingViewHolderTypeOne;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lcom/simply407/patpat/databinding/ItemOnboardingOneBinding;", "(Lcom/simply407/patpat/ui/onboarding/OnboardingAdapter;Lcom/simply407/patpat/databinding/ItemOnboardingOneBinding;)V", "app_debug"})
+    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u0006\u0010\u0005\u001a\u00020\u0006R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0007"}, d2 = {"Lcom/simply407/patpat/ui/onboarding/OnboardingAdapter$OnboardingViewHolderTypeOne;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lcom/simply407/patpat/databinding/ItemOnboardingOneBinding;", "(Lcom/simply407/patpat/ui/onboarding/OnboardingAdapter;Lcom/simply407/patpat/databinding/ItemOnboardingOneBinding;)V", "bind", "", "app_debug"})
     public final class OnboardingViewHolderTypeOne extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
+        @org.jetbrains.annotations.NotNull
+        private final com.simply407.patpat.databinding.ItemOnboardingOneBinding binding = null;
         
         public OnboardingViewHolderTypeOne(@org.jetbrains.annotations.NotNull
         com.simply407.patpat.databinding.ItemOnboardingOneBinding binding) {
             super(null);
+        }
+        
+        public final void bind() {
         }
     }
     

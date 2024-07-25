@@ -49,6 +49,12 @@
         android:theme="@style/Theme.PatPat"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.simply407.patpat.ui.join.JoinInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.simply407.patpat.ui.join.JoinCompleteActivity"
+            android:exported="false" />
+        <activity
             android:name="com.simply407.patpat.ui.login.LoginActivity"
             android:exported="false" />
         <activity
@@ -56,18 +62,17 @@
             android:exported="false" />
         <activity
             android:name="com.simply407.patpat.MainActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name="com.simply407.patpat.ui.chat.ChattingActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
+            android:theme="@style/Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.simply407.patpat.ui.splash.SplashActivity"
-            android:exported="true"
-            android:theme="@style/Splash" >
         </activity>
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
@@ -85,6 +90,10 @@
                     android:host="oauth"
                     android:scheme="@string/kakao_oauth_host" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.simply407.patpat.ui.splash.SplashActivity"
+            android:exported="false" >
         </activity>
         <activity
             android:name="com.kakao.sdk.friend.view.FullPickerActivity"

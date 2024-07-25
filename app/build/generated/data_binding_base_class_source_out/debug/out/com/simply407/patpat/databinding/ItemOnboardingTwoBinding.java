@@ -4,9 +4,11 @@ package com.simply407.patpat.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -20,12 +22,21 @@ public final class ItemOnboardingTwoBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button buttonItemOnboardingTwo;
+  public final AppCompatButton buttonStartOnboardingTwo;
+
+  @NonNull
+  public final ImageView imageViewOnboardingTwo;
+
+  @NonNull
+  public final TextView textViewTitleOnboardingTwo;
 
   private ItemOnboardingTwoBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button buttonItemOnboardingTwo) {
+      @NonNull AppCompatButton buttonStartOnboardingTwo, @NonNull ImageView imageViewOnboardingTwo,
+      @NonNull TextView textViewTitleOnboardingTwo) {
     this.rootView = rootView;
-    this.buttonItemOnboardingTwo = buttonItemOnboardingTwo;
+    this.buttonStartOnboardingTwo = buttonStartOnboardingTwo;
+    this.imageViewOnboardingTwo = imageViewOnboardingTwo;
+    this.textViewTitleOnboardingTwo = textViewTitleOnboardingTwo;
   }
 
   @Override
@@ -55,13 +66,26 @@ public final class ItemOnboardingTwoBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button_item_onboarding_two;
-      Button buttonItemOnboardingTwo = ViewBindings.findChildViewById(rootView, id);
-      if (buttonItemOnboardingTwo == null) {
+      id = R.id.button_start_onboarding_two;
+      AppCompatButton buttonStartOnboardingTwo = ViewBindings.findChildViewById(rootView, id);
+      if (buttonStartOnboardingTwo == null) {
         break missingId;
       }
 
-      return new ItemOnboardingTwoBinding((ConstraintLayout) rootView, buttonItemOnboardingTwo);
+      id = R.id.imageView_onboarding_two;
+      ImageView imageViewOnboardingTwo = ViewBindings.findChildViewById(rootView, id);
+      if (imageViewOnboardingTwo == null) {
+        break missingId;
+      }
+
+      id = R.id.textView_title_onboarding_two;
+      TextView textViewTitleOnboardingTwo = ViewBindings.findChildViewById(rootView, id);
+      if (textViewTitleOnboardingTwo == null) {
+        break missingId;
+      }
+
+      return new ItemOnboardingTwoBinding((ConstraintLayout) rootView, buttonStartOnboardingTwo,
+          imageViewOnboardingTwo, textViewTitleOnboardingTwo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,6 +1,6 @@
 package com.simply407.patpat.ui.chat
 
-import android.graphics.Rect
+
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
@@ -9,28 +9,29 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
-import android.view.WindowManager
+import android.widget.EditText
+import android.widget.ImageButton
 import androidx.annotation.RequiresApi
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.simply407.patpat.R
+import com.simply407.patpat.api.RetrofitInstance
+import com.simply407.patpat.api.patApi
+import com.simply407.patpat.data.ChatGet
+import com.simply407.patpat.data.ChatSse
 import com.simply407.patpat.data.Ui_chat
+import com.simply407.patpat.data.model.ChatLocalDB
 import com.simply407.patpat.databinding.FragmentChattingBinding
-import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.subjects.BehaviorSubject
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
-import java.util.concurrent.TimeUnit
+//import com.simply407.patpat.ui.chat.ChattingViewModel.Companion
+//import com.simply407.patpat.ui.chat.ChattingViewModel.Companion.patApi
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class ChattingFragment : Fragment() {
 
@@ -43,10 +44,17 @@ class ChattingFragment : Fragment() {
 
     private lateinit var viewModel : ChattingViewModel //ViewModel
 
-    private val job = Job()
-    private val scope = CoroutineScope(Dispatchers.Main + job)
+    companion object{
+        private const val COUNSELORID ="8b5ec154-1346-4f2a-afbc-a83ea62b4288"
+        private var initialMent =""
+    }
+
+
+//    private val job = Job()
+//    private val scope = CoroutineScope(Dispatchers.Main + job)
 
     private val imageResource =getProfileImg("bb") //임시코드
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +64,55 @@ class ChattingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
+       val patApi = RetrofitInstance.getInstance().create(patApi::class.java)
+
 
         _binding=FragmentChattingBinding.inflate(inflater,container,false)
         viewModel= ViewModelProvider(this)[ChattingViewModel::class.java]
-        viewModel.addItem(Ui_chat(false,getProfileImg("bb"),"안녕~"))//들어올 때 소개 추후 조건 걸어서 채팅이 시작 할 때 띄우도록
+
+
+//        patApi.getCounselor().enqueue(object :Callback<Void>{
+//            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+//                Log.d()
+//            }
+//
+//            override fun onFailure(call: Call<Void>, response: Throwable) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        })
+        patApi.getChat(COUNSELORID).enqueue(object : Callback<ChatGet> {
+            override fun onResponse(call: Call<ChatGet>, response: Response<ChatGet>) {
+
+                Log.d("chattttting","${response}")
+
+                val response=response.body()
+                //Log.d("chattttting","/{counselorId}  ${response.toString()}")
+                if (response != null) {
+                    initialMent=response.counselor.description
+                    viewModel.addItem(Ui_chat(false,getProfileImg("bb"), initialMent))
+                }
+
+                patApi.getChatSend(COUNSELORID,).enqueue(object : Callback<Void>{
+                    override fun onResponse(p0: Call<Void>, p1: Response<Void>) {
+                        Log.d("chattttting","/{counselorId}/message ${response.toString()}")
+                    }
+
+                    override fun onFailure(p0: Call<Void>, p1: Throwable) {
+                        Log.d("chattttting","/{counselorId}/message failure")
+                    }
+
+                })
+            }
+            override fun onFailure(call: Call<ChatGet>, response: Throwable) {
+                Log.d("chattttting","/{counselorId} failure")
+            }
+        })
+
+
+
+
+//        ChatLocalDB.init(requireContext())
 
         //recycler view 생성
         rvAdapter = ChattingAdapter(requireContext(),chatlist)
@@ -69,13 +122,11 @@ class ChattingFragment : Fragment() {
         binding.chatRv.layoutManager = layoutManager
         binding.chatRv.itemAnimator = null
 
-
         //초기 recyclerView 위치 셋팅
         val recyclerViewLayoutParams = binding.chatRv.layoutParams
         recyclerViewLayoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
         binding.chatRv.layoutParams = recyclerViewLayoutParams
 
-        //위치에 따른 recycler의 움직임
         binding.root.setOnApplyWindowInsetsListener { _, insets ->
             val windowInsets = WindowInsetsCompat.toWindowInsetsCompat(insets)
             val keyboardHeight = windowInsets.getInsets(WindowInsetsCompat.Type.ime())?.bottom ?: 0
@@ -107,24 +158,17 @@ class ChattingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupChatInputListener(binding.chatInput, binding.chatSendbtn, viewModel)
 
 
-
-        binding.chatSendbtn.setOnClickListener {
-            val chatMessage = binding.chatInput.text.toString()
-            if (chatMessage.isNotEmpty()) {
-                viewModel.addItem(Ui_chat(true, imageResource, chatMessage))
-                binding.chatInput.setText(" ")
-                viewModel.addItem(Ui_chat(false, imageResource, "입력중.."))
-
-            }
-        }
-
-
-        val lastIndex = (binding.chatRv.adapter as? ChattingAdapter)?.itemCount ?: 0
         viewModel.items.observe(viewLifecycleOwner, Observer {
+            val lastIndex = (binding.chatRv.adapter as? ChattingAdapter)?.itemCount ?: 0
             (binding.chatRv.adapter as? ChattingAdapter)?.updateItems(it.toMutableList())
             binding.chatRv.scrollToPosition(lastIndex)
+        })
+
+        viewModel.buttonState.observe(viewLifecycleOwner,Observer{
+            binding.chatSendbtn.isEnabled = it
         })
 
 
@@ -139,9 +183,60 @@ class ChattingFragment : Fragment() {
         }
     } //방 제목에 따라 프로필 사진 부여
 
-    private fun sendMessage() {
-        val message = "아"
-        viewModel.setItem(Ui_chat(false,imageResource,message))
+
+
+
+    private fun loadChat() {
+
+    }
+
+    private fun saveChat(){
+
+    }
+
+    private fun setupChatInputListener(chatInput: EditText, chatSendBtn: ImageButton, viewModel: ChattingViewModel) {
+        val patApi = RetrofitInstance.getInstance().create(patApi::class.java)
+        chatInput.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                chatSendBtn.isEnabled = false
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s.toString().isNotEmpty()) {
+                    chatSendBtn.isEnabled = true
+                    chatSendBtn.setBackgroundResource(R.drawable.chat_setbtn)
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        chatSendBtn.setOnClickListener {
+            val chatMessage = chatInput.text.toString()
+            if (chatMessage.isNotEmpty()) {
+                viewModel.addItem(Ui_chat(true, imageResource, chatMessage))
+
+                chatInput.setText(" ")
+                val hi : com.simply407.patpat.api.patApi.bodyy = com.simply407.patpat.api.patApi.bodyy(chatMessage)
+                patApi.postChatSend(COUNSELORID, hi).enqueue(object : Callback<ChatSse> {
+                    override fun onResponse(call: Call<ChatSse>, response: Response<ChatSse>) {
+                        val responses=response.body()
+
+                        if (responses != null) {
+                            viewModel.addItem(Ui_chat(false, imageResource, responses.content))
+                        }
+                    }
+
+                    override fun onFailure(call: Call<ChatSse>, response: Throwable) {
+                        Log.d("chattttting","/{counselorId}/postmessage failure")
+                    }
+
+                })
+
+                chatSendBtn.isEnabled = false
+                chatSendBtn.setBackgroundResource(R.drawable.chat_sendbtn_lock)
+            }
+        }
     }
 
 

@@ -10,5 +10,5 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
   // Field from default config.
-  public static final String KAKAO_NATIVE_APP_KEY = null;
+  public static final String KAKAO_NATIVE_APP_KEY = "42525b916e05605b5cc36350531915d5";
 }

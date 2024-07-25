@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.simply407.patpat.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,16 +20,16 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ConstraintLayout main;
+  public final BottomNavigationView bottomNavigationViewMain;
 
   @NonNull
-  public final FragmentContainerView mainfragment;
+  public final ConstraintLayout main;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout main,
-      @NonNull FragmentContainerView mainfragment) {
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull BottomNavigationView bottomNavigationViewMain, @NonNull ConstraintLayout main) {
     this.rootView = rootView;
+    this.bottomNavigationViewMain = bottomNavigationViewMain;
     this.main = main;
-    this.mainfragment = mainfragment;
   }
 
   @Override
@@ -59,15 +59,15 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      ConstraintLayout main = (ConstraintLayout) rootView;
-
-      id = R.id.mainfragment;
-      FragmentContainerView mainfragment = ViewBindings.findChildViewById(rootView, id);
-      if (mainfragment == null) {
+      id = R.id.bottomNavigationView_main;
+      BottomNavigationView bottomNavigationViewMain = ViewBindings.findChildViewById(rootView, id);
+      if (bottomNavigationViewMain == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, main, mainfragment);
+      ConstraintLayout main = (ConstraintLayout) rootView;
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, bottomNavigationViewMain, main);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

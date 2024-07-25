@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="gray">#8A8A8A</color>
+    <color name="orange">#EE9A1B</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">PatPat</string>
-    <string name="kakao_oauth_host" translatable="false">null</string>
+    <string name="check">확인</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kakao_oauth_host" translatable="false">"kakao42525b916e05605b5cc36350531915d5"</string>
+    <string name="next">다음</string>
+    <string name="nick_name_hint">닉네임 입력</string>
+    <string name="start">시작하기</string>
+    <string name="title_join_complete">회원가입 완료!</string>
+    <string name="title_join_nick_name">어떻게 불러드릴까요?</string>
+    <string name="title_onboarding_one">고민이 있나요?</string>
+    <string name="title_onboarding_two">시원한 해결책과\n따뜻한 위로를 주는\n친구들을 만나보세요!</string>
     <style name="Base.Theme.PatPat" parent="Theme.Material3.DayNight.NoActionBar">
         
         
+        <item name="android:statusBarColor">@color/white</item>"
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="BottomNavigationTextAppearance" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
     <style name="Splash" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>

@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.SharedPreferences
 import com.kakao.sdk.common.KakaoSdk
 import com.simply407.patpat.BuildConfig
-import com.simply407.patpat.data.ChatData
 import com.simply407.patpat.data.model.ChatLocalDB
 import com.simply407.patpat.data.model.SharedPreferencesManager
 
@@ -18,7 +17,7 @@ class GlobalApplication : Application() {
         ChatLocalDB.init(this)
 
         // Kakao Sdk 초기화
-        //KakaoSdk.init(this, BuildConfig.KAKAO_NATIVE_APP_KEY)
+        KakaoSdk.init(this, BuildConfig.KAKAO_NATIVE_APP_KEY)
 
 
     }

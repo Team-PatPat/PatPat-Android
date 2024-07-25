@@ -68,14 +68,15 @@ dependencies {
 
     implementation (libs.rxjava3.rxjava)
     implementation (libs.rxandroid.v300) //observer형태로 response
+    implementation (libs.gson)
 
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     implementation (libs.okhttp)
     implementation (libs.logging.interceptor)
 
-
     implementation(libs.kotlinx.coroutines.android.v160)
+
     implementation(libs.v2.all) // 전체 모듈 설치, 2.11.0 버전부터 지원
     implementation(libs.v2.user) // 카카오 로그인 API 모듈
     implementation(libs.v2.share) // 카카오톡 공유 API 모듈

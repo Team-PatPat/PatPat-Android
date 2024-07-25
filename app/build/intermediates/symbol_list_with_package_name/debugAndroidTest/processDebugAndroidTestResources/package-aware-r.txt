@@ -1,0 +1,4 @@
+com.simply407.patpat.test
+string kakao_oauth_host
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

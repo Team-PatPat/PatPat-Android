@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.simply407.patpat.test.app-mergeDebugAndroidTestResources-2:/values/values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\1____\\githubRepo\\potenday\\app\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\gradleResValues.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "159",
+                        "endColumns": "105",
+                        "endOffsets": "260"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "105",
+                        "endOffsets": "156"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\1____\\.gradle\\caches\\transforms-4\\7ee32d8a60810e6a9427ea1943618d70\\transformed\\core-1.6.1\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "4,11",
+                        "startColumns": "0,0",
+                        "startOffsets": "142,510",
+                        "endLines": "10,17",
+                        "endColumns": "8,8",
+                        "endOffsets": "509,875"
+                    },
+                    "to": {
+                        "startLines": "3,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "161,533",
+                        "endLines": "9,16",
+                        "endColumns": "8,8",
+                        "endOffsets": "528,898"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -845,6 +845,7 @@
     <color name="error_color_material_light">#ff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="gray">#8A8A8A</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="m3_ref_palette_black">#ff000000</color>
@@ -1099,6 +1100,7 @@
     <color name="nightonly_yellow550s">#FBDD0D</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="orange">#EE9A1B</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -2309,6 +2311,7 @@
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="chat">Chats</string>
+    <string name="check">확인</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string name="com_kakao_talk_chooser_text">Which version of KakaoTalk would you like to use?</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
@@ -2328,10 +2331,11 @@
     <string name="fallback_menu_item_share_link">Share link</string>
     <string name="favorite">Favorites</string>
     <string name="friend">Friend</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="item_view_role_description">Tab</string>
-    <string name="kakao_oauth_host" translatable="false">null</string>
+    <string name="kakao_oauth_host" translatable="false">"kakao42525b916e05605b5cc36350531915d5"</string>
     <string name="kakao_sdk_friend_app_name">partner-friend</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
     <string name="m3_ref_typeface_brand_medium" translatable="false">sans-serif-medium</string>
@@ -2442,7 +2446,8 @@
     <string description="Button text to indicate that the widget will ignore the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_cancel">Cancel</string>
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
     <string name="my_profile">My Profile</string>
-    <string name="next">Next</string>
+    <string name="next">다음</string>
+    <string name="nick_name_hint">닉네임 입력</string>
     <string name="not_talk_friend">Not a Kakao Talk Friend</string>
     <string name="ok">OK</string>
     <string name="password_toggle_content_description">Show password</string>
@@ -2467,7 +2472,12 @@
     <string name="select_friend">Select Friends</string>
     <string description="Title of the side sheet&apos;s accessibility pane that is spoken by TalkBack when the side sheet appears on screen. [CHAR_LIMIT=NONE]" name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="side_sheet_behavior" translatable="false">com.google.android.material.sidesheet.SideSheetBehavior</string>
+    <string name="start">시작하기</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="title_join_complete">회원가입 완료!</string>
+    <string name="title_join_nick_name">어떻게 불러드릴까요?</string>
+    <string name="title_onboarding_one">고민이 있나요?</string>
+    <string name="title_onboarding_two">시원한 해결책과\n따뜻한 위로를 주는\n친구들을 만나보세요!</string>
     <string name="unexpected_error_message">An unexpected error has occurred. Please try again later.</string>
     <string name="unregistered">Unregistered</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
@@ -2899,6 +2909,9 @@
     <style name="Base.Theme.PatPat" parent="Theme.Material3.DayNight.NoActionBar">
         
         
+        <item name="android:statusBarColor">@color/white</item>"
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
     <style name="Base.ThemeOverlay.AppCompat" parent="Platform.ThemeOverlay.AppCompat"/>
     <style name="Base.ThemeOverlay.AppCompat.ActionBar">
@@ -5876,6 +5889,10 @@
     <item name="shapeAppearanceOverlay">@null</item>
   </style>
     <style name="Base.Widget.MaterialComponents.TextView" parent="Widget.AppCompat.TextView"/>
+    <style name="BottomNavigationTextAppearance" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
     <style name="CardView" parent="Base.CardView">
     </style>
     <style name="CardView.Dark">

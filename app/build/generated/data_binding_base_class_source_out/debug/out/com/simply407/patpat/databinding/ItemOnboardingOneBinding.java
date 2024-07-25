@@ -4,20 +4,39 @@ package com.simply407.patpat.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.simply407.patpat.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ItemOnboardingOneBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
 
-  private ItemOnboardingOneBinding(@NonNull ConstraintLayout rootView) {
+  @NonNull
+  public final AppCompatButton buttonNextOnboardingOne;
+
+  @NonNull
+  public final ImageView imageViewOnboardingOne;
+
+  @NonNull
+  public final TextView textViewTitleOnboardingOne;
+
+  private ItemOnboardingOneBinding(@NonNull ConstraintLayout rootView,
+      @NonNull AppCompatButton buttonNextOnboardingOne, @NonNull ImageView imageViewOnboardingOne,
+      @NonNull TextView textViewTitleOnboardingOne) {
     this.rootView = rootView;
+    this.buttonNextOnboardingOne = buttonNextOnboardingOne;
+    this.imageViewOnboardingOne = imageViewOnboardingOne;
+    this.textViewTitleOnboardingOne = textViewTitleOnboardingOne;
   }
 
   @Override
@@ -43,10 +62,32 @@ public final class ItemOnboardingOneBinding implements ViewBinding {
 
   @NonNull
   public static ItemOnboardingOneBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.button_next_onboarding_one;
+      AppCompatButton buttonNextOnboardingOne = ViewBindings.findChildViewById(rootView, id);
+      if (buttonNextOnboardingOne == null) {
+        break missingId;
+      }
 
-    return new ItemOnboardingOneBinding((ConstraintLayout) rootView);
+      id = R.id.imageView_onboarding_one;
+      ImageView imageViewOnboardingOne = ViewBindings.findChildViewById(rootView, id);
+      if (imageViewOnboardingOne == null) {
+        break missingId;
+      }
+
+      id = R.id.textView_title_onboarding_one;
+      TextView textViewTitleOnboardingOne = ViewBindings.findChildViewById(rootView, id);
+      if (textViewTitleOnboardingOne == null) {
+        break missingId;
+      }
+
+      return new ItemOnboardingOneBinding((ConstraintLayout) rootView, buttonNextOnboardingOne,
+          imageViewOnboardingOne, textViewTitleOnboardingOne);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

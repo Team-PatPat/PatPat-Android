@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.FragmentJoinNickNameBinding
 
@@ -21,9 +22,11 @@ class JoinNickNameFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        joinInfoActivity = activity as JoinInfoActivity
         binding = FragmentJoinNickNameBinding.inflate(layoutInflater, container, false)
 
         checkValidText()
+        onClickButton()
 
         return binding.root
     }
@@ -52,6 +55,17 @@ class JoinNickNameFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun onClickButton() {
+        binding.buttonCheckJoinComplete.setOnClickListener {
+            val background = binding.buttonCheckJoinComplete.background
+            val orangeBackground = ContextCompat.getDrawable(requireContext(), R.drawable.bg_orange_r15)
+
+            if (background.constantState == orangeBackground?.constantState) {
+                joinInfoActivity.addFragment(JoinInfoActivity.JOIN_MBTI_FIRST_FRAGMENT, true, null)
+            }
+        }
     }
 
 }

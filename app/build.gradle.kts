@@ -69,13 +69,11 @@ dependencies {
     implementation (libs.rxjava3.rxjava)
     implementation (libs.rxandroid.v300) //observer형태로 response
 
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
     implementation (libs.okhttp)
     implementation (libs.logging.interceptor)
 
-
-    implementation(libs.androidx.room.runtime) //local DB
-    annotationProcessor(libs.androidx.room.compiler)
-    kapt("androidx.room:room-compiler:2.6.1")
 
     implementation(libs.kotlinx.coroutines.android.v160)
     implementation(libs.v2.all) // 전체 모듈 설치, 2.11.0 버전부터 지원

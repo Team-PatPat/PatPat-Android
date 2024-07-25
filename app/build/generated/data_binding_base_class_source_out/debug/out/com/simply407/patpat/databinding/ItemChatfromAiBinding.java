@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.simply407.patpat.R;
@@ -21,11 +22,15 @@ public abstract class ItemChatfromAiBinding extends ViewDataBinding {
   @NonNull
   public final ImageView itemProfile;
 
+  @NonNull
+  public final CardView itemProfileCardview;
+
   protected ItemChatfromAiBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView itemChatfromme, ImageView itemProfile) {
+      TextView itemChatfromme, ImageView itemProfile, CardView itemProfileCardview) {
     super(_bindingComponent, _root, _localFieldCount);
     this.itemChatfromme = itemChatfromme;
     this.itemProfile = itemProfile;
+    this.itemProfileCardview = itemProfileCardview;
   }
 
   @NonNull

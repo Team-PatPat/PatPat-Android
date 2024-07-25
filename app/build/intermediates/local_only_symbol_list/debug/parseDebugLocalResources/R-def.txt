@@ -2,7 +2,13 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
-drawable frame_47
+drawable chat_bubble_from
+drawable chat_bubble_profile
+drawable chat_bubble_to
+drawable chat_inputtext
+drawable chat_sendbtn_lock
+drawable chat_sendbtn_pause
+drawable chat_setbtn
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable temp_icon_backbtn
@@ -23,6 +29,7 @@ id chat_sendbtn
 id item_chatfromme
 id item_chattome
 id item_profile
+id item_profile_cardview
 id linearLayout
 id main
 id mainfragment

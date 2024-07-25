@@ -4,8 +4,8 @@ package com.simply407.patpat.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,14 +31,14 @@ public abstract class FragmentChattingBinding extends ViewDataBinding {
   public final RecyclerView chatRv;
 
   @NonNull
-  public final Button chatSendbtn;
+  public final ImageButton chatSendbtn;
 
   @NonNull
   public final LinearLayout linearLayout;
 
   protected FragmentChattingBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppBarLayout appBarLayout, CustomAppbarChattingBinding appbar, EditText chatInput,
-      RecyclerView chatRv, Button chatSendbtn, LinearLayout linearLayout) {
+      RecyclerView chatRv, ImageButton chatSendbtn, LinearLayout linearLayout) {
     super(_bindingComponent, _root, _localFieldCount);
     this.appBarLayout = appBarLayout;
     this.appbar = appbar;

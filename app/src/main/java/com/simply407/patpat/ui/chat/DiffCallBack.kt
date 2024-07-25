@@ -1,5 +1,6 @@
 package com.simply407.patpat.ui.chat
 
+import android.os.Bundle
 import androidx.recyclerview.widget.DiffUtil
 import com.simply407.patpat.data.Ui_chat
 
@@ -18,4 +19,6 @@ class DiffCallback(
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldList[oldItemPosition] == newList[newItemPosition]
     }
+
+
 }

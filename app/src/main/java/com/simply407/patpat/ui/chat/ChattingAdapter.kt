@@ -11,7 +11,7 @@ import com.simply407.patpat.data.Ui_chat
 import com.simply407.patpat.databinding.ItemChatfromAiBinding
 import com.simply407.patpat.databinding.ItemChattoAiBinding
 
-class ChattingAdapter(val context: Context, private val items: MutableList<Ui_chat>) :
+class ChattingAdapter(val context: Context, private var items: MutableList<Ui_chat>) :
     RecyclerView.Adapter<ChattingAdapter.ViewHolder>() {
     companion object {
         private const val FROM = 1
@@ -69,6 +69,25 @@ class ChattingAdapter(val context: Context, private val items: MutableList<Ui_ch
         items.addAll(newItems)
         diffResult.dispatchUpdatesTo(this)
     }
+
+//    fun streamItems(index: Int, new_c:Char){
+//        val oldItems = items.toMutableList() // 기존 리스트의 복사본 생성
+//        oldItems[index] = oldItems[index].copy(message = oldItems[index].message + new_c) // 특정 인덱스의 항목만 변경
+//
+//        val diffCallback = DiffCallback(oldItems, oldItems.toMutableList().also {
+//            it[index] = it[index].copy(message = it[index].message + new_c)
+//        })
+//        val diffResult = DiffUtil.calculateDiff(diffCallback)
+//
+//        items = oldItems.toMutableList()
+//        diffResult.dispatchUpdatesTo(this)
+//
+//
+//    }
+
+
+
+
 
 
 

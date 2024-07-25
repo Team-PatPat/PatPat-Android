@@ -37,7 +37,7 @@ public class FragmentChattingBindingImpl extends FragmentChattingBinding  {
             , (bindings[2] != null) ? com.simply407.patpat.databinding.CustomAppbarChattingBinding.bind((android.view.View) bindings[2]) : null
             , (android.widget.EditText) bindings[5]
             , (androidx.recyclerview.widget.RecyclerView) bindings[3]
-            , (android.widget.Button) bindings[6]
+            , (android.widget.ImageButton) bindings[6]
             , (android.widget.LinearLayout) bindings[4]
             );
         this.appBarLayout.setTag(null);

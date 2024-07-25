@@ -12,13 +12,14 @@
             android:id="@+id/item_chattome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/chat_bubble_to"
             android:maxWidth="200dp"
-            android:text="문민우문민우"
+            android:padding="6dp"
 
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="입력하세요"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginRight="8dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

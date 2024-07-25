@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">PatPat</string>
+    <string name="kakao_oauth_host" translatable="false">null</string>
+    <style name="Base.Theme.PatPat" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="Theme.PatPat" parent="Base.Theme.PatPat"/>
+</resources>

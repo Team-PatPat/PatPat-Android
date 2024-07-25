@@ -5,6 +5,6 @@ data class Ui_chat(
 
     val isUser: Boolean, //유저면 true ai면 false
     val profileImg:Int, // img id
-    val message: String //메세지
+    var message: String //메세지
 )
 

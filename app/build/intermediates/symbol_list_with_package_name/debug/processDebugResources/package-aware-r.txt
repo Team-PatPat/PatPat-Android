@@ -3252,12 +3252,18 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable chat_bubble_from
+drawable chat_bubble_profile
+drawable chat_bubble_to
+drawable chat_inputtext
+drawable chat_sendbtn_lock
+drawable chat_sendbtn_pause
+drawable chat_setbtn
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable frame_47
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3657,6 +3663,7 @@ id italic
 id item_chatfromme
 id item_chattome
 id item_profile
+id item_profile_cardview
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart

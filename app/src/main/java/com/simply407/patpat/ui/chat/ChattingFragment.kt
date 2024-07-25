@@ -16,11 +16,21 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.simply407.patpat.R
 import com.simply407.patpat.data.Ui_chat
 import com.simply407.patpat.databinding.FragmentChattingBinding
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.BehaviorSubject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 class ChattingFragment : Fragment() {
 
@@ -32,10 +42,14 @@ class ChattingFragment : Fragment() {
     private lateinit var rvAdapter: ChattingAdapter
 
     private lateinit var viewModel : ChattingViewModel //ViewModel
+
+    private val job = Job()
+    private val scope = CoroutineScope(Dispatchers.Main + job)
+
+    private val imageResource =getProfileImg("bb") //임시코드
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -45,9 +59,7 @@ class ChattingFragment : Fragment() {
 
         _binding=FragmentChattingBinding.inflate(inflater,container,false)
         viewModel= ViewModelProvider(this)[ChattingViewModel::class.java]
-
-        viewModel.addItem(Ui_chat(false,getProfileImg("bb"),"도섻헌트!!!"))//들어올 때 소개 추후 조건 걸어서 채팅이 시작 할 때 띄우도록
-        viewModel.addItem(Ui_chat(false,getProfileImg("aa"),"도섻헌트!!!"))
+        viewModel.addItem(Ui_chat(false,getProfileImg("bb"),"안녕~"))//들어올 때 소개 추후 조건 걸어서 채팅이 시작 할 때 띄우도록
 
         //recycler view 생성
         rvAdapter = ChattingAdapter(requireContext(),chatlist)
@@ -55,6 +67,7 @@ class ChattingFragment : Fragment() {
         val layoutManager = LinearLayoutManager(requireContext())
         layoutManager.stackFromEnd = true
         binding.chatRv.layoutManager = layoutManager
+        binding.chatRv.itemAnimator = null
 
 
         //초기 recyclerView 위치 셋팅
@@ -94,26 +107,30 @@ class ChattingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageResource =getProfileImg("bb") //임시코드
 
-        Log.d("Dosec",chatlist.toString())
+
+
         binding.chatSendbtn.setOnClickListener {
             val chatMessage = binding.chatInput.text.toString()
             if (chatMessage.isNotEmpty()) {
                 viewModel.addItem(Ui_chat(true, imageResource, chatMessage))
                 binding.chatInput.setText(" ")
+                viewModel.addItem(Ui_chat(false, imageResource, "입력중.."))
+
             }
         }
 
 
+        val lastIndex = (binding.chatRv.adapter as? ChattingAdapter)?.itemCount ?: 0
         viewModel.items.observe(viewLifecycleOwner, Observer {
             (binding.chatRv.adapter as? ChattingAdapter)?.updateItems(it.toMutableList())
-            binding.chatRv.scrollToPosition(binding.chatRv.adapter?.itemCount?.minus(1) ?: 0)
+            binding.chatRv.scrollToPosition(lastIndex)
         })
 
 
-    }
 
+
+    }
     private fun getProfileImg(title :String) :Int{
         return when(title){
             "aa" -> R.drawable.tmp_profile
@@ -122,6 +139,10 @@ class ChattingFragment : Fragment() {
         }
     } //방 제목에 따라 프로필 사진 부여
 
+    private fun sendMessage() {
+        val message = "아"
+        viewModel.setItem(Ui_chat(false,imageResource,message))
+    }
 
 
 }

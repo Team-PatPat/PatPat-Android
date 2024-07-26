@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                              
+                                                        
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="10dp" android:tag="layout/item_chatfrom_ai_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_profile_cardview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/chat_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="5dp"
+            app:cardCornerRadius="40dp">
+
+            <ImageView
+                android:background="@drawable/tmp_profile"
+                android:id="@+id/item_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!---54dp-->
+        <TextView
+            android:id="@+id/item_chatfromme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/chat_frombubble"
+            android:maxWidth="220dp"
+            android:paddingLeft="18dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="8dp"
+            android:text="wffwfwfwfwegege"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_profile_cardview"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         

@@ -1,334 +1,330 @@
 [
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/font_pretendard_bold.otf.flat",
+        "source": "com.simply407.patpat.app-main-43:/font/pretendard_bold.otf"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_custom_appbar_chatting.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\custom_appbar_chatting.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_onboarding_second.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_onboarding_second.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\anim_mbti_fade_out.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\anim\\mbti_fade_out.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/menu_main_menu.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/menu/main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_selector_bottom_navigation_home.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\selector_bottom_navigation_home.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_chatting.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_chatting.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_backbtn.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_backbtn.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_main.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_onboarding.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_onboarding.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_sendbtn_pause.png.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_sendbtn_pause.png"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_tobubble.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_tobubble.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_bubble_from.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_bubble_from.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_onboarding_first.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_onboarding_first.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_fragment_chatting.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_chatting.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_inputtext.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_inputtext.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/color_bottom_navigation.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/color/bottom_navigation.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_user_on.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_user_on.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_chatfrom_ai.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_chatfrom_ai.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_fragment_join_nick_name.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_nick_name.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_temp_icon_backbtn.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/temp_icon_backbtn.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_bubble_profile.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_bubble_profile.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_tmp_profile.jpeg.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/tmp_profile.jpeg"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_main.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_letter_frame.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/letter_frame.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_selector_bottom_navigation_inbox.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\selector_bottom_navigation_inbox.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_dot_one.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_dot_one.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_join_mbti_complete.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_mbti_complete.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_splash.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_home_on.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_home_on.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_inbox_off.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_inbox_off.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_temp_icon_backbtn.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\temp_icon_backbtn.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_home_off.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_home_off.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_join_mbti_second.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_mbti_second.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-anydpi\\ic_launcher_round.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\color_text_input_line.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\color\\text_input_line.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_inbox_on.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_inbox_on.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_dot_one.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_dot_one.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_tmp_profile3.jpeg.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/tmp_profile3.jpeg"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_fragment_join_mbti_complete.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_complete.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_bubble_to.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_bubble_to.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_tmp_profile3.jpeg.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\tmp_profile3.jpeg"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_login.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_sendbtn_lock.png.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_sendbtn_lock.png"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_wantletter.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_wantletter.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_mbti_i.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_mbti_i.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_splash.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_activity_join_complete.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_join_complete.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_letter_share.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/letter_share.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_letter_like.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\letter_like.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_custom_appbar_chatting.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/custom_appbar_chatting.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_item_onboarding_two.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_onboarding_two.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_join_complete.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_join_complete.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\menu_main_menu.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\menu\\main_menu.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_bg_gray_r15.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/bg_gray_r15.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_activity_chatting.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_chatting.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_user_on.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_user_on.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_letter_download.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\letter_download.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_onboarding_two.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_onboarding_two.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-anydpi\\ic_launcher.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_bg_orange_r15.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\bg_orange_r15.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_activity_join_info.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_join_info.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_edit_text_underline.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/edit_text_underline.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\color_bottom_navigation.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\color\\bottom_navigation.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_selector_bottom_navigation_home.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/selector_bottom_navigation_home.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_temp_icon_storebtn.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\temp_icon_storebtn.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/anim_mbti_fade_out.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/anim/mbti_fade_out.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_frombubble.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_frombubble.xml"
     },
     {
         "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_btn_load.xml.flat",
         "source": "com.simply407.patpat.app-main-43:/drawable/chat_btn_load.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_inbox_on.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_inbox_on.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_tmp_profile2.jpeg.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/tmp_profile2.jpeg"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_bg_gray_r15.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\bg_gray_r15.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_backbtn.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_backbtn.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_fragment_join_mbti_second.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_second.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_letter_exit.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/letter_exit.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_activity_onboarding.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_onboarding.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_inputtext.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_inputtext.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_tmp_profile.jpeg.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\tmp_profile.jpeg"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_mbti_i.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_mbti_i.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_home_on.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_home_on.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/font_pretendard_medium.otf.flat",
+        "source": "com.simply407.patpat.app-main-43:/font/pretendard_medium.otf"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\xml\\backup_rules.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_join_info.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_join_info.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_wantletter.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_wantletter.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_bg_orange_r15.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/bg_orange_r15.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/color_text_input_line.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/color/text_input_line.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_btn_block.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_btn_block.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_login.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_btn_pause.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_btn_pause.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_user_off.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_user_off.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_bottom_navigation_rounded.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/bottom_navigation_rounded.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_edit_text_underline.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\edit_text_underline.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_item_onboarding_one.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_onboarding_one.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_user_off.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_user_off.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_item_chatto_ai.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_chatto_ai.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_selector_bottom_navigation_inbox.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/selector_bottom_navigation_inbox.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_dot_two.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_dot_two.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_letter_like.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/letter_like.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_fragment_join_mbti_third.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_third.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_dot_two.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_dot_two.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_fragment_join_mbti_fourth.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_fourth.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_btn_block.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_btn_block.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_letter_exit.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\letter_exit.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_onboarding_one.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_onboarding_one.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_profile.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_profile.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/xml_backup_rules.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_fragment_join_mbti_first.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_first.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_join_nick_name.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_nick_name.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_tmp_profile2.jpeg.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\tmp_profile2.jpeg"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_profile.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_profile.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_btn_load.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_btn_load.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/font_pretendard_semibold.otf.flat",
+        "source": "com.simply407.patpat.app-main-43:/font/pretendard_semibold.otf"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_letter_download.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/letter_download.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_common_mbti.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\common_mbti.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_join_mbti_first.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_mbti_first.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\layout_item_chatfrom_ai.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_chatfrom_ai.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_mbti_e.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_mbti_e.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_mbti_e.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_mbti_e.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_join_mbti_third.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_mbti_third.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_letter_share.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\letter_share.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_tobubble.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_tobubble.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_chatto_ai.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_chatto_ai.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_letter_frame.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\letter_frame.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_join_mbti_fourth.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_mbti_fourth.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_bottom_navigation_rounded.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\bottom_navigation_rounded.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/font_pretendard_regular.otf.flat",
+        "source": "com.simply407.patpat.app-main-43:/font/pretendard_regular.otf"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_chatting.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_chatting.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\xml\\data_extraction_rules.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_home_off.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_home_off.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_selector_bottom_navigation_user.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/selector_bottom_navigation_user.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_selector_bottom_navigation_user.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\selector_bottom_navigation_user.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_temp_icon_storebtn.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/temp_icon_storebtn.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_frombubble.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_frombubble.xml"
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_setbtn.png.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_setbtn.png"
+        "merged": "com.simply407.patpat.app-debug-41:/layout_common_mbti.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/common_mbti.xml"
     },
     {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_ic_inbox_off.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\ic_inbox_off.xml"
-    },
-    {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\drawable_chat_btn_pause.xml.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\drawable\\chat_btn_pause.xml"
-    },
-    {
-        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-debug-41:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.simply407.patpat.app-debug-41:/xml_data_extraction_rules.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/xml/data_extraction_rules.xml"
     }
 ]

@@ -29,9 +29,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
+
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".ui.chat.ChattingActivity"
             android:exported="true"
             android:theme="@style/Splash">
             <intent-filter>
@@ -39,6 +41,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
@@ -54,6 +57,12 @@
                     android:host="oauth"
                     android:scheme="@string/kakao_oauth_host" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="false">
+
         </activity>
     </application>
 

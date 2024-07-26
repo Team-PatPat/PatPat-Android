@@ -1,0 +1,234 @@
+[
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/menu_main_menu.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/menu/main_menu.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_chatting.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_chatting.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_main.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_onboarding.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_onboarding.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_sendbtn_pause.png.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_sendbtn_pause.png"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_bubble_to.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_bubble_to.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/color_bottom_navigation.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/color/bottom_navigation.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_chatfrom_ai.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_chatfrom_ai.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_temp_icon_backbtn.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/temp_icon_backbtn.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_tmp_profile.jpeg.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/tmp_profile.jpeg"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_dot_one.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_dot_one.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_home_on.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_home_on.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_inbox_off.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_inbox_off.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_home_off.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_home_off.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_inbox_on.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_inbox_on.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_tmp_profile3.jpeg.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/tmp_profile3.jpeg"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_login.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_splash.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_custom_appbar_chatting.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/custom_appbar_chatting.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_join_complete.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_join_complete.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_setbtn.png.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_setbtn.png"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_bg_gray_r15.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/bg_gray_r15.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_onboarding_two.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_onboarding_two.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_user_on.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_user_on.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_selector_bottom_navigation_home.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/selector_bottom_navigation_home.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_tmp_profile2.jpeg.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/tmp_profile2.jpeg"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_inputtext.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_inputtext.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_sendbtn_lock.png.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_sendbtn_lock.png"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_bubble_profile.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_bubble_profile.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_join_info.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_join_info.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_bg_orange_r15.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/bg_orange_r15.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/color_text_input_line.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/color/text_input_line.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_bottom_navigation_rounded.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/bottom_navigation_rounded.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_user_off.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_user_off.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_selector_bottom_navigation_inbox.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/selector_bottom_navigation_inbox.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_onboarding_one.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_onboarding_one.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/xml_backup_rules.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_fragment_join_nick_name.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_nick_name.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_item_chatto_ai.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/item_chatto_ai.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_chat_bubble_from.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/chat_bubble_from.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/layout_activity_chatting.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/layout/activity_chatting.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_selector_bottom_navigation_user.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/selector_bottom_navigation_user.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/drawable_temp_icon_storebtn.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/drawable/temp_icon_storebtn.xml"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.simply407.patpat.app-main-43:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.simply407.patpat.app-debug-41:/xml_data_extraction_rules.xml.flat",
+        "source": "com.simply407.patpat.app-main-43:/xml/data_extraction_rules.xml"
+    }
+]

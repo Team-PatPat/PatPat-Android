@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 object SharedPreferencesManager {
 
-    private const val FILE_NAME = "user_info"
+    const val FILE_NAME = "user_info"
     private const val KEY_ONBOARDING_SHOWN = "onboarding_shown"
     private const val KEY_USER_IS_LOGGED_IN = "user_is_logged_in"
     private const val KEY_FIRST_JOIN_COMPLETE = "first_join_complete"

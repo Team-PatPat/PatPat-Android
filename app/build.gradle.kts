@@ -3,6 +3,7 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id ("kotlin-kapt")
 }
 
 android {
@@ -41,9 +42,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
+
+    buildFeatures{
         viewBinding = true
+        dataBinding = true
         buildConfig = true
+
     }
 }
 
@@ -57,6 +61,21 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.kotlinx.coroutines.android) //retrofit
+
+    implementation (libs.rxjava3.rxjava)
+    implementation (libs.rxandroid.v300) //observer형태로 response
+    implementation (libs.gson)
+
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    implementation (libs.okhttp)
+    implementation (libs.logging.interceptor)
+
+    implementation(libs.kotlinx.coroutines.android.v160)
 
     implementation(libs.v2.all) // 전체 모듈 설치, 2.11.0 버전부터 지원
     implementation(libs.v2.user) // 카카오 로그인 API 모듈

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                              
+                                                        
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" android:tag="layout/item_chatfrom_ai_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_profile_cardview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/chat_bubble_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="5dp"
+            app:cardCornerRadius="40dp">
+
+            <ImageView
+                android:id="@+id/item_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tmp_profile"
+                android:scaleType="fitXY" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!---54dp-->
+        <TextView
+            android:id="@+id/item_chatfromme"
+            android:background="@drawable/chat_bubble_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:maxWidth="200dp"
+            android:text="도쎄엑헌트"
+            app:layout_constraintStart_toEndOf="@+id/item_profile_cardview"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="10dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         

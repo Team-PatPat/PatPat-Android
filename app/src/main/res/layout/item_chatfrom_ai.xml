@@ -6,23 +6,24 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/item_profile_cardview"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/chat_bubble_profile"
+            android:background="@drawable/chat_profile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginLeft="5dp"
             app:cardCornerRadius="40dp">
 
             <ImageView
+                android:background="@drawable/tmp_profile"
                 android:id="@+id/item_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/tmp_profile"
                 android:scaleType="fitXY" />
 
         </androidx.cardview.widget.CardView>
@@ -30,14 +31,20 @@
         <!---54dp-->
         <TextView
             android:id="@+id/item_chatfromme"
-            android:background="@drawable/chat_bubble_from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:maxWidth="200dp"
-            android:text="도쎄엑헌트"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/chat_frombubble"
+            android:maxWidth="220dp"
+            android:paddingLeft="18dp"
+            android:paddingTop="8dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="8dp"
+            android:text="wffwfwfwfwegege"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_profile_cardview"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="10dp"/>
+            />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

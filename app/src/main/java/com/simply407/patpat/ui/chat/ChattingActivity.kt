@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.appbar.AppBarLayout
 import com.kakao.sdk.common.util.Utility
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.ActivityChattingBinding
@@ -26,7 +27,7 @@ class ChattingActivity :AppCompatActivity() {
 
             insets
         }
-
+        val roomName =intent.getStringExtra("name")
         val transaction=manager.beginTransaction()
         val fragmentChat = ChattingFragment()
 

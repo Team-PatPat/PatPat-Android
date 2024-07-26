@@ -16,4 +16,6 @@
     <string name="sub_title_join_mbti">나에게 맞는 친구를 추천해 드려요.</string>
     <string name="alert_info_join_mbti">나중에 다시 설정할 수 있으니 걱정 마세요!</string>
     <string name="title_login">고민 상담을 하러 가볼까요?</string>
+    <string name="back">뒤로가기</string>
+    <string name="skip">건너뛰기</string>
 </resources>

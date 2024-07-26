@@ -42,7 +42,7 @@ class JoinNickNameFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 s?.let {
                     if (it.length == 15) {
-                        binding.textInputLayoutJoinNickName.helperText = "입력은 최대 15자까지 가능합니다."
+                        binding.textInputLayoutJoinNickName.helperText = "15자 이내로 입력해 주세요."
                     } else {
                         binding.textInputLayoutJoinNickName.helperText = null
                     }

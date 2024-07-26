@@ -17,7 +17,7 @@ import com.simply407.patpat.R
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivityLoginBinding
-import com.simply407.patpat.ui.join.JoinCompleteActivity
+import com.simply407.patpat.ui.join.JoinInfoActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -98,18 +98,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkFirstJoinComplete() {
-        if (SharedPreferencesManager.isFirstJoinComplete()) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        } else {
-            val intent = Intent(this, JoinCompleteActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
-
     private fun observeData() {
         viewModel.loginResult.observe(this) { result ->
             result.onSuccess { loginResponse ->
@@ -128,6 +116,15 @@ class LoginActivity : AppCompatActivity() {
             result.onSuccess { userInfoResponse ->
                 // 유저 정보 성공 처리
                 Log.d(TAG, "유저 정보 성공: $userInfoResponse")
+
+                // 닉네임 설정을 안한 유저
+                if (userInfoResponse.name == null) {
+                    moveToJoinInfoActivity()
+                } else {
+                    // 닉네임 설정을 한 유저
+                    moveToMain()
+                }
+
             }
             result.onFailure { error ->
                 // 로그인 실패 처리
@@ -135,5 +132,17 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun moveToJoinInfoActivity() {
+        val intent = Intent(this, JoinInfoActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun moveToMain() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

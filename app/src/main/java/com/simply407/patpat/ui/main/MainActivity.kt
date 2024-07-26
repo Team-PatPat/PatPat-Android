@@ -1,14 +1,11 @@
-package com.simply407.patpat
+package com.simply407.patpat.ui.main
 
 import android.os.Bundle
-import android.view.WindowManager
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updateLayoutParams
+import com.simply407.patpat.R
 import com.simply407.patpat.databinding.ActivityMainBinding
-import com.simply407.patpat.ui.chat.ChattingFragment
 
 
 class MainActivity : AppCompatActivity() {

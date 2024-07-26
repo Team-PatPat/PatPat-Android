@@ -9,7 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.simply407.patpat.MainActivity
+import com.simply407.patpat.ui.main.MainActivity
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivitySplashBinding

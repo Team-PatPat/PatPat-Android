@@ -12,7 +12,7 @@ import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
-import com.simply407.patpat.MainActivity
+import com.simply407.patpat.ui.main.MainActivity
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.SharedPreferencesManager

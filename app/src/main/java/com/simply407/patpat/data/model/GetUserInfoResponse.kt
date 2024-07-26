@@ -5,5 +5,6 @@ data class GetUserInfoResponse(
     val name: String,
     val email: String,
     val mbti: String,
-    val vendor: String
+    val vendor: String,
+    val avatarUrl: String,
 )

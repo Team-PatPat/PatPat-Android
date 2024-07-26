@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.FragmentJoinNickNameBinding
 
@@ -17,6 +18,8 @@ class JoinNickNameFragment : Fragment() {
     private lateinit var joinInfoActivity: JoinInfoActivity
     private lateinit var binding: FragmentJoinNickNameBinding
 
+    private lateinit var viewModel: JoinViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,6 +27,8 @@ class JoinNickNameFragment : Fragment() {
 
         joinInfoActivity = activity as JoinInfoActivity
         binding = FragmentJoinNickNameBinding.inflate(layoutInflater, container, false)
+
+        viewModel = ViewModelProvider(requireActivity())[JoinViewModel::class.java]
 
         checkValidText()
         onClickButton()
@@ -65,6 +70,12 @@ class JoinNickNameFragment : Fragment() {
             if (background.constantState == orangeBackground?.constantState) {
                 joinInfoActivity.addFragment(JoinInfoActivity.JOIN_MBTI_FIRST_FRAGMENT, true, null)
             }
+
+            val nickName = binding.textInputEditTextJoinNickName.text.toString()
+            if (nickName.isNotEmpty()) {
+                viewModel.setName(nickName)
+            }
+
         }
     }
 

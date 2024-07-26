@@ -20,9 +20,10 @@
             android:id="@+id/textView_back_join_mbti_complete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="뒤로가기"
-            android:textColor="@color/gray"
-            android:textSize="16dp" />
+            android:text="@string/back"
+            android:textAppearance="@style/Typography.Bold16"
+            android:textColor="@color/grayScale400"
+            android:textSize="14sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -32,8 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="@string/title_join_mbti"
-        android:textSize="26sp"
-        android:textStyle="bold"
+        android:textAppearance="@style/Typography.Bold22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,8 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sub_title_join_mbti"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        android:textAppearance="@style/Typography.Medium16"
+        android:textColor="@color/grayScale400"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_title_join_mbti_complete" />
 
@@ -62,9 +62,8 @@
             android:background="@drawable/edit_text_underline"
             android:enabled="false"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/Typography.Bold22"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/edit_text_second_join_mbti_complete"
@@ -74,9 +73,8 @@
             android:background="@drawable/edit_text_underline"
             android:enabled="false"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/Typography.Bold22"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/edit_text_third_join_mbti_complete"
@@ -86,9 +84,8 @@
             android:background="@drawable/edit_text_underline"
             android:enabled="false"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/Typography.Bold22"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/edit_text_fourth_join_mbti_complete"
@@ -98,9 +95,8 @@
             android:background="@drawable/edit_text_underline"
             android:enabled="false"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textAppearance="@style/Typography.Bold22"
+            android:textColor="@color/black" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -110,8 +106,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/alert_info_join_mbti"
-        android:textColor="@color/gray"
-        android:textSize="12dp"
+        android:textAppearance="@style/Typography.Medium12"
+        android:textColor="@color/grayScale400"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout_join_mbti_complete" />
 
@@ -143,9 +139,9 @@
                     android:layout_height="wrap_content"
                     android:text="I"
                     android:textAlignment="center"
+                    android:textAppearance="@style/Typography.Bold22"
                     android:textColor="@color/blue"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="34sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -155,9 +151,9 @@
                     android:layout_height="wrap_content"
                     android:text="I"
                     android:textAlignment="center"
+                    android:textAppearance="@style/Typography.Bold22"
                     android:textColor="@color/blue"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="34sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -167,9 +163,9 @@
                     android:layout_height="wrap_content"
                     android:text="I"
                     android:textAlignment="center"
+                    android:textAppearance="@style/Typography.Bold22"
                     android:textColor="@color/blue"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="34sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -179,9 +175,9 @@
                     android:layout_height="wrap_content"
                     android:text="I"
                     android:textAlignment="center"
+                    android:textAppearance="@style/Typography.Bold22"
                     android:textColor="@color/blue"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="34sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -197,8 +193,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="유형이시군요!"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textAppearance="@style/Typography.Bold18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout_result_join_mbti_complete" />
@@ -210,8 +205,7 @@
         android:layout_marginTop="24dp"
         android:text="{사용자 닉네임}님께\n맞는 친구를 추천해 드릴게요!"
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textAppearance="@style/Typography.SemiBold18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_category_join_mbti_complete" />
@@ -230,13 +224,12 @@
         android:id="@+id/button_start_join_mbti_complete"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="46dp"
         android:background="@drawable/bg_orange_r15"
         android:stateListAnimator="@null"
         android:text="@string/start"
+        android:textAppearance="@style/Typography.Bold18"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

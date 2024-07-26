@@ -1,15 +1,15 @@
-#Fri Jul 26 16:57:06 KST 2024
-base.0=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.10=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.2=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.3=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.4=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.5=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.6=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.7=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
-base.8=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
-base.9=C\:\\Users\\1____\\githubRepo\\potenday\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+#Fri Jul 26 17:07:48 KST 2024
+base.0=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.10=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.2=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
+base.3=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
+base.4=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
+base.5=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+base.6=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
+base.7=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex
+base.8=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
+base.9=/Users/jeongjuseong/PatPat-Android/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=classes2.dex

@@ -33,7 +33,7 @@
         </activity>
 
         <activity
-            android:name=".ui.chat.ChattingActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Splash">
             <intent-filter>
@@ -60,7 +60,7 @@
         </activity>
 
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".ui.chat.ChattingActivity"
             android:exported="false">
 
         </activity>

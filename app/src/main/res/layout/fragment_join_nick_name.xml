@@ -15,8 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="@string/title_join_nick_name"
-        android:textSize="26sp"
-        android:textStyle="bold"
+        android:textAppearance="@style/Typography.Bold22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,6 +28,8 @@
         app:boxStrokeColor="@color/text_input_line"
         app:boxStrokeWidth="2dp"
         app:endIconMode="clear_text"
+        app:helperTextTextAppearance="@style/Typography.Medium12"
+        app:helperTextTextColor="@color/grayScale400"
         app:hintEnabled="false"
         app:layout_constraintTop_toBottomOf="@+id/textView_title_join_nick_name">
 
@@ -41,7 +42,9 @@
             android:hint="@string/nick_name_hint"
             android:maxLength="15"
             android:paddingStart="0dp"
-            android:paddingTop="12dp" />
+            android:paddingTop="12dp"
+            android:textAppearance="@style/Typography.SemiBold18"
+            android:textColorHint="@color/grayScale300" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -58,13 +61,12 @@
         android:id="@+id/button_check_join_complete"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="46dp"
         android:background="@drawable/bg_gray_r15"
         android:stateListAnimator="@null"
         android:text="@string/next"
+        android:textAppearance="@style/Typography.Bold18"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

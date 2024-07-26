@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <!-- Automatically generated file. DO NOT MODIFY -->
-
-    <!-- Value from default config. -->
-    <string name="kakao_oauth_host" translatable="false">"kakao42525b916e05605b5cc36350531915d5"</string>
-
-</resources>

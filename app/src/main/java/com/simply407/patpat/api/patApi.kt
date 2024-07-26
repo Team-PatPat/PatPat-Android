@@ -3,10 +3,14 @@ package com.simply407.patpat.api
 import com.simply407.patpat.data.ChatGet
 import com.simply407.patpat.data.ChatSse
 import com.simply407.patpat.data.messageBody
+import com.simply407.patpat.data.model.GetUserInfoResponse
+import com.simply407.patpat.data.model.LoginRequest
+import com.simply407.patpat.data.model.LoginResponse
 
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Field
@@ -14,6 +18,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface patApi {
@@ -53,6 +58,11 @@ interface patApi {
         @Path("counselorId") counselorId : String
     ) : Call<Void>
 
+    @POST("api/v1/login")
+    suspend fun postLogin(@Body loginRequest: LoginRequest): Response<LoginResponse>
+
+    @GET("api/v1/users/me")
+    suspend fun getUserInfo(@Header("Authorization") accessToken: String): Response<GetUserInfoResponse>
 }
 
 

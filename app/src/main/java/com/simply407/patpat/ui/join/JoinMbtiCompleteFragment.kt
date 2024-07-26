@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.CommonMbtiBinding
 import com.simply407.patpat.databinding.FragmentJoinMbtiCompleteBinding
@@ -22,6 +23,8 @@ class JoinMbtiCompleteFragment : Fragment() {
     private lateinit var thirdMbti: String
     private lateinit var fourthMbti: String
 
+    private lateinit var viewModel: JoinViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,7 +38,10 @@ class JoinMbtiCompleteFragment : Fragment() {
         thirdMbti = arguments?.getString("thirdMbti") ?: ""
         fourthMbti = arguments?.getString("fourthMbti") ?: ""
 
+        viewModel = ViewModelProvider(requireActivity())[JoinViewModel::class.java]
+
         initUi()
+        observerData()
         back()
         clickButton()
 
@@ -77,6 +83,12 @@ class JoinMbtiCompleteFragment : Fragment() {
             "J" -> binding.textViewFourthMbtiComplete.setTextColor(ContextCompat.getColor(requireContext(), R.color.blue))
         }
 
+    }
+
+    private fun observerData() {
+        viewModel.nickName.observe(viewLifecycleOwner) { name ->
+            binding.textViewNameJoinMbtiComplete.text = "${name}님께\n맞는 친구를 추천해 드릴게요!"
+        }
     }
 
     private fun back() {

@@ -21,6 +21,12 @@
                 layout="@layout/custom_appbar_chatting" />
 
         </com.google.android.material.appbar.AppBarLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#D8D8D8"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+            android:layout_marginBottom="4dp"/>
 
 
         <FrameLayout
@@ -35,7 +41,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/chat_rv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"/>
 
         </FrameLayout>
 
@@ -45,7 +52,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:weightSum="9"
-                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <EditText
@@ -53,23 +59,22 @@
                     android:id="@+id/chat_input"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="7"
                     android:layout_marginStart="10dp"
                     android:layout_gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:layout_weight="7"
+                    android:paddingLeft="14dp"
                     android:hint="어떤 고민이 있나요?"
                     android:maxLines="3"
                     android:text=""
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <ImageButton
                     android:id="@+id/chat_sendbtn"
-                    android:background="@drawable/chat_sendbtn_lock"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/chat_btn_load"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
                     android:text="1" />
 
             </LinearLayout>

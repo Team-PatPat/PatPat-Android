@@ -12,6 +12,20 @@
     <color name="green">#06BA73</color>
 
     <color name="red">#EC6E4B</color>
+    
+    <color name="sub_blue">#799DDF</color>
+    <color name="sub_blue_light">#DAE6FC</color>
+
+    <color name="sub_green_light">#DAF0E7</color>
+    <color name="sub_green">#31B17E</color>
+
+    <color name="sub_yellow_light">#FFF6DE</color>
+    <color name="sub_yellow">#F6BA60</color>
+
+    <color name="sub_red_light">#FCE2DB</color>
+    <color name="sub_red">#E8704F</color>
+
+
 
     <color name="mainColor">#EE9A1B</color>
 

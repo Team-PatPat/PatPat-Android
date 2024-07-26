@@ -1,58 +1,86 @@
 [
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/activity_main.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/activity_main.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\custom_appbar_chatting.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\custom_appbar_chatting.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/activity_chatting.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/activity_chatting.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\activity_onboarding.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_onboarding.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/item_onboarding_two.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/item_onboarding_two.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\fragment_join_nick_name.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_nick_name.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/activity_join_info.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/activity_join_info.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\fragment_join_mbti_third.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_third.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/custom_appbar_chatting.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/custom_appbar_chatting.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\activity_chatting.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_chatting.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\fragment_join_mbti_first.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_first.xml"
     },
     {
         "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/item_chatto_ai.xml",
         "source": "com.simply407.patpat.app-main-43:/layout/item_chatto_ai.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/activity_login.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/activity_login.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\activity_join_info.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_join_info.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/item_chatfrom_ai.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/item_chatfrom_ai.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_splash.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/activity_onboarding.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/activity_onboarding.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\fragment_join_mbti_fourth.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_fourth.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/item_onboarding_one.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/item_onboarding_one.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/activity_join_complete.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/activity_join_complete.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\item_chatto_ai.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_chatto_ai.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/fragment_join_nick_name.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/fragment_join_nick_name.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\common_mbti.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\common_mbti.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/fragment_chatting.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/fragment_chatting.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\item_onboarding_two.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_onboarding_two.xml"
     },
     {
-        "merged": "com.simply407.patpat.app-mergeDebugResources-40:/layout/activity_splash.xml",
-        "source": "com.simply407.patpat.app-main-43:/layout/activity_splash.xml"
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\fragment_join_mbti_complete.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_complete.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\fragment_join_mbti_second.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_join_mbti_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\fragment_chatting.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\fragment_chatting.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\item_chatfrom_ai.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_chatfrom_ai.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\activity_join_complete.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\activity_join_complete.xml"
+    },
+    {
+        "merged": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-mergeDebugResources-40:\\layout\\item_onboarding_one.xml",
+        "source": "C:\\Users\\1____\\.gradle\\daemon\\8.7\\com.simply407.patpat.app-main-43:\\layout\\item_onboarding_one.xml"
     }
 ]

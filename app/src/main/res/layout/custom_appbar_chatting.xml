@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="16dp"
-        android:src="@drawable/temp_icon_backbtn" />
+        android:src="@drawable/chat_backbtn" />
 
     <TextView
         android:id="@+id/appbar_chat_title"
@@ -29,6 +29,6 @@
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="16dp"
-        android:src="@drawable/temp_icon_storebtn" />
+        android:src="@drawable/chat_wantletter" />
 
 </LinearLayout>

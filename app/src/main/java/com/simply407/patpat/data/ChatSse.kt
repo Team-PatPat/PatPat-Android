@@ -25,4 +25,6 @@ data class ChatSse(
     val content: String
 )
 
+data class messageBody(val message : String) //post할떄 사용하는
+
 

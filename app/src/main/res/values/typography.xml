@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Typography">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Typography.Bold16">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/pretendard_bold</item>
+    </style>
+
+    <style name="Typography.Bold18">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/pretendard_bold</item>
+    </style>
+
+    <style name="Typography.Bold20">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/pretendard_bold</item>
+    </style>
+
+    <style name="Typography.Bold22">
+        <item name="android:textSize">22sp</item>
+        <item name="fontFamily">@font/pretendard_bold</item>
+    </style>
+
+    <style name="Typography.Medium12">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/pretendard_medium</item>
+    </style>
+
+    <style name="Typography.Medium14">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/pretendard_medium</item>
+    </style>
+
+    <style name="Typography.Medium16">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/pretendard_medium</item>
+    </style>
+
+    <style name="Typography.Regular14">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/pretendard_regular</item>
+    </style>
+
+    <style name="Typography.Regular16">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/pretendard_regular</item>
+    </style>
+
+    <style name="Typography.SemiBold16">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/pretendard_semibold</item>
+    </style>
+
+    <style name="Typography.SemiBold18">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/pretendard_semibold</item>
+    </style>
+
+    <style name="Typography.SemiBold20">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/pretendard_semibold</item>
+    </style>
+
+</resources>

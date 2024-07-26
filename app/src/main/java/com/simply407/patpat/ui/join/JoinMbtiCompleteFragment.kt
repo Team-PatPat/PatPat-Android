@@ -1,6 +1,7 @@
 package com.simply407.patpat.ui.join
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.NewUserInfo
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.CommonMbtiBinding
 import com.simply407.patpat.databinding.FragmentJoinMbtiCompleteBinding
 import com.simply407.patpat.databinding.FragmentJoinMbtiFourthBinding
@@ -24,6 +27,8 @@ class JoinMbtiCompleteFragment : Fragment() {
     private lateinit var fourthMbti: String
 
     private lateinit var viewModel: JoinViewModel
+
+    val TAG = "JoinMbtiCompleteFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -89,6 +94,16 @@ class JoinMbtiCompleteFragment : Fragment() {
         viewModel.nickName.observe(viewLifecycleOwner) { name ->
             binding.textViewNameJoinMbtiComplete.text = "${name}님께\n맞는 친구를 추천해 드릴게요!"
         }
+
+        viewModel.userInfoResult.observe(viewLifecycleOwner) { result ->
+            result.onSuccess { userInfoResponse ->
+                Log.d(TAG, "유저 정보 업데이트 성공: $userInfoResponse")
+                joinInfoActivity.moveToMain()
+            }
+            result.onFailure { error ->
+                Log.d(TAG, "유저 정보 업데이트 실패: $error")
+            }
+        }
     }
 
     private fun back() {
@@ -99,7 +114,14 @@ class JoinMbtiCompleteFragment : Fragment() {
 
     private fun clickButton() {
         binding.buttonStartJoinMbtiComplete.setOnClickListener {
-            joinInfoActivity.moveToMain()
+
+            val newUserInfo = NewUserInfo(viewModel.nickName.value!!, firstMbti + secondMbti + thirdMbti + fourthMbti)
+            Log.d(TAG, "newUserInfo: $newUserInfo")
+
+            SharedPreferencesManager.getUserAccessToken()?.let { it1 ->
+                viewModel.putUserInfo(it1, newUserInfo)
+            }
+
         }
     }
 

@@ -6,6 +6,7 @@ import com.simply407.patpat.data.messageBody
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.LoginResponse
+import com.simply407.patpat.data.model.NewUserInfo
 
 import io.reactivex.rxjava3.core.Observable
 import okhttp3.ResponseBody
@@ -63,6 +64,12 @@ interface patApi {
 
     @GET("api/v1/users/me")
     suspend fun getUserInfo(@Header("Authorization") accessToken: String): Response<GetUserInfoResponse>
+
+    @PUT("api/v1/users/me")
+    suspend fun putUserInfo(
+        @Header("Authorization") accessToken: String,
+        @Body newUserInfo: NewUserInfo
+    ): Response<GetUserInfoResponse>
 }
 
 

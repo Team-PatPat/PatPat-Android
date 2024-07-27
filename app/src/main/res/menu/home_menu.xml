@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/time_home_menu_item"
+        android:icon="@drawable/ic_time"
+        android:title="시간"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/heart_home_menu_item"
+        android:icon="@drawable/ic_heart"
+        android:title="좋아요"
+        app:showAsAction="always" />
+
+</menu>

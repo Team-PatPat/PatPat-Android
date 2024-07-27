@@ -22,4 +22,9 @@
     <string name="doctor_introduction">현실적인 조언을\n주는 똑똑한 박사님</string>
     <string name="kwak_introduction">조금 과격해 보여도\n재미있는 N행시 장인</string>
     <string name="coco_introduction">까칠해도 매력있는\n츤데레 고양이</string>
+    <string name="talk">대화하기</string>
+    <string name="bokname_introduction_detail">안녕! 난 복남이야!\n네가 힘들 땐 언제나\n네 편이 되어줄게! 🐶</string>
+    <string name="doctor_introduction_detail">젊은이, 무슨 일이신가?\n이 냉철한 박사와 함께라면\n뭐든 해결 가능하다네. 👨🏼‍</string>
+    <string name="kwak_introduction_detail">걱정들 하지 마라\n웃음으로다가\n다 날리뿌자! 😆</string>
+    <string name="coco_introduction_detail">좀 냉정해 보여도\n난 결국 네 편이야.\n너, 최고야! 🐱</string>
 </resources>

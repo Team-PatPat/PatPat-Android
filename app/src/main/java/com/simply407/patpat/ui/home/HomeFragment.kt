@@ -54,6 +54,7 @@ class HomeFragment : Fragment() {
                 // 유저 정보 성공 처리
                 Log.d(TAG, "유저 정보 성공: $userInfoResponse")
                 binding.textViewNameHome.text = userInfoResponse.name + "님,\n누구와 대화해 볼까요?"
+                SharedPreferencesManager.setUserName(userInfoResponse.name)
             }
             result.onFailure { error ->
                 // 로그인 실패 처리

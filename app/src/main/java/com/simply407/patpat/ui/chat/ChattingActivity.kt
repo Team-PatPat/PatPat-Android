@@ -42,6 +42,9 @@ class ChattingActivity :AppCompatActivity() {
 
     lateinit var roomName : String
 
+    // 전달받은 데이터를 저장할 변수
+    private lateinit var counselorName : String
+    private lateinit var counselorId : String
 
     companion object {
         private const val ROOM1="복남이"
@@ -56,6 +59,8 @@ class ChattingActivity :AppCompatActivity() {
         setContentView(binding.root)
         viewModel= ViewModelProvider(this)[ChattingViewModel::class.java]
 
+        counselorName = intent.getStringExtra("counselorName") ?: ""
+        counselorId = intent.getStringExtra("counselorId") ?: ""
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

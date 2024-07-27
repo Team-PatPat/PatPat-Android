@@ -10,6 +10,7 @@ object SharedPreferencesManager {
     private const val KEY_USER_IS_LOGGED_IN = "user_is_logged_in"
     private const val KEY_FIRST_JOIN_COMPLETE = "first_join_complete"
     private const val KEY_USER_ACCESS_TOKEN = "accessToken"
+    private const val KEY_USER_NAME = "user_name"
 
     private lateinit var sharedPref: SharedPreferences
 
@@ -47,6 +48,14 @@ object SharedPreferencesManager {
 
     fun getUserAccessToken(): String? {
         return sharedPref.getString(KEY_USER_ACCESS_TOKEN, null)
+    }
+
+    fun setUserName(name: String) {
+        sharedPref.edit().putString(KEY_USER_NAME, name).apply()
+    }
+
+    fun getUserName(): String? {
+        return sharedPref.getString(KEY_USER_NAME, null)
     }
 
 }

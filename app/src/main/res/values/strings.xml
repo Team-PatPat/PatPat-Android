@@ -18,6 +18,7 @@
     <string name="title_login">고민 상담을 하러 가볼까요?</string>
     <string name="back">뒤로가기</string>
     <string name="skip">건너뛰기</string>
+
     <string name="bokname_introduction">위로가 필요하다면?\n언제나 내 편 복남이</string>
     <string name="doctor_introduction">현실적인 조언을\n주는 똑똑한 박사님</string>
     <string name="kwak_introduction">조금 과격해 보여도\n재미있는 N행시 장인</string>
@@ -27,4 +28,18 @@
     <string name="doctor_introduction_detail">젊은이, 무슨 일이신가?\n이 냉철한 박사와 함께라면\n뭐든 해결 가능하다네. 👨🏼‍</string>
     <string name="kwak_introduction_detail">걱정들 하지 마라\n웃음으로다가\n다 날리뿌자! 😆</string>
     <string name="coco_introduction_detail">좀 냉정해 보여도\n난 결국 네 편이야.\n너, 최고야! 🐱</string>
+
+
+    <string name="letterPs1">PS. 기분이 안 좋을 땐 이런 걸 해보자! 🐶</string>
+    <string name="letterFrom1">From. 최고의 친구 복남이가</string>
+
+    <string name="letterPs2">PS. 자네를 위한 나의 조언은 이거야 🖋</string>
+    <string name="letterFrom2">From. 자네를 응원하는 닥터 냉철한</string>
+
+    <string name="letterPs3">PS. 웃음이 보약인기라!! 😝</string>
+    <string name="letterFrom3">From. 언제나 유쾌한 곽.두.팔</string>
+
+    <string name="letterPs4">PS. 새겨 들어라 😼</string>
+    <string name="letterFrom4">From. 코코</string>
+
 </resources>

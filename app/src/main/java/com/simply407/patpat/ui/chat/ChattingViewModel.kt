@@ -28,58 +28,47 @@ class ChattingViewModel : ViewModel() {
         private const val COUNSELORID ="8b5ec154-1346-4f2a-afbc-a83ea62b4288"
     }
 
+
     val patApi = RetrofitInstance.getInstance().create(patApi::class.java)
     private val currentItems: MutableList<Ui_chat> = mutableListOf()
 
     private val _items = MutableLiveData<MutableList<Ui_chat>>(currentItems)
     val items : LiveData<MutableList<Ui_chat>> get()=_items
 
-    private val _buttonState=MutableLiveData<Boolean>(true)
-    val buttonState : LiveData<Boolean> get()=_buttonState
+    private val _buttonState=MutableLiveData<Int>(1)
+    val buttonState : LiveData<Int> get()=_buttonState
 
-//    private val _text=MutableLiveData<String>("")
-//    val text : LiveData<String> get()=_text
+    private val _edittextState=MutableLiveData<Boolean>(true)
+    val edittextState : LiveData<Boolean> get()=_edittextState
 
 
-    fun activeBtn(b : Boolean){
-        if(b) _buttonState.value=true
-        else _buttonState.value=false
+    private var roomName = "unknown"
+    fun addRoomName(s :String){
+        roomName=s
+    }
+    fun getRoomName(): String {
+        return roomName
+    }
+
+
+
+    fun activeBtn(value : Int){
+        if(value==1) _buttonState.value=1 //동작
+        else if(value==2) _buttonState.value=2 //비활성
+        else _buttonState.value=3 //중지
+    }
+
+    fun activeEditText(b : Boolean){
+        if(b) _edittextState.value=true
+        else _edittextState.value=false
     }
 
     fun addItem(items: Ui_chat) {
-        _buttonState.value = false
         currentItems.add(items)
         _items.value = currentItems
 
     }
 
-//    private fun requestPostChatSend(patApi: patApi, message: String) {
-//        patApi.postChatSend(COUNSELORID, messageBody(message))
-//            .enqueue(object : Callback<ChatSse> {
-//                override fun onResponse(call: Call<ChatSse>, response: Response<ChatSse>?) {
-//                    // Log.d("UnknwonWhat",response.body()!!.content)
-//
-//                    val responseContent = response?.body()?.content
-//
-//                    if (currentItems.isNotEmpty()) currentItems.removeAt(currentItems.lastIndex)
-//
-//                    val newChatItem = responseContent?.let { Ui_chat(false, R.drawable.tmp_profile2, it) }
-//                    currentItems.add(newChatItem!!)
-//
-//
-//                    // LiveData 업데이트
-//                    _items.value = currentItems
-//
-//
-//
-//                }
-//
-//                override fun onFailure(call: Call<ChatSse>, response: Throwable) {
-//                    Log.d("UnknwonWhat", "error")
-//                }
-//
-//            })
-//    }
 
 
 }

@@ -1,7 +1,6 @@
 package com.simply407.patpat.ui.chat
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -54,6 +53,7 @@ class ChattingAdapter(val context: Context, private var items: MutableList<Ui_ch
             when(binding){
                 is ItemChatfromAiBinding->{
                     binding.itemChatfromme.text=items.message
+
                     when(items.colorResource){
                         1-> binding.itemProfile.setBackgroundResource(R.drawable.tmp_profile)
                         2->binding.itemProfile.setBackgroundResource(R.drawable.tmp_profile2)
@@ -65,26 +65,28 @@ class ChattingAdapter(val context: Context, private var items: MutableList<Ui_ch
                 is ItemChattoAiBinding->{
                     val drawable=ContextCompat.getDrawable(context,R.drawable.chat_tobubble)
                     binding.itemChattome.text=items.message
+
+
                     when(items.colorResource){
                         1-> {
                             drawable?.let {
                                 DrawableCompat.setTint( drawable, ContextCompat.getColor(context, R.color.sub_yellow_light))
-                                binding.itemChattome.background=it
+                                binding.itemChattomeFrame.background=it
                             }
                         } // 색상 변경
                         2->drawable?.let {
                             DrawableCompat.setTint( drawable, ContextCompat.getColor(context, R.color.sub_blue_light))
-                            binding.itemChattome.background=it
+                            binding.itemChattomeFrame.background=it
                         }
                         3->{
                             drawable?.let {
                                 DrawableCompat.setTint( drawable, ContextCompat.getColor(context, R.color.sub_red_light))
-                                binding.itemChattome.background=it
+                                binding.itemChattomeFrame.background=it
                             }
                         }
                         4->drawable?.let {
                             DrawableCompat.setTint( drawable, ContextCompat.getColor(context, R.color.sub_green_light))
-                            binding.itemChattome.background=it
+                            binding.itemChattomeFrame.background=it
                         }
                     }
                 }

@@ -18,4 +18,13 @@
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/pretendard_bold</item>
     </style>
+
+
+
+    //글씨체
+    <style name="fontMedium">
+        <item name="fontFamily">@font/pretendard_medium</item>
+    </style>
+
+
 </resources>

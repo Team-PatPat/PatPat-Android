@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
-import com.simply407.patpat.MainActivity
+import com.simply407.patpat.ui.main.MainActivity
 import com.simply407.patpat.R
 
 class JoinInfoActivity : AppCompatActivity() {

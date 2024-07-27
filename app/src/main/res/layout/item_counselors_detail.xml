@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="325dp"
+        android:layout_height="480dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_heart_counselors_detail"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="28dp"
+                android:src="@drawable/ic_heart" />
+
+            <ImageView
+                android:id="@+id/imageView_counselors_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="260dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="41dp"
+                android:src="@drawable/img_boknam_detail" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout_state_counselors_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_below="@+id/imageView_counselors_detail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-19dp"
+                android:background="@drawable/bg_counselor_blue_r20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="3dp">
+
+                <ImageView
+                    android:id="@+id/imageView_state_counselors_detail"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/ic_blue_heart" />
+
+                <TextView
+                    android:id="@+id/textView_state_counselors_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="친밀도 2%"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/Typography.SemiBold18"
+                    android:textColor="@color/pointColor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_name_counselors_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout_state_counselors_detail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="복남이"
+                android:textAppearance="@style/Typography.Bold22"
+                android:textColor="@color/grayScale600" />
+
+            <TextView
+                android:id="@+id/textView_introduction_counselor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_name_counselors_detail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="22dp"
+                android:text="안녕! 난 복남이야!\n네가 힘들 땐 언제나\n네 편이 되어줄게! 🐶"
+                android:textAlignment="center"
+                android:textAppearance="@style/Typography.Medium14"
+                android:textColor="@color/grayScale500"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+

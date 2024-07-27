@@ -7,6 +7,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.ActivityMainBinding
+import com.simply407.patpat.ui.home.HomeDetailFragment
 import com.simply407.patpat.ui.home.HomeFragment
 
 
@@ -74,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         if (newFragment == null) {
             newFragment = when(name) {
                 HOME_FRAGMENT -> HomeFragment()
+                HOME_DETAIL_FRAGMENT -> HomeDetailFragment()
                 else -> Fragment()
             }
             // 새 프래그먼트를 추가합니다. 태그를 사용하여 찾을 수 있도록 합니다.
@@ -94,5 +96,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val HOME_FRAGMENT = "HomeFragment"
+        const val HOME_DETAIL_FRAGMENT = "HomeDetailFragment"
     }
 }

@@ -43,6 +43,7 @@ class HomeFragment : Fragment() {
 
         observeData()
         initUi()
+        clickCounselor()
 
         return binding.root
     }
@@ -120,6 +121,42 @@ class HomeFragment : Fragment() {
             doctorCounselorBinding.textViewStateCounselor.text = "MBTI 추천"
             kwakCounselorBinding.linearLayoutStateCounselor.visibility = View.GONE
             cocoCounselorBinding.linearLayoutStateCounselor.visibility = View.GONE
+        }
+    }
+
+    private fun clickCounselor() {
+        binding.run {
+            // 복남이 선택
+            includeBoknamHome.root.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("counselorsIndex", 0)
+
+                mainActivity.addFragment(MainActivity.HOME_DETAIL_FRAGMENT, true, bundle)
+            }
+
+            // 닥터 선택
+            includeDoctorHome.root.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("counselorsIndex", 1)
+
+                mainActivity.addFragment(MainActivity.HOME_DETAIL_FRAGMENT, true, bundle)
+            }
+
+            // 곽두팔 선택
+            includeKwakHome.root.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("counselorsIndex", 2)
+
+                mainActivity.addFragment(MainActivity.HOME_DETAIL_FRAGMENT, true, bundle)
+            }
+
+            // 코코 선택
+            includeCocoHome.root.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putInt("counselorsIndex", 3)
+
+                mainActivity.addFragment(MainActivity.HOME_DETAIL_FRAGMENT, true, bundle)
+            }
         }
     }
 

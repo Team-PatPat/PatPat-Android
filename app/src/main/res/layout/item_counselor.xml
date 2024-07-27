@@ -36,8 +36,9 @@
 
             <ImageView
                 android:id="@+id/imageView_state_counselor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="1dp"
                 android:src="@drawable/ic_blue_heart" />
 
             <TextView

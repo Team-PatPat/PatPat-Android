@@ -21,6 +21,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     private lateinit var loginViewModel: LoginViewModel
+    private lateinit var homeViewModel: HomeViewModel
 
     val TAG = "HomeFragment1"
 
@@ -33,7 +34,12 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
         loginViewModel = ViewModelProvider(requireActivity())[LoginViewModel::class.java]
-        SharedPreferencesManager.getUserAccessToken()?.let { loginViewModel.getUserInfo(it) }
+        homeViewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+
+        SharedPreferencesManager.getUserAccessToken()?.let {
+            loginViewModel.getUserInfo(it)
+            homeViewModel.getCounselors(it)
+        }
 
         observeData()
         initUi()
@@ -53,12 +59,53 @@ class HomeFragment : Fragment() {
                 Log.d(TAG, "유저 정보 실패: $error")
             }
         })
+
+        homeViewModel.counselorList.observe(viewLifecycleOwner) { result ->
+
+            Log.d(TAG, "homeViewModel.counselorList.observe 결과 : $result")
+            result.onSuccess { counselorList ->
+                // 상담 리스트 성공 처리
+                Log.d(TAG, "상담사 정보 성공: $counselorList")
+                counselorList.forEachIndexed { index, counselor ->
+
+                    val name = counselor.name
+
+                    when (index) {
+                        0 -> {
+                            binding.includeBoknamHome.textViewNameCounselor.text = name
+                            binding.includeBoknamHome.textViewIntroductionCounselor.text = getString(R.string.bokname_introduction)
+                        }
+                        1 -> {
+                            binding.includeDoctorHome.textViewNameCounselor.text = name
+                            binding.includeDoctorHome.textViewIntroductionCounselor.text = getString(R.string.doctor_introduction)
+                        }
+                        2 -> {
+                            binding.includeKwakHome.textViewNameCounselor.text = name
+                            binding.includeKwakHome.textViewIntroductionCounselor.text = getString(R.string.kwak_introduction)
+                        }
+                        3 -> {
+                            binding.includeCocoHome.textViewNameCounselor.text = name
+                            binding.includeCocoHome.textViewIntroductionCounselor.text = getString(R.string.coco_introduction)
+                        }
+                    }
+                }
+            }
+
+            result.onFailure { error ->
+                // 상담 리스트 실패 처리
+                Log.d(TAG, "상담사 정보 실패: $error")
+            }
+        }
+
     }
 
     private fun initUi() {
         binding.run {
 
             // 상담자 사진 설정
+            val boknamCounselorBinding = ItemCounselorBinding.bind(binding.includeBoknamHome.root)
+            boknamCounselorBinding.imageViewCounselor.setImageResource(R.drawable.img_boknam)
+
             val doctorCounselorBinding = ItemCounselorBinding.bind(binding.includeDoctorHome.root)
             doctorCounselorBinding.imageViewCounselor.setImageResource(R.drawable.ic_doctor)
 
@@ -67,6 +114,12 @@ class HomeFragment : Fragment() {
 
             val cocoCounselorBinding = ItemCounselorBinding.bind(binding.includeCocoHome.root)
             cocoCounselorBinding.imageViewCounselor.setImageResource(R.drawable.ic_coco)
+
+            // 임시 화면 설정
+            doctorCounselorBinding.imageViewStateCounselor.setImageResource(R.drawable.ic_thumbs_up)
+            doctorCounselorBinding.textViewStateCounselor.text = "MBTI 추천"
+            kwakCounselorBinding.linearLayoutStateCounselor.visibility = View.GONE
+            cocoCounselorBinding.linearLayoutStateCounselor.visibility = View.GONE
         }
     }
 

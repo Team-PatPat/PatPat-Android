@@ -3,6 +3,7 @@ package com.simply407.patpat.api
 import com.simply407.patpat.data.ChatGet
 import com.simply407.patpat.data.ChatSse
 import com.simply407.patpat.data.messageBody
+import com.simply407.patpat.data.model.GetCounselorResponse
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.LoginResponse
@@ -70,6 +71,9 @@ interface patApi {
         @Header("Authorization") accessToken: String,
         @Body newUserInfo: NewUserInfo
     ): Response<GetUserInfoResponse>
+
+    @GET("api/v1/counselors")
+    suspend fun getCounselors(@Header("Authorization") accessToken: String): Response<List<GetCounselorResponse>>
 }
 
 

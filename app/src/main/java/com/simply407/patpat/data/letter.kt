@@ -4,6 +4,6 @@ data class letter (
     val counselor : String,
     val username : String,
     val content : String,
-    val commentImage: Int?,
+    val commentImage: Int,
     val commentString : String?
 )

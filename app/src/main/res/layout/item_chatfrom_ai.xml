@@ -28,22 +28,27 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!---54dp-->
-        <TextView
-            android:id="@+id/item_chatfromme"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/chat_frombubble"
-            android:maxWidth="220dp"
-            android:paddingLeft="18dp"
-            android:paddingTop="8dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="8dp"
-            android:text="wffwfwfwfwegege"
-            app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintStart_toEndOf="@+id/item_profile_cardview"
-            />
+            android:background="@drawable/chat_frombubble"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:id="@+id/item_chatfromme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="210dp"
+                android:text="dddd"
+                android:textAlignment="textStart"
+                android:textSize="15sp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!---54dp-->
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

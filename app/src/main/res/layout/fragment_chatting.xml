@@ -6,27 +6,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.chat.ChattingFragment">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <include
-                android:id="@+id/appbar"
-                layout="@layout/custom_appbar_chatting" />
-
-        </com.google.android.material.appbar.AppBarLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#D8D8D8"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-            android:layout_marginBottom="4dp"/>
+        tools:context=".ui.chat.ChattingFragment"
+        android:orientation="vertical">
 
 
         <FrameLayout
@@ -36,33 +17,39 @@
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/chat_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp" />
 
         </FrameLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="#EEEEEE"
+            app:layout_constraintBottom_toBottomOf="parent">
+
             <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
+                android:layout_width="370dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:weightSum="9"
-                app:layout_constraintBottom_toBottomOf="parent">
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/chat_inputtext"
+                android:gravity="center"
+                android:padding="5dp">
 
                 <EditText
-                    android:background="@drawable/chat_inputtext"
                     android:id="@+id/chat_input"
-                    android:layout_width="wrap_content"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="7"
-                    android:layout_marginStart="10dp"
                     android:layout_gravity="center_vertical"
-                    android:paddingLeft="14dp"
+                    android:background="@null"
                     android:hint="어떤 고민이 있나요?"
                     android:maxLines="3"
                     android:text=""
@@ -70,14 +57,17 @@
 
                 <ImageButton
                     android:id="@+id/chat_sendbtn"
-                    android:scaleType="fitXY"
-                    android:background="@drawable/chat_btn_load"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginStart="10dp"
-                    android:text="1" />
+                    android:background="@drawable/chat_btn_load"
+                    android:contentDescription="btn"
+                    android:scaleType="fitXY" />
 
             </LinearLayout>
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

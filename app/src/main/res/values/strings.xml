@@ -18,4 +18,8 @@
     <string name="title_login">고민 상담을 하러 가볼까요?</string>
     <string name="back">뒤로가기</string>
     <string name="skip">건너뛰기</string>
+    <string name="bokname_introduction">위로가 필요하다면?\n언제나 내 편 복남이</string>
+    <string name="doctor_introduction">현실적인 조언을\n주는 똑똑한 박사님</string>
+    <string name="kwak_introduction">조금 과격해 보여도\n재미있는 N행시 장인</string>
+    <string name="coco_introduction">까칠해도 매력있는\n츤데레 고양이</string>
 </resources>

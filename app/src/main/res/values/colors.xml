@@ -50,4 +50,8 @@
     <color name="grayScale500">#3C3C3C</color>
     <color name="grayScale600">#121212</color>
 
+    <color name="background">#F5F5F5</color>
+    
+    <color name="counselor_blue">#E8F3FF</color>
+
 </resources>

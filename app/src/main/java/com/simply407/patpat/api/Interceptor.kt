@@ -5,7 +5,7 @@ import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
 
-class Intercepter : Interceptor {
+class Interceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
 
         val token = SharedPreferencesManager.getUserAccessToken()

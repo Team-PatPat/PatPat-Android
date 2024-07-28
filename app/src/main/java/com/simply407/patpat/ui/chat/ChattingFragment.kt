@@ -7,14 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,10 +21,9 @@ import com.simply407.patpat.data.ChatGet
 import com.simply407.patpat.data.ChatSse
 import com.simply407.patpat.data.Ui_chat
 import com.simply407.patpat.data.messageBody
-import com.simply407.patpat.data.model.ChatLocalDB
+import com.simply407.patpat.data.ChatGetAll
+import com.simply407.patpat.data.MessageGet
 import com.simply407.patpat.databinding.FragmentChattingBinding
-import kotlinx.coroutines.delay
-import okhttp3.internal.immutableListOf
 //import com.simply407.patpat.ui.chat.ChattingViewModel.Companion
 //import com.simply407.patpat.ui.chat.ChattingViewModel.Companion.patApi
 import retrofit2.Call
@@ -60,12 +55,9 @@ class ChattingFragment : Fragment() {
 //    private val scope = CoroutineScope(Dispatchers.Main + job)
 
     private lateinit var roomName : String
+    private lateinit var counselorId : String
     private var imageResource=0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d("LetterFragment", "onCreate called")
-    }
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreateView(
@@ -80,8 +72,8 @@ class ChattingFragment : Fragment() {
     //        settingAdapter()//recycler view 생성
         if (savedInstanceState == null) {
             // Fragment가 처음 생성된 경우에만 API 호출
-            roomName=viewModel.getRoomName() //이름 따온다. ㅇㅇ
-            Log.d("RoomNameeeee",roomName)
+            roomName=viewModel.getRoomName() //이름
+            counselorId=viewModel.getCounselorId()
             imageResource=getThemeResource(roomName)
             requestGetChat(patApi) //getChat api 호출
             settingAdapter()//recycler view 생성
@@ -101,13 +93,18 @@ class ChattingFragment : Fragment() {
             if(it==1 || it==3){
                 if(it==1){
                     binding.chatSendbtn.setBackgroundResource(R.drawable.chat_btn_load)
+                    binding.chatInput.isFocusable=true
                 }else{
                     binding.chatSendbtn.setBackgroundResource(R.drawable.chat_btn_pause)
+                    binding.chatInput.isFocusable=false
+
                 }
                 binding.chatSendbtn.isEnabled=true
+
             }else{
                 binding.chatSendbtn.isEnabled=false
                 binding.chatSendbtn.setBackgroundResource(R.drawable.chat_btn_block)
+
             }
         })
 
@@ -116,21 +113,6 @@ class ChattingFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        Log.d("LetterFragment", "onViewCreated called")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        Log.d("LetterFragment", "onDestroyView called")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        // Fragment가 사용자와 상호작용할 준비가 되었을 때 호출
-        Log.d("LetterFragment", "onResume called")
-    }
 
 
     private fun getThemeResource(str :String):Int{ //여기 방 이름 코드입니다
@@ -169,12 +151,12 @@ class ChattingFragment : Fragment() {
     private fun setupTextChangedListener() {
         binding.chatInput.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                viewModel.activeBtn(2) // 버튼 막아두기
+                viewModel.activeBtn(2)
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                //if (s.isNullOrEmpty())  viewModel.activeBtn(2)
-                viewModel.activeBtn(1)
+                if (s.isNullOrEmpty())  viewModel.activeBtn(2)
+                else viewModel.activeBtn(1)
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -199,15 +181,13 @@ class ChattingFragment : Fragment() {
     }
 
     private fun requestGetChat(patApi : patApi){
-        patApi.getChat(COUNSELORID).enqueue(object : Callback<ChatGet> {
+        patApi.getChat(counselorId).enqueue(object : Callback<ChatGet> {
             override fun onResponse(call: Call<ChatGet>, response: Response<ChatGet>) {
+                Log.d("WhatsWrong",response.toString())
                 val responsebody =response.body()
 
                 if (responsebody != null) {
-                    initMessage=responsebody.counselor.description
-                    Log.d("WhatsWrong","zzzzzzzsfsfssf")
-                    viewModel.addItem(Ui_chat(false,getThemeResource(roomName), initMessage))
-
+                    viewModel.addItem(Ui_chat(false,getThemeResource(roomName), responsebody.counselor.greeting))
                     requestGetChatSend(patApi)
                 }
             }
@@ -218,27 +198,39 @@ class ChattingFragment : Fragment() {
     }
 
     private fun requestGetChatSend(patApi : patApi){
-        patApi.getChatSend(COUNSELORID,).enqueue(object : Callback<Void>{
-            override fun onResponse(p0: Call<Void>, p1: Response<Void>) {
-                Log.d("WhatsWrong",p1.body().toString())
+        patApi.getChatSend(counselorId).enqueue(object : Callback<ChatGetAll>{
+            override fun onResponse(p0: Call<ChatGetAll>, response: Response<ChatGetAll>) {
+                val response=response.body()
+                val isMessagesEmpty= response?.data?.isNotEmpty()
+                Log.d("whatsWrong",response.toString())
+                if (isMessagesEmpty == true) {
+                    for(i in 0 until response.data.size){
+                        if(response.data[i].role=="USER")
+                            viewModel.addItem(Ui_chat(true, imageResource, response.data[i].content))
+                        else
+                            viewModel.addItem(Ui_chat(false, imageResource, response.data[i].content))
+                    }
+                }
+
             }
 
-            override fun onFailure(p0: Call<Void>, p1: Throwable) {}
+            override fun onFailure(p0: Call<ChatGetAll>, response: Throwable) {}
 
         })
     }
 
     private fun requestPostChatSend(patApi: patApi, message: String) {
-        viewModel.activeBtn(3)
-        patApi.postChatSend(COUNSELORID, messageBody(message))
+        binding.chatInput.hint = "답변을 기다려주세요!"
+        viewModel.activeBtn(2)
+
+        patApi.postChatSend(counselorId, messageBody(message))
             .enqueue(object : Callback<ChatSse> {
                 override fun onResponse(call: Call<ChatSse>, response: Response<ChatSse>?) {
-                    // Log.d("UnknwonWhat",response.body()!!.content)
-                    viewModel.activeBtn(1)
 
-                    val response = response?.body()
-                    binding.chatInput.isClickable=true
-                    binding.chatInput.isFocusable = true
+                    viewModel.activeBtn(1)
+                    binding.chatInput.hint = "어떤 고민이 있나요?"
+
+                    val response= response?.body()
 
                     if (response != null) viewModel.addItem(Ui_chat(false, imageResource, response.content))
                 }

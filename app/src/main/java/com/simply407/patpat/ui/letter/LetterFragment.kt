@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.simply407.patpat.R
 import com.simply407.patpat.data.letter
 import com.simply407.patpat.databinding.FragmentLetterBinding
+import kotlin.random.Random
 
 class LetterFragment:Fragment() {
 
@@ -52,7 +54,7 @@ class LetterFragment:Fragment() {
     private fun makeTheme(counselor: String) {
         if(counselor==ROOM1){
             Log.d("sfsfjslf",themeValues.commentImage.toString())
-            binding.letterSendImage.setBackgroundResource(themeValues.commentImage)
+            binding.letterSendImage.setBackgroundResource(randomPicture())
         }else{
             binding.letterSendComment.text=themeValues.commentString
         }
@@ -82,6 +84,8 @@ class LetterFragment:Fragment() {
                     DrawableCompat.setTint(drawable_frame,ContextCompat.getColor(requireContext(),R.color.sub_blue_light))
                     DrawableCompat.setTint(drawable_line,ContextCompat.getColor(requireContext(),R.color.sub_blue))
                 }
+                val typeface = ResourcesCompat.getFont(requireContext(), R.font.nanum_glad)
+                binding.letterSendComment.typeface = typeface
             }
 
             ROOM3->{
@@ -91,6 +95,8 @@ class LetterFragment:Fragment() {
                     DrawableCompat.setTint(drawable_frame,ContextCompat.getColor(requireContext(),R.color.sub_red_light))
                     DrawableCompat.setTint(drawable_line,ContextCompat.getColor(requireContext(),R.color.sub_red))
                 }
+                val typeface = ResourcesCompat.getFont(requireContext(), R.font.nanum_gang)
+                binding.letterSendComment.typeface = typeface
             }
 
             else->{
@@ -100,8 +106,30 @@ class LetterFragment:Fragment() {
                     DrawableCompat.setTint(drawable_frame,ContextCompat.getColor(requireContext(),R.color.sub_green_light))
                     DrawableCompat.setTint(drawable_line,ContextCompat.getColor(requireContext(),R.color.sub_green))
                 }
+                val typeface = ResourcesCompat.getFont(requireContext(), R.font.nanum_fly)
+                binding.letterSendComment.typeface = typeface
             }
         }
+
+    }
+
+    private fun randomPicture() : Int{
+        var value= Random.nextInt(1,11)
+
+        when(value){
+            1->value=R.drawable.boknam1
+            2->value=R.drawable.boknam2
+            3->value=R.drawable.boknam3
+            4->value=R.drawable.boknam4
+            5->value=R.drawable.boknam5
+            6->value=R.drawable.boknam6
+            7->value=R.drawable.boknam7
+            8->value=R.drawable.boknam8
+            9->value=R.drawable.boknam9
+            else->R.drawable.boknam10
+        }
+        return value
+
 
     }
 }

@@ -36,9 +36,9 @@ class LetterActivity : AppCompatActivity(){
         val send1=intent.getStringExtra("letter_room")!!  //counselorId 는 이름
         val send2=intent.getStringExtra("letter_user")!! //내 이름
         val send3=intent.getStringExtra("letter_content")!! //content
-        val send4=intent.getStringExtra("letter_image")!! // 이미지
+        val send4=intent.getIntExtra("letter_image",-1) // 이미지
         val send5=intent.getStringExtra("letter_comment")!! //코멘트
-        viewModel.set_letter_info(letter(send1,send2,send3,R.drawable.tmp_profile,send5))
+        viewModel.set_letter_info(letter(send1,send2,send3,send4,send5))
 
         binding.appbar2.appbarLetterTitle.text=send1+"의 편지"
         binding.appbar2.appbarLetterBackBtn.setOnClickListener{

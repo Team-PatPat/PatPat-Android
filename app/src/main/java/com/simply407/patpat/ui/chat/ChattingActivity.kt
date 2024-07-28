@@ -6,6 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Message
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -22,10 +24,13 @@ import com.simply407.patpat.data.letter
 import com.simply407.patpat.data.letterMessageBody
 import com.simply407.patpat.data.model.LetterResponse
 import com.simply407.patpat.data.model.LoginRequest
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ActivityChattingBinding
 import com.simply407.patpat.ui.chat.ChattingFragment
 import com.simply407.patpat.ui.join.JoinInfoActivity
 import com.simply407.patpat.ui.letter.LetterActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -38,13 +43,15 @@ class ChattingActivity :AppCompatActivity() {
     private lateinit var appbar : AppBarLayout
     private val manager =supportFragmentManager
 
+    private val uiScope = CoroutineScope(Dispatchers.Main)
+
     private lateinit var viewModel : ChattingViewModel //ViewModel
 
     lateinit var roomName : String
 
     // 전달받은 데이터를 저장할 변수
-    private lateinit var counselorName : String
-    private lateinit var counselorId : String
+    lateinit var counselorName : String
+    lateinit var counselorId : String
 
     companion object {
         private const val ROOM1="복남이"
@@ -59,8 +66,8 @@ class ChattingActivity :AppCompatActivity() {
         setContentView(binding.root)
         viewModel= ViewModelProvider(this)[ChattingViewModel::class.java]
 
-        counselorName = intent.getStringExtra("counselorName") ?: ""
-        counselorId = intent.getStringExtra("counselorId") ?: ""
+        counselorName = intent.getStringExtra("counselorName") ?: "" //리얼 이름
+        counselorId = intent.getStringExtra("counselorId") ?: "" //해싱
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -72,8 +79,11 @@ class ChattingActivity :AppCompatActivity() {
         val patApi = RetrofitInstance.getInstance().create(patApi::class.java)
         //roomName= intent.getStringExtra("코코").toString()
 
-        viewModel.addRoomName(ROOM1)
-        binding.appbar.appbarChatTitle.text=ROOM1
+        viewModel.setRoomName(counselorName)
+        viewModel.setCounselorId(counselorId)
+        Log.d("ssss",SharedPreferencesManager.getUserAccessToken().toString())
+        Log.d("ssss",counselorId)
+        binding.appbar1.appbarChatTitle.text=counselorName
 
         //val roomName =intent.getStringExtra("name")
 
@@ -86,40 +96,42 @@ class ChattingActivity :AppCompatActivity() {
 
 
 
-        binding.appbar.appbarChatStore.setOnClickListener {
-            postLetter(patApi)
+        binding.appbar1.appbarChatStore.setOnClickListener {
+            val customDialog=ChattingPopup(this,patApi)
+            customDialog.show("${counselorName}의 편지를 받아보시겠어요?")
 
         }
 
-        binding.appbar.appbarChatBackBtn.setOnClickListener{
+        binding.appbar1.appbarChatBackBtn.setOnClickListener{
             finish()
         }
 
 
-
     }
+
 
      fun postLetter( patApi: patApi) {
          val intent = Intent(this@ChattingActivity, LetterActivity::class.java)
-        patApi.postLetters(letterMessageBody(COUNSELORID)).enqueue(object : Callback<LetterResponse>{
+         binding.progressBar.visibility= View.VISIBLE
+        patApi.postLetters(letterMessageBody(counselorId)).enqueue(object : Callback<LetterResponse>{
             override fun onResponse(p0: Call<LetterResponse>, response: Response<LetterResponse>) {
                 if(response.isSuccessful){
                     removeData(patApi)
 
                     val response=response.body()
                     if (response != null) {
-                        Log.d("WhatsSuccess",response.toString())
+                        binding.progressBar.visibility= View.GONE
 
                         //val dclass=letter(ROOM3,"윤성준",response.content.content,0,response.content.footer)
-                        intent.putExtra("letter_room", ROOM1)
-                        intent.putExtra("letter_user", "윤성준")
+                        intent.putExtra("letter_room", counselorName)
+                        intent.putExtra("letter_user", SharedPreferencesManager.getUserName().toString())
                         intent.putExtra("letter_content", response.content)
                         if(response.footer!=null){
-                            intent.putExtra("letter_image", "0")
+                            intent.putExtra("letter_image",-1)
                             intent.putExtra("letter_comment", response.footer)
                         }else{
-                            intent.putExtra("letter_image", "Image_file")
-                            intent.putExtra("letter_comment", "NO")
+                            intent.putExtra("letter_image", R.drawable.tmp_profile2)
+                            intent.putExtra("letter_comment", "Unknown Photo")
                         }
 
                     }
@@ -129,7 +141,8 @@ class ChattingActivity :AppCompatActivity() {
             }
 
             override fun onFailure(p0: Call<LetterResponse>, error: Throwable) {
-                Log.d("WhatsError",error.toString())
+                Toast.makeText(baseContext,"서버 오류",Toast.LENGTH_LONG).show()
+                binding.progressBar.visibility= View.GONE
             }
 
         })
@@ -137,7 +150,7 @@ class ChattingActivity :AppCompatActivity() {
     }
 
     fun removeData(patApi: patApi){
-        patApi.deleteChat(COUNSELORID).enqueue(object :Callback<Void>{
+        patApi.deleteChat(counselorId).enqueue(object :Callback<Void>{
             override fun onResponse(p0: Call<Void>, p1: Response<Void>) {
                Log.d("WhatsError",p1.body().toString())
             }
@@ -151,3 +164,4 @@ class ChattingActivity :AppCompatActivity() {
 
 
 }
+

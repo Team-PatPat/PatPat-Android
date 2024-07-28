@@ -14,6 +14,8 @@ data class MessageGet(
     @SerializedName("name")
     val name : String,
     @SerializedName("description")
-    val description :String
+    val description :String,
+    @SerializedName("greeting")
+    val greeting : String
 
 )

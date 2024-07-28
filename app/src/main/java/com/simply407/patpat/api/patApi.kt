@@ -4,21 +4,18 @@ import com.simply407.patpat.data.ChatGet
 import com.simply407.patpat.data.ChatSse
 import com.simply407.patpat.data.letterMessageBody
 import com.simply407.patpat.data.messageBody
+import com.simply407.patpat.data.ChatGetAll
 import com.simply407.patpat.data.model.GetCounselorResponse
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LetterResponse
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.LoginResponse
 import com.simply407.patpat.data.model.NewUserInfo
-import com.simply407.patpat.data.model.SharedPreferencesManager
 
-import io.reactivex.rxjava3.core.Observable
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
-import retrofit2.http.Field
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
@@ -44,7 +41,7 @@ interface patApi {
    // @Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgwYzEzYmI3LTBiNzgtNGViYS1hZWYwLTliOGU2NGY2ZWE0MyIsImVtYWlsIjoidGVzdGVyQHBhdHBhdC5jb20iLCJuYW1lIjoidGVzdGVyIiwiYXZhdGFyVXJsIjpudWxsLCJpYXQiOjE3MjE5MTIyNDAsImV4cCI6MTczOTkxMjI0MH0.NFFD8mQ47m6MX_slJZP4T3bu98tgBjRzsSkkIuMT2fI")
     fun getChatSend(
         @Path("counselorId") counselorId : String,
-    ) :Call<Void>
+    ) :Call<ChatGetAll>
 
     @POST("api/v1/chats/{counselorId}/messages")
     //@Headers("Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgwYzEzYmI3LTBiNzgtNGViYS1hZWYwLTliOGU2NGY2ZWE0MyIsImVtYWlsIjoidGVzdGVyQHBhdHBhdC5jb20iLCJuYW1lIjoidGVzdGVyIiwiYXZhdGFyVXJsIjpudWxsLCJpYXQiOjE3MjE5MTIyNDAsImV4cCI6MTczOTkxMjI0MH0.NFFD8mQ47m6MX_slJZP4T3bu98tgBjRzsSkkIuMT2fI")

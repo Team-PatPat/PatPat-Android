@@ -51,7 +51,8 @@
                     android:layout_gravity="center_vertical"
                     android:background="@null"
                     android:hint="어떤 고민이 있나요?"
-                    android:maxLines="3"
+                    android:maxLines="2"
+                    android:fontFamily="@font/pretendard_medium"
                     android:text=""
                     android:textSize="16sp" />
 

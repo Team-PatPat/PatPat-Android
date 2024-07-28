@@ -6,6 +6,7 @@
     tools:context=".ui.chat.ChattingActivity">
 
     <LinearLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/main"
@@ -19,7 +20,7 @@
            >
 
             <include
-                android:id="@+id/appbar"
+                android:id="@+id/appbar1"
                 layout="@layout/custom_appbar_chatting" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -32,12 +33,26 @@
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/chattingfragment"
-            android:name="com.simply407.patpat.ui.chat.ChattingFragment"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
 
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/chattingfragment"
+                android:name="com.simply407.patpat.ui.chat.ChattingFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contextClickable="false"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+
+        </FrameLayout>
 
     </LinearLayout>
 </layout>

@@ -55,10 +55,10 @@ class ChattingAdapter(val context: Context, private var items: MutableList<Ui_ch
                     binding.itemChatfromme.text=items.message
 
                     when(items.colorResource){
-                        1-> binding.itemProfile.setBackgroundResource(R.drawable.tmp_profile)
-                        2->binding.itemProfile.setBackgroundResource(R.drawable.tmp_profile2)
-                        3->binding.itemProfile.setBackgroundResource(R.drawable.tmp_profile3)
-                        4->binding.itemProfile.setBackgroundResource(R.drawable.chat_btn_block)
+                        1-> binding.itemProfile.setBackgroundResource(R.drawable.chat_img_bok)
+                        2->binding.itemProfile.setBackgroundResource(R.drawable.chat_img_doctor)
+                        3->binding.itemProfile.setBackgroundResource(R.drawable.chat_img_kwak)
+                        4->binding.itemProfile.setBackgroundResource(R.drawable.chat_img_coco)
 
                     }
                 }

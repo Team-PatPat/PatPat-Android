@@ -43,11 +43,20 @@ class ChattingViewModel : ViewModel() {
 
 
     private var roomName = "unknown"
-    fun addRoomName(s :String){
+    fun setRoomName(s :String){
         roomName=s
     }
     fun getRoomName(): String {
         return roomName
+    }
+
+    private var counselorId =""
+
+    fun setCounselorId(s :String){
+        counselorId=s
+    }
+    fun getCounselorId(): String {
+        return counselorId
     }
 
 

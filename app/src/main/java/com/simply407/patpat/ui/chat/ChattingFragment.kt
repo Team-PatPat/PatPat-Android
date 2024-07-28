@@ -204,7 +204,7 @@ class ChattingFragment : Fragment() {
                 val isMessagesEmpty= response?.data?.isNotEmpty()
                 Log.d("whatsWrong",response.toString())
                 if (isMessagesEmpty == true) {
-                    for(i in 0 until response.data.size){
+                    for(i in response.data.size-1 downTo 0){
                         if(response.data[i].role=="USER")
                             viewModel.addItem(Ui_chat(true, imageResource, response.data[i].content))
                         else

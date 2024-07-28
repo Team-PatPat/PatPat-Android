@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.simply407.patpat.R
 import com.simply407.patpat.data.letter
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentLetterBinding
 import kotlin.random.Random
 
@@ -52,6 +53,10 @@ class LetterFragment:Fragment() {
     }
 
     private fun makeTheme(counselor: String) {
+
+        // 사용자 이름
+        binding.letterSendUser.text = SharedPreferencesManager.getUserName() + "에게"
+
         if(counselor==ROOM1){
             Log.d("sfsfjslf",themeValues.commentImage.toString())
             binding.letterSendImage.setBackgroundResource(randomPicture())

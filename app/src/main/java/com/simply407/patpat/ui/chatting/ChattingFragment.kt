@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.FragmentChatting2Binding
@@ -71,6 +72,12 @@ class ChattingFragment : Fragment() {
                         subtitle = "코코"
                     }
                 }
+            }
+
+            recyclerViewChatting.run {
+                val sampleDataList = List(10) { it + 1 }
+                adapter = ChattingAdapter(sampleDataList)
+                layoutManager = LinearLayoutManager(requireContext())
             }
 
             editTextChatting.addTextChangedListener(object : TextWatcher {

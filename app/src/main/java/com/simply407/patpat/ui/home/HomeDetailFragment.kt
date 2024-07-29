@@ -106,7 +106,11 @@ class HomeDetailFragment : Fragment() {
 
     private fun moveToChatting() {
         binding.buttonTalkHomeDetail.setOnClickListener {
-            mainActivity.addFragment(MainActivity.CHATTING_FRAGMENT, true, null)
+
+            val bundle = Bundle()
+            bundle.putInt("currentPageIndex", currentPageIndex)
+
+            mainActivity.addFragment(MainActivity.CHATTING_FRAGMENT, true, bundle)
         }
     }
 

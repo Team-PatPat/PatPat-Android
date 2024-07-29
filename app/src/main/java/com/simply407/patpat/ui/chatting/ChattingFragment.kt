@@ -3,6 +3,7 @@ package com.simply407.patpat.ui.chatting
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,8 @@ class ChattingFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private lateinit var binding: FragmentChatting2Binding
 
+    private var currentPageIndex: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,6 +29,8 @@ class ChattingFragment : Fragment() {
 
         mainActivity = activity as MainActivity
         binding = FragmentChatting2Binding.inflate(layoutInflater, container, false)
+
+        currentPageIndex = arguments?.getInt("currentPageIndex") ?: 0
 
         initUi()
 
@@ -49,6 +54,21 @@ class ChattingFragment : Fragment() {
                         }
 
                         else -> false
+                    }
+                }
+
+                when (currentPageIndex) {
+                    0 -> {
+                        subtitle = "복남이"
+                    }
+                    1 -> {
+                        subtitle = "닥터 냉철한"
+                    }
+                    2 -> {
+                        subtitle = "곽두팔"
+                    }
+                    3 -> {
+                        subtitle = "코코"
                     }
                 }
             }

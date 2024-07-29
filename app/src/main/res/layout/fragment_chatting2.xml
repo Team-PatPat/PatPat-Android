@@ -16,7 +16,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/chatting_menu"
-        app:navigationIcon="@drawable/ic_back" />
+        app:navigationIcon="@drawable/ic_back"
+        app:subtitle="복남이"
+        app:subtitleCentered="true"
+        app:subtitleTextAppearance="@style/Typography.Bold20" />
 
     <View
         android:layout_width="0dp"

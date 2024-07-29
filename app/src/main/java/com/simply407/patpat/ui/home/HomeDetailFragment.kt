@@ -106,13 +106,7 @@ class HomeDetailFragment : Fragment() {
 
     private fun moveToChatting() {
         binding.buttonTalkHomeDetail.setOnClickListener {
-
-            val intent = Intent(requireContext(), ChattingActivity::class.java).apply {
-                putExtra("counselorName", counselorDataList[currentPageIndex].name)
-                putExtra("counselorId", counselorDataList[currentPageIndex].id)
-            }
-
-            startActivity(intent)
+            mainActivity.addFragment(MainActivity.CHATTING_FRAGMENT, true, null)
         }
     }
 

@@ -3,6 +3,7 @@ package com.simply407.patpat.ui.main
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.ActivityMainBinding
+import com.simply407.patpat.ui.chatting.ChattingFragment
 import com.simply407.patpat.ui.home.HomeDetailFragment
 import com.simply407.patpat.ui.home.HomeFragment
 import com.simply407.patpat.ui.storagebox.StorageBoxFragment
@@ -48,13 +50,18 @@ class MainActivity : AppCompatActivity() {
         // 뒤로가기 버튼 처리
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (backPressedOnce) {
-                    handler.removeCallbacks(backPressRunnable)
-                    finish()
+                if (supportFragmentManager.backStackEntryCount > 0) {
+                    supportFragmentManager.popBackStack()
+                    backPressedOnce = false
                 } else {
-                    backPressedOnce = true
-                    Toast.makeText(this@MainActivity, "'뒤로' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT).show()
-                    handler.postDelayed(backPressRunnable, 2000)
+                    if (backPressedOnce) {
+                        handler.removeCallbacks(backPressRunnable)
+                        finish()
+                    } else {
+                        backPressedOnce = true
+                        Toast.makeText(this@MainActivity, "'뒤로' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT).show()
+                        handler.postDelayed(backPressRunnable, 2000)
+                    }
                 }
             }
         })
@@ -106,6 +113,7 @@ class MainActivity : AppCompatActivity() {
                 HOME_FRAGMENT -> HomeFragment()
                 HOME_DETAIL_FRAGMENT -> HomeDetailFragment()
                 STORAGE_BOX_FRAGMENT -> StorageBoxFragment()
+                CHATTING_FRAGMENT -> ChattingFragment()
                 else -> Fragment()
             }
             // 새 프래그먼트를 추가합니다. 태그를 사용하여 찾을 수 있도록 합니다.
@@ -124,14 +132,27 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    fun removeFragment(name: String){
+        supportFragmentManager.popBackStack(name, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+    }
+
     fun removeAllBackStack() {
         val fragmentManager = supportFragmentManager
         fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+    }
+
+    fun showBottomNavigation() {
+        binding.bottomNavigationViewMain.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNavigation() {
+        binding.bottomNavigationViewMain.visibility = View.GONE
     }
 
     companion object {
         const val HOME_FRAGMENT = "HomeFragment"
         const val HOME_DETAIL_FRAGMENT = "HomeDetailFragment"
         const val STORAGE_BOX_FRAGMENT = "StorageBoxFragment"
+        const val CHATTING_FRAGMENT = "ChattingFragment"
     }
 }

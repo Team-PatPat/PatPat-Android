@@ -87,4 +87,7 @@ dependencies {
 
     // viewModelScope
     implementation(libs.androidx.lifecycle.viewmodel.ktx.v240)
+
+    // circleimageview
+    implementation(libs.circleimageview)
 }

@@ -41,5 +41,6 @@
 
     <string name="letterPs4">PS. 새겨 들어라 😼</string>
     <string name="letterFrom4">From. 코코</string>
+    <string name="save_letter_prompt">대화를 종료하고,\n%s의 편지를 받아보시겠어요?</string>
 
 </resources>

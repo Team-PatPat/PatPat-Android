@@ -5,12 +5,15 @@ import com.simply407.patpat.data.ChatSse
 import com.simply407.patpat.data.letterMessageBody
 import com.simply407.patpat.data.messageBody
 import com.simply407.patpat.data.ChatGetAll
+import com.simply407.patpat.data.model.ChattingRoomInfo
 import com.simply407.patpat.data.model.GetCounselorResponse
+import com.simply407.patpat.data.model.PostMessageResponse
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LetterResponse
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.LoginResponse
 import com.simply407.patpat.data.model.NewUserInfo
+import com.simply407.patpat.data.model.PostMessageRequest
 
 import retrofit2.Call
 import retrofit2.Response
@@ -18,10 +21,10 @@ import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
-import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface patApi {
 
@@ -82,6 +85,21 @@ interface patApi {
     fun postLetters(
         @Body messageBody: letterMessageBody
     ):Call<LetterResponse>
+
+    @GET("api/v1/chats/{counselorId}/messages")
+    suspend fun getAllChattingRoomInfo(
+        @Header("Authorization") accessToken: String,
+        @Path("counselorId") counselorId: String,
+        @Query("page") page: Int,
+        @Query("size") size: Int
+    ): Response<ChattingRoomInfo>
+
+    @POST("api/v1/chats/{counselorId}/messages")
+    suspend fun postMessage(
+        @Header("Authorization") accessToken: String,
+        @Path("counselorId") counselorId: String,
+        @Body postMessageRequest : PostMessageRequest
+    ): Response<PostMessageResponse>
 }
 
 

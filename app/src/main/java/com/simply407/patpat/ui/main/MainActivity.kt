@@ -3,6 +3,7 @@ package com.simply407.patpat.ui.main
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -147,6 +148,15 @@ class MainActivity : AppCompatActivity() {
 
     fun hideBottomNavigation() {
         binding.bottomNavigationViewMain.visibility = View.GONE
+    }
+
+    fun logLongMessage(tag: String, message: String) {
+        val maxLogSize = 1000
+        for (i in 0..message.length / maxLogSize) {
+            val start = i * maxLogSize
+            val end = Math.min((i + 1) * maxLogSize, message.length)
+            Log.d(tag, message.substring(start, end))
+        }
     }
 
     companion object {

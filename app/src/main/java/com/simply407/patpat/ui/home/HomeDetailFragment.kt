@@ -109,6 +109,7 @@ class HomeDetailFragment : Fragment() {
 
             val bundle = Bundle()
             bundle.putInt("currentPageIndex", currentPageIndex)
+            bundle.putString("counselorId", counselorDataList[currentPageIndex].id)
 
             mainActivity.addFragment(MainActivity.CHATTING_FRAGMENT, true, bundle)
         }

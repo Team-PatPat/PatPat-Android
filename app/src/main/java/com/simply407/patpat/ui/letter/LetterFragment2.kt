@@ -1,6 +1,5 @@
 package com.simply407.patpat.ui.letter
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,7 +16,7 @@ import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentLetterBinding
 import kotlin.random.Random
 
-class LetterFragment:Fragment() {
+class LetterFragment2:Fragment() {
 
     companion object{
         private const val ROOM1="복남이"
@@ -27,7 +26,7 @@ class LetterFragment:Fragment() {
     }
 
     private lateinit var binding : FragmentLetterBinding
-    private lateinit var viewModel: LetterViewModel
+    private lateinit var viewModel: LetterViewModel2
     private lateinit var themeValues : letter
 
     override fun onCreateView(
@@ -36,7 +35,7 @@ class LetterFragment:Fragment() {
         Log.d("Why So Serious","ㄴㄴㄴㄴㄴ")
         binding = FragmentLetterBinding.inflate(inflater, container, false)
 
-        viewModel = ViewModelProvider(requireActivity())[LetterViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[LetterViewModel2::class.java]
 
         themeValues = viewModel.get_letter_info()
         if(themeValues.counselor== ROOM1){

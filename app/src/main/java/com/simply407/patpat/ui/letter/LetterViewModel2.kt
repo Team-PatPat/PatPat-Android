@@ -3,7 +3,7 @@ package com.simply407.patpat.ui.letter
 import androidx.lifecycle.ViewModel
 import com.simply407.patpat.data.letter
 
-class LetterViewModel : ViewModel() {
+class LetterViewModel2 : ViewModel() {
 
     companion object{
         private const val ROOM1="복남이"

@@ -7,11 +7,11 @@ import com.simply407.patpat.data.messageBody
 import com.simply407.patpat.data.ChatGetAll
 import com.simply407.patpat.data.model.ChattingRoomInfo
 import com.simply407.patpat.data.model.GetCounselorResponse
-import com.simply407.patpat.data.model.PostMessageResponse
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LetterResponse
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.LoginResponse
+import com.simply407.patpat.data.model.MessageInfo
 import com.simply407.patpat.data.model.NewUserInfo
 import com.simply407.patpat.data.model.PostMessageRequest
 
@@ -99,7 +99,7 @@ interface patApi {
         @Header("Authorization") accessToken: String,
         @Path("counselorId") counselorId: String,
         @Body postMessageRequest : PostMessageRequest
-    ): Response<PostMessageResponse>
+    ): Response<MessageInfo>
 }
 
 

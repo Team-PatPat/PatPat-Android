@@ -8,8 +8,9 @@ import com.simply407.patpat.R
 import com.simply407.patpat.data.model.MessageInfo
 import com.simply407.patpat.databinding.ItemChattingCounselorBinding
 import com.simply407.patpat.databinding.ItemChattingMyBinding
+import com.simply407.patpat.ui.main.MainActivity
 
-class ChattingAdapter(private var allMessagesDataList: List<MessageInfo>, private val counselorId: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ChattingAdapter(private var allMessagesDataList: MutableList<MessageInfo>, private val counselorId: Int) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class ChattingCounselorViewHolder(private val binding: ItemChattingCounselorBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -105,11 +106,20 @@ class ChattingAdapter(private var allMessagesDataList: List<MessageInfo>, privat
         }
     }
 
+    fun addMessage(newMessage: MessageInfo) {
+        allMessagesDataList.add(newMessage)
+        notifyItemInserted(allMessagesDataList.size - 1)
+
+        val mainActivity = MainActivity()
+        mainActivity.logLongMessage("ChattingFragment", "addMessage 에 의해서 확인하는 어뎁터에 있는 allMessagesDataList : $allMessagesDataList")
+    }
+
     fun updateMessages(newMessages: List<MessageInfo>) {
-        allMessagesDataList = newMessages
+        allMessagesDataList = newMessages.toMutableList()
         notifyDataSetChanged()
 
-        Log.d("ChattingAdapter", "allMessagesDataList : $allMessagesDataList")
+        val mainActivity = MainActivity()
+        mainActivity.logLongMessage("ChattingFragment", "updateMessages 에 의해서 확인하는 어뎁터에 있는 allMessagesDataList : $allMessagesDataList")
     }
 
     companion object {

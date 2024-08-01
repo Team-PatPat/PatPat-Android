@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simply407.patpat.data.model.ChattingRoomInfo
+import com.simply407.patpat.data.model.MessageInfo
 import com.simply407.patpat.data.model.PostMessageRequest
-import com.simply407.patpat.data.model.PostMessageResponse
 import com.simply407.patpat.repository.ChattingRepository
 import kotlinx.coroutines.launch
 
@@ -18,8 +18,8 @@ class ChattingViewModel : ViewModel() {
     private val _chattingRoomInfo = MutableLiveData<Result<ChattingRoomInfo>>()
     val chattingRoomInfo: LiveData<Result<ChattingRoomInfo>> get() = _chattingRoomInfo
 
-    private val _postMessageResult = MutableLiveData<Result<PostMessageResponse>>()
-    val postMessageResult: LiveData<Result<PostMessageResponse>> get() = _postMessageResult
+    private val _postMessageResult = MutableLiveData<Result<MessageInfo>>()
+    val postMessageResult: LiveData<Result<MessageInfo>> get() = _postMessageResult
 
     fun getAllChattingRoomInfo(accessToken: String, counselorId: String, page: Int, size: Int) {
         viewModelScope.launch {

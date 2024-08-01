@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.MessageInfo
 import com.simply407.patpat.data.model.PostMessageRequest
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentChatting2Binding
@@ -45,7 +46,9 @@ class ChattingFragment : Fragment() {
 
         chattingViewModel = ViewModelProvider(this)[ChattingViewModel::class.java]
 
-        chattingViewModel.getAllChattingRoomInfo(SharedPreferencesManager.getUserAccessToken()!!, counselorId, 1, 20)
+        chattingViewModel.getAllChattingRoomInfo(SharedPreferencesManager.getUserAccessToken()!!, counselorId, 1, 100)
+
+        Log.d(TAG, "token : ${SharedPreferencesManager.getUserAccessToken()}")
 
         initUi()
         sendMessage()
@@ -91,7 +94,7 @@ class ChattingFragment : Fragment() {
             }
 
             recyclerViewChatting.run {
-                chattingAdapter = ChattingAdapter(emptyList(), currentPageIndex)
+                chattingAdapter = ChattingAdapter(mutableListOf(), currentPageIndex)
                 adapter = chattingAdapter
                 layoutManager = LinearLayoutManager(requireContext())
             }
@@ -147,6 +150,11 @@ class ChattingFragment : Fragment() {
             Log.d(TAG, "postMessageRequest 값 : $postMessageRequest")
             SharedPreferencesManager.getUserAccessToken()?.let {
                 chattingViewModel.postMessage(it, counselorId, postMessageRequest)
+
+                // 메시지를 즉시 추가
+                val temporaryMessage = MessageInfo(id = "", chatId = "", role = "USER", status = "", type = "", content = message, createdAt = "", updatedAt = "" )
+                chattingAdapter.addMessage(temporaryMessage)
+                binding.recyclerViewChatting.scrollToPosition(chattingAdapter.itemCount - 1)
             }
 
             binding.editTextChatting.text.clear()
@@ -158,8 +166,26 @@ class ChattingFragment : Fragment() {
         chattingViewModel.chattingRoomInfo.observe(viewLifecycleOwner) { result ->
             result.onSuccess { chattingRoomInfo ->
                 mainActivity.logLongMessage(TAG, "chattingRoomInfo 성공: $chattingRoomInfo")
-                val reversedMessages = chattingRoomInfo.data.reversed()
-                chattingAdapter.updateMessages(reversedMessages)
+
+                // 채팅방이 비어 있는지 확인
+                if (chattingRoomInfo.data.isEmpty()) {
+                    val postMessageRequest = PostMessageRequest("처음 인사말", true)
+                    SharedPreferencesManager.getUserAccessToken()?.let {
+                        chattingViewModel.postMessage(it, counselorId, postMessageRequest)
+                    }
+                } else if (chattingRoomInfo.data.first().status == "COMPLETED") {
+                    val postMessageRequest = PostMessageRequest("처음 인사말", true)
+                    SharedPreferencesManager.getUserAccessToken()?.let {
+                        chattingViewModel.postMessage(it, counselorId, postMessageRequest)
+                    }
+                    // 기존 채팅 내역 업데이트
+                    val reversedMessages = chattingRoomInfo.data.reversed()
+                    chattingAdapter.updateMessages(reversedMessages)
+                } else {
+                    val reversedMessages = chattingRoomInfo.data.reversed()
+                    chattingAdapter.updateMessages(reversedMessages)
+                    binding.recyclerViewChatting.scrollToPosition(chattingAdapter.itemCount - 1)
+                }
             }
             result.onFailure { error ->
                 Log.d(TAG, "chattingRoomInfo 실패: $error")
@@ -168,7 +194,9 @@ class ChattingFragment : Fragment() {
 
         chattingViewModel.postMessageResult.observe(viewLifecycleOwner) { result ->
             result.onSuccess { messageResponse ->
-                Log.d(TAG, "postMessage 성공: $messageResponse")
+                mainActivity.logLongMessage(TAG, "postMessage 성공: $messageResponse")
+                chattingAdapter.addMessage(messageResponse)
+                binding.recyclerViewChatting.scrollToPosition(chattingAdapter.itemCount - 1)
             }
             result.onFailure { error ->
                 Log.d(TAG, "postMessage 실패: $error")

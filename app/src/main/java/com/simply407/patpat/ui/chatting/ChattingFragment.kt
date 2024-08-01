@@ -134,7 +134,22 @@ class ChattingFragment : Fragment() {
         builder.setView(itemSaveLetterBinding.root)
         val dialog = builder.create()
 
-        val name = "복남이"
+        var name = ""
+        when (currentPageIndex) {
+            0 -> {
+                name = "복남이"
+            }
+            1 -> {
+                name = "닥터 냉철한"
+            }
+            2 -> {
+                name = "곽두팔"
+            }
+            3 -> {
+                name = "코코"
+            }
+        }
+
         val prompt = getString(R.string.save_letter_prompt, name)
         itemSaveLetterBinding.textViewSaveLetterItem.text = prompt
 

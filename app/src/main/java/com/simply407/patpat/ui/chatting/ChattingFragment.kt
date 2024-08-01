@@ -97,6 +97,15 @@ class ChattingFragment : Fragment() {
                 chattingAdapter = ChattingAdapter(mutableListOf(), currentPageIndex)
                 adapter = chattingAdapter
                 layoutManager = LinearLayoutManager(requireContext())
+
+                // 키보드가 올라갔을 때, 리사이클러뷰 마지막 아이템으로 스크롤
+                addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+                    if (bottom < oldBottom) {
+                        recyclerViewChatting.post {
+                            (layoutManager as LinearLayoutManager).scrollToPosition(chattingAdapter.itemCount - 1)
+                        }
+                    }
+                }
             }
 
             editTextChatting.addTextChangedListener(object : TextWatcher {

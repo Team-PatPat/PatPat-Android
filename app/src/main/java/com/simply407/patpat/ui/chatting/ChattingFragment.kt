@@ -23,6 +23,7 @@ class ChattingFragment : Fragment() {
 
     private lateinit var mainActivity: MainActivity
     private lateinit var binding: FragmentChatting2Binding
+    private lateinit var chattingAdapter: ChattingAdapter
 
     private lateinit var chattingViewModel: ChattingViewModel
 
@@ -42,7 +43,7 @@ class ChattingFragment : Fragment() {
         currentPageIndex = arguments?.getInt("currentPageIndex") ?: 0
         counselorId = arguments?.getString("counselorId") ?: ""
 
-        chattingViewModel = ViewModelProvider(requireActivity())[ChattingViewModel::class.java]
+        chattingViewModel = ViewModelProvider(this)[ChattingViewModel::class.java]
 
         chattingViewModel.getAllChattingRoomInfo(SharedPreferencesManager.getUserAccessToken()!!, counselorId, 1, 20)
 
@@ -90,8 +91,8 @@ class ChattingFragment : Fragment() {
             }
 
             recyclerViewChatting.run {
-                val sampleDataList = List(10) { it + 1 }
-                adapter = ChattingAdapter(sampleDataList)
+                chattingAdapter = ChattingAdapter(emptyList(), currentPageIndex)
+                adapter = chattingAdapter
                 layoutManager = LinearLayoutManager(requireContext())
             }
 
@@ -157,6 +158,8 @@ class ChattingFragment : Fragment() {
         chattingViewModel.chattingRoomInfo.observe(viewLifecycleOwner) { result ->
             result.onSuccess { chattingRoomInfo ->
                 mainActivity.logLongMessage(TAG, "chattingRoomInfo 성공: $chattingRoomInfo")
+                val reversedMessages = chattingRoomInfo.data.reversed()
+                chattingAdapter.updateMessages(reversedMessages)
             }
             result.onFailure { error ->
                 Log.d(TAG, "chattingRoomInfo 실패: $error")

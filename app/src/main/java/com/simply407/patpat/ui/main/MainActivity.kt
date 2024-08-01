@@ -1,9 +1,13 @@
 package com.simply407.patpat.ui.main
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
+import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +15,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.google.android.material.textfield.TextInputEditText
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.ActivityMainBinding
 import com.simply407.patpat.ui.chatting.ChattingFragment
@@ -65,6 +70,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+
+        if(currentFocus is TextInputEditText) {
+            currentFocus!!.clearFocus()
+        }
+
+        return super.dispatchTouchEvent(ev)
     }
 
     fun bottomNavigation() {
@@ -147,6 +163,15 @@ class MainActivity : AppCompatActivity() {
 
     fun hideBottomNavigation() {
         binding.bottomNavigationViewMain.visibility = View.GONE
+    }
+
+    fun logLongMessage(tag: String, message: String) {
+        val maxLogSize = 1000
+        for (i in 0..message.length / maxLogSize) {
+            val start = i * maxLogSize
+            val end = Math.min((i + 1) * maxLogSize, message.length)
+            Log.d(tag, message.substring(start, end))
+        }
     }
 
     companion object {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentLetter2Binding
@@ -106,6 +107,27 @@ class LetterFragment : Fragment() {
             if (index == 0) {
                 val randomImage = boknamImages.random()
                 imageViewLetter.setImageResource(randomImage)
+                imageViewLetter.visibility = View.VISIBLE
+                textViewFooterLetter.visibility = View.GONE
+            } else {
+                imageViewLetter.visibility = View.GONE
+                textViewFooterLetter.visibility = View.VISIBLE
+
+                // 폰트 설정 (인덱스에 따라 다르게 설정)
+                val typeface = when (index) {
+                    1 -> ResourcesCompat.getFont(requireContext(), R.font.nanum_glad)
+                    2 -> ResourcesCompat.getFont(requireContext(), R.font.nanum_gang)
+                    3 -> ResourcesCompat.getFont(requireContext(), R.font.nanum_fly)
+                    else -> textViewFooterLetter.typeface
+                }
+                textViewFooterLetter.typeface = typeface
+
+                // 폰트 크기 설정 (인덱스에 따라 다르게 설정)
+                val fontSize = when (index) {
+                    3 -> 28f
+                    else -> 22f
+                }
+                textViewFooterLetter.textSize = fontSize
             }
 
         }

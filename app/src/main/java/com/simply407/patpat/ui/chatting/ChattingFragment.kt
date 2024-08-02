@@ -155,7 +155,11 @@ class ChattingFragment : Fragment() {
 
         // 네 좋아요!
         itemSaveLetterBinding.buttonYesSaveLetterItem.setOnClickListener {
-            mainActivity.addFragment(MainActivity.LETTER_FRAGMENT, true, null)
+
+            val bundle = Bundle()
+            bundle.putInt("currentPageIndex", currentPageIndex)
+
+            mainActivity.addFragment(MainActivity.LETTER_FRAGMENT, true, bundle)
             dialog.dismiss()
         }
 

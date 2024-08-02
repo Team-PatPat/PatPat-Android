@@ -104,7 +104,7 @@ class LetterFragment : Fragment() {
 
             materialToolbarLetter.run {
                 setNavigationOnClickListener {
-                    mainActivity.removeFragment(MainActivity.LETTER_FRAGMENT)
+                    mainActivity.removeAllBackStack()
                 }
 
                 subtitle = subtitles.getOrNull(index) ?: "기본 제목"

@@ -1,40 +1,44 @@
 package com.simply407.patpat.ui.letter
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.simply407.patpat.data.letter
+import androidx.lifecycle.viewModelScope
+import com.simply407.patpat.data.model.CreateLetterRequest
+import com.simply407.patpat.data.model.CreateLetterResponse
+import com.simply407.patpat.repository.LetterRepository
+import kotlinx.coroutines.launch
 
-class LetterViewModel : ViewModel() {
+class LetterViewModel: ViewModel() {
 
-    companion object{
-        private const val ROOM1="복남이"
-        private const val ROOM2="닥터 냉철한"
-        private const val ROOM3="곽두팔"
-        private const val ROOM4="코코"
-    }
+    private val letterRepository = LetterRepository()
 
-    private var letter_counselor=""
-    private var letter_reciever=""
-    private var letter_content=""
-    private var letter_comment=""
-    private var letter_image=0
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
 
+    // SingleLiveEvent 사용
+    private val _createLetterResult = SingleLiveEvent<Result<CreateLetterResponse>>()
+    val createLetterResult: LiveData<Result<CreateLetterResponse>> get() = _createLetterResult
 
-    fun set_letter_info(letter :letter){
-        letter_counselor=letter.counselor
-        letter_reciever=letter.username
-        letter_content=letter.content
-        if(letter.counselor==ROOM1){
-            letter_comment="unknown"
-            letter_image=letter.commentImage
-        }else{
-            letter_comment=letter.commentString!!
-            letter_image=-1
+    fun createLetter(accessToken: String, createLetterRequest: CreateLetterRequest) {
+        viewModelScope.launch {
+            _isLoading.postValue(true)
+            try {
+                val response = letterRepository.createLetter(accessToken, createLetterRequest)
+                Log.d("LetterViewModel", "createLetter 응답: $response")
+
+                if (response.isSuccessful) {
+                    _createLetterResult.postValue(Result.success(response.body()!!))
+                } else {
+                    _createLetterResult.postValue(Result.failure(Exception("Error: ${response.errorBody()?.string()}")))
+                }
+            } catch (e: Exception) {
+                _createLetterResult.postValue(Result.failure(e))
+            } finally {
+                _isLoading.postValue(false)
+            }
         }
-
-    }
-
-    fun get_letter_info() : letter{
-        return letter(letter_counselor,letter_reciever,letter_content,letter_image,letter_comment)
     }
 
 }

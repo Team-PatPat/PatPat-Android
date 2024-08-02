@@ -5,25 +5,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.google.android.material.appbar.AppBarLayout
 import com.simply407.patpat.R
 import com.simply407.patpat.data.letter
-import com.simply407.patpat.databinding.ActivityChattingBinding
 import com.simply407.patpat.databinding.ActivityLetterBinding
-import com.simply407.patpat.ui.chat.ChattingFragment
-import com.simply407.patpat.ui.chat.ChattingViewModel
 
 class LetterActivity : AppCompatActivity(){
     private lateinit var binding: ActivityLetterBinding
     private val manager =supportFragmentManager
-    private lateinit var viewModel : LetterViewModel
+    private lateinit var viewModel : LetterViewModel2
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
 
         binding = ActivityLetterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel= ViewModelProvider(this)[LetterViewModel::class.java]
+        viewModel= ViewModelProvider(this)[LetterViewModel2::class.java]
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

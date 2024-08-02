@@ -54,4 +54,14 @@
     
     <color name="counselor_blue">#E8F3FF</color>
 
+    <color name="letter_yellow">#99FFF6DE</color>
+    <color name="letter_blue">#E9F0FD</color>
+    <color name="letter_red">#FDEEE9</color>
+    <color name="letter_green">#E9F6F1</color>
+
+    <color name="line_yellow">#F4D09C</color>
+    <color name="line_blue">#90B4F7</color>
+    <color name="line_red">#E8AD9C</color>
+    <color name="line_green">#68C7A2</color>
+
 </resources>

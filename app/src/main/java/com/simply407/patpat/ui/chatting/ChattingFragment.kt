@@ -155,6 +155,7 @@ class ChattingFragment : Fragment() {
 
         // 네 좋아요!
         itemSaveLetterBinding.buttonYesSaveLetterItem.setOnClickListener {
+            mainActivity.addFragment(MainActivity.LETTER_FRAGMENT, true, null)
             dialog.dismiss()
         }
 

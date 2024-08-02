@@ -59,6 +59,13 @@ class LetterFragment : Fragment() {
                 R.color.line_green
             )
 
+            val textPsList = listOf(
+                R.string.letter_ps_boknam,
+                R.string.letter_ps_doctor,
+                R.string.letter_ps_kwak,
+                R.string.letter_ps_coco
+            )
+
             val textFromList = listOf(
                 "From. 최고의 친구 복남이가",
                 "From. 자네를 응원하는 닥터 냉철한",
@@ -100,6 +107,9 @@ class LetterFragment : Fragment() {
             editTextContentsLetter.setLineColor(
                 lineColors.getOrNull(index) ?: R.color.line_yellow
             )
+
+            // 상담사 별 PS 설정
+            textViewPsLetter.text = getString(textPsList.getOrNull(index) ?: R.string.letter_ps_boknam)
 
             // 상담사 별 From 설정
             textViewFromLetter.text = textFromList.getOrNull(index) ?: "From. 기본 이름"

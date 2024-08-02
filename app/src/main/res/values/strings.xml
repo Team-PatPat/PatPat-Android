@@ -43,5 +43,9 @@
     <string name="letterFrom4">From. 코코</string>
     <string name="save_letter_prompt">대화를 종료하고,\n%s의 편지를 받아보시겠어요?</string>
     <string name="user_name_letter">%1$s에게</string>
+    <string name="letter_ps_boknam">PS. 기분이 안 좋을 땐 이런 걸 해보자! 🐶</string>
+    <string name="letter_ps_doctor">PS. 자네를 위한 나의 조언은 이거야 🖋</string>
+    <string name="letter_ps_kwak">PS. 웃음이 보약인기라!! 😝</string>
+    <string name="letter_ps_coco">PS. 새겨 들어라 😼</string>
 
 </resources>

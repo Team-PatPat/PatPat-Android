@@ -90,4 +90,7 @@ dependencies {
 
     // circleimageview
     implementation(libs.circleimageview)
+
+    // lottie
+    implementation(libs.lottie)
 }

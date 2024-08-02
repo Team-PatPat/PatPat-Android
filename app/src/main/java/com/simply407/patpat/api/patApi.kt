@@ -6,6 +6,8 @@ import com.simply407.patpat.data.letterMessageBody
 import com.simply407.patpat.data.messageBody
 import com.simply407.patpat.data.ChatGetAll
 import com.simply407.patpat.data.model.ChattingRoomInfo
+import com.simply407.patpat.data.model.CreateLetterRequest
+import com.simply407.patpat.data.model.CreateLetterResponse
 import com.simply407.patpat.data.model.GetCounselorResponse
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LetterResponse
@@ -100,6 +102,12 @@ interface patApi {
         @Path("counselorId") counselorId: String,
         @Body postMessageRequest : PostMessageRequest
     ): Response<MessageInfo>
+
+    @POST("api/v1/letters")
+    suspend fun createLetter(
+        @Header("Authorization") accessToken: String,
+        @Body createLetterRequest: CreateLetterRequest
+    ): Response<CreateLetterResponse>
 }
 
 

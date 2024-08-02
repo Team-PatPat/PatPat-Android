@@ -1,15 +1,22 @@
 package com.simply407.patpat.ui.letter
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.CreateLetterResponse
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentLetter2Binding
+import com.simply407.patpat.databinding.ItemLoadingLetterBinding
 import com.simply407.patpat.ui.main.MainActivity
 
 
@@ -18,7 +25,13 @@ class LetterFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private lateinit var binding: FragmentLetter2Binding
 
+    private lateinit var letterViewModel: LetterViewModel
+
     private var currentPageIndex: Int = 0
+
+    private lateinit var loadingDialog: AlertDialog
+
+    val TAG = "LetterFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +43,10 @@ class LetterFragment : Fragment() {
 
         currentPageIndex = arguments?.getInt("currentPageIndex") ?: 0
 
+        letterViewModel = ViewModelProvider(requireActivity())[LetterViewModel::class.java]
+
         initUi(currentPageIndex)
+        observeData()
 
         return binding.root
     }
@@ -140,6 +156,74 @@ class LetterFragment : Fragment() {
                 textViewFooterLetter.textSize = fontSize
             }
 
+        }
+    }
+
+    private fun observeData() {
+        letterViewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            if (isLoading) {
+                showLoading()
+            } else {
+                hideLoading()
+            }
+        }
+
+        letterViewModel.createLetterResult.observe(viewLifecycleOwner) { result ->
+            result.onSuccess { createLetterResponse ->
+                mainActivity.logLongMessage(TAG, "createLetter 성공: $createLetterResponse")
+                settingUi(createLetterResponse)
+            }
+            result.onFailure { error ->
+                mainActivity.logLongMessage(TAG, "createLetter 실패: $error")
+                mainActivity.removeFragment(MainActivity.LETTER_FRAGMENT)
+                Snackbar.make(binding.root, "편지 생성에 실패했습니다.", Snackbar.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
+    private fun settingUi(createLetterResponse : CreateLetterResponse) {
+        binding.run {
+            editTextContentsLetter.setText(createLetterResponse.content)
+
+            // footer 설정
+            if (createLetterResponse.footer != null) {
+                textViewFooterLetter.text = createLetterResponse.footer
+            } else {
+                textViewFooterLetter.text = ""
+            }
+        }
+    }
+
+    private fun showLoading() {
+        if (!::loadingDialog.isInitialized) {
+            createLoadingDialog()
+        }
+        loadingDialog.show()
+        binding.linearLayoutMainLetter.visibility = View.GONE
+    }
+
+    private fun hideLoading() {
+        if (::loadingDialog.isInitialized && loadingDialog.isShowing) {
+            loadingDialog.dismiss()
+        }
+        binding.linearLayoutMainLetter.visibility = View.VISIBLE
+    }
+
+    private fun createLoadingDialog() {
+        val itemLoadingLetterBinding = ItemLoadingLetterBinding.inflate(layoutInflater)
+        val builder = MaterialAlertDialogBuilder(mainActivity)
+        builder.setView(itemLoadingLetterBinding.root)
+        builder.setCancelable(false)
+
+        loadingDialog = builder.create()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        if (::loadingDialog.isInitialized && loadingDialog.isShowing) {
+            loadingDialog.dismiss()
         }
     }
 

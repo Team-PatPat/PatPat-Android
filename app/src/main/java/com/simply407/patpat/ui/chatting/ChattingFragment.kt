@@ -12,11 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.CreateLetterRequest
 import com.simply407.patpat.data.model.MessageInfo
 import com.simply407.patpat.data.model.PostMessageRequest
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentChatting2Binding
 import com.simply407.patpat.databinding.ItemSaveLetterBinding
+import com.simply407.patpat.ui.letter.LetterViewModel
 import com.simply407.patpat.ui.main.MainActivity
 
 
@@ -27,6 +29,7 @@ class ChattingFragment : Fragment() {
     private lateinit var chattingAdapter: ChattingAdapter
 
     private lateinit var chattingViewModel: ChattingViewModel
+    private lateinit var letterViewModel: LetterViewModel
 
     private var currentPageIndex: Int = 0
     private var counselorId: String = ""
@@ -45,6 +48,7 @@ class ChattingFragment : Fragment() {
         counselorId = arguments?.getString("counselorId") ?: ""
 
         chattingViewModel = ViewModelProvider(this)[ChattingViewModel::class.java]
+        letterViewModel = ViewModelProvider(requireActivity())[LetterViewModel::class.java]
 
         chattingViewModel.getAllChattingRoomInfo(SharedPreferencesManager.getUserAccessToken()!!, counselorId, 1, 100)
 
@@ -158,6 +162,9 @@ class ChattingFragment : Fragment() {
 
             val bundle = Bundle()
             bundle.putInt("currentPageIndex", currentPageIndex)
+
+            Log.d(TAG, "counselorId : $counselorId")
+            letterViewModel.createLetter(SharedPreferencesManager.getUserAccessToken()!!, CreateLetterRequest(counselorId))
 
             mainActivity.addFragment(MainActivity.LETTER_FRAGMENT, true, bundle)
             dialog.dismiss()

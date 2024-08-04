@@ -13,7 +13,8 @@ import java.util.Locale
 
 class StorageBoxAdapter(
     private var counselorList: List<String>,
-    private var allLettersDataList: List<CreateLetterResponse>
+    private var allLettersDataList: List<CreateLetterResponse>,
+    private val letterClickListener: LetterClickListener
 ) : RecyclerView.Adapter<StorageBoxAdapter.StorageBoxViewHolder>() {
 
     inner class StorageBoxViewHolder(private val binding: ItemStorageBoxBinding) : RecyclerView.ViewHolder(binding.root){
@@ -52,6 +53,11 @@ class StorageBoxAdapter(
 
             binding.textViewLetterContentStorageBox.text = letter.content
             binding.textViewLetterDateStorageBox.text = formatDate(letter.createdAt)
+
+            // 전체 보기 클릭
+            binding.linearLayoutShowAllStorageBox.setOnClickListener {
+                letterClickListener.onClickLetter(counselorIndex, letter)
+            }
         }
 
     }
@@ -85,6 +91,10 @@ class StorageBoxAdapter(
         counselorList = newCounselorList
         allLettersDataList = newLettersDataList
         notifyDataSetChanged()
+    }
+
+    interface LetterClickListener {
+        fun onClickLetter(counselorIndex: Int, letter: CreateLetterResponse)
     }
 
 }

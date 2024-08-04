@@ -78,7 +78,17 @@ class StorageBoxFragment : Fragment() {
             }
 
             recyclerViewStorageBox.run {
-                adapter = StorageBoxAdapter(emptyList(), emptyList())
+                adapter = StorageBoxAdapter(emptyList(), emptyList(), object : StorageBoxAdapter.LetterClickListener {
+                    override fun onClickLetter(counselorIndex: Int, letter: CreateLetterResponse) {
+
+                        val bundle = Bundle().apply {
+                            putInt("counselorIndex", counselorIndex)
+                            putParcelable("letter", letter)
+                        }
+
+                        mainActivity.addFragment(MainActivity.STORAGE_BOX_DETAIL_FRAGMENT, true, bundle)
+                    }
+                })
                 setHasFixedSize(true)
                 layoutManager = LinearLayoutManager(requireContext())
 
@@ -90,7 +100,6 @@ class StorageBoxFragment : Fragment() {
                         val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                         val totalItemCount = layoutManager.itemCount
                         val lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition()
-
 
                         if (!isLoading && lastVisibleItemPosition + 1 >= totalItemCount && totalItemCount < totalElements) {
                             currentSize += 20

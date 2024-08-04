@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.storagebox.StorageBoxDetailFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar_storage_box_detail"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        app:navigationIcon="@drawable/ic_back"
+        app:subtitle="편지 보관함"
+        app:subtitleCentered="true"
+        app:subtitleTextAppearance="@style/Typography.Bold20" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/grayScale200" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout_storage_box_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_storage_box_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="@color/letter_yellow"
+                app:cardCornerRadius="30dp"
+                app:strokeColor="@android:color/transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginEnd="22dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_user_name_storage_box_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:text="@string/user_name_letter"
+                        android:textAppearance="@style/Typography.Bold22"
+                        android:textColor="@color/grayScale500" />
+
+                    <com.simply407.patpat.ui.letter.LinedEditText
+                        android:id="@+id/editText_contents_storage_box_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:text="안녕agnklnanklnklnklnklnklnklnklnklnklnkl"
+                        android:textColor="@color/grayScale500" />
+
+                    <TextView
+                        android:id="@+id/textView_ps_storage_box_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="PS. 기분이 안 좋을 땐 이런 걸 해보자! 🐶"
+                        android:textAppearance="@style/Typography.Medium16"
+                        android:textColor="@color/grayScale500" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="300dp"
+                        android:layout_height="190dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:strokeColor="@android:color/transparent">
+
+                        <ImageView
+                            android:id="@+id/imageView_storage_box_detail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_boknam_one" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView_footer_storage_box_detail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:shadowColor="#000000"
+                                android:shadowDx="0"
+                                android:shadowDy="0"
+                                android:shadowRadius="1"
+                                android:text="스트레스 받을 땐\n심호흡을 해봐!\n"
+                                android:textAlignment="center"
+                                android:textColor="@color/grayScale500"
+                                android:textSize="22sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/textView_from_storage_box_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="36dp"
+                        android:text="From. 최고의 친구 복남이가"
+                        android:textAppearance="@style/Typography.Medium16"
+                        android:textColor="@color/grayScale500" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

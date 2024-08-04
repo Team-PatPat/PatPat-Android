@@ -62,7 +62,7 @@ class StorageBoxFragment : Fragment() {
             }
 
             recyclerViewStorageBox.run {
-                adapter = StorageBoxAdapter()
+                adapter = StorageBoxAdapter(emptyList())
                 setHasFixedSize(true)
                 layoutManager = LinearLayoutManager(requireContext())
             }
@@ -74,6 +74,10 @@ class StorageBoxFragment : Fragment() {
         letterViewModel.allLettersList.observe(viewLifecycleOwner) { result ->
             result.onSuccess { allLettersList ->
                 mainActivity.logLongMessage(TAG, "getAllLetters 성공: $allLettersList")
+                allLettersList.data.forEach { letter ->
+                    Log.d(TAG, "letter : $letter")
+                }
+                binding.recyclerViewStorageBox.adapter = StorageBoxAdapter(allLettersList.data)
             }
 
             result.onFailure { error ->

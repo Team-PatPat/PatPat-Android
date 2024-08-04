@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.simply407.patpat.R
 import com.simply407.patpat.databinding.FragmentStorageBoxBinding
 import com.simply407.patpat.ui.main.MainActivity
@@ -49,6 +50,13 @@ class StorageBoxFragment : Fragment() {
                     }
                 }
             }
+
+            recyclerViewStorageBox.run {
+                adapter = StorageBoxAdapter()
+                setHasFixedSize(true)
+                layoutManager = LinearLayoutManager(requireContext())
+            }
+
         }
     }
 

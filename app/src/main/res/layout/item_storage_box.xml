@@ -31,6 +31,7 @@
                     android:src="@drawable/ic_profile_boknam" />
 
                 <TextView
+                    android:id="@+id/textView_letter_title_storage_box"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -42,6 +43,7 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <View
+                android:id="@+id/view_line_storage_box"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginTop="12dp"

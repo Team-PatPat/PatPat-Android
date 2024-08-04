@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentStorageBoxBinding
+import com.simply407.patpat.ui.home.HomeViewModel
 import com.simply407.patpat.ui.letter.LetterViewModel
 import com.simply407.patpat.ui.main.MainActivity
 
@@ -21,7 +22,10 @@ class StorageBoxFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private lateinit var binding: FragmentStorageBoxBinding
 
+    private lateinit var homeViewModel: HomeViewModel
     private lateinit var letterViewModel: LetterViewModel
+
+    private var counselorIdList: MutableList<String> = mutableListOf()
 
     val TAG = "StorageBoxFragment"
 
@@ -33,8 +37,10 @@ class StorageBoxFragment : Fragment() {
         mainActivity = activity as MainActivity
         binding = FragmentStorageBoxBinding.inflate(layoutInflater, container, false)
 
+        homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         letterViewModel = ViewModelProvider(this)[LetterViewModel::class.java]
 
+        homeViewModel.getCounselors(SharedPreferencesManager.getUserAccessToken()!!)
         letterViewModel.getAllLetters(SharedPreferencesManager.getUserAccessToken()!!, 1, 100, false)
 
         initUi()
@@ -62,7 +68,7 @@ class StorageBoxFragment : Fragment() {
             }
 
             recyclerViewStorageBox.run {
-                adapter = StorageBoxAdapter(emptyList())
+                adapter = StorageBoxAdapter(emptyList(), emptyList())
                 setHasFixedSize(true)
                 layoutManager = LinearLayoutManager(requireContext())
             }
@@ -71,13 +77,25 @@ class StorageBoxFragment : Fragment() {
     }
 
     private fun observeData() {
+        homeViewModel.counselorList.observe(viewLifecycleOwner) { result ->
+            result.onSuccess { counselorList ->
+                mainActivity.logLongMessage(TAG, "getCounselors 성공: $counselorList")
+                counselorList.forEach { counselor ->
+                    counselorIdList.add(counselor.id)
+                }
+            }
+            result.onFailure { error ->
+                mainActivity.logLongMessage(TAG, "getCounselors 실패: $error")
+            }
+        }
+
         letterViewModel.allLettersList.observe(viewLifecycleOwner) { result ->
             result.onSuccess { allLettersList ->
                 mainActivity.logLongMessage(TAG, "getAllLetters 성공: $allLettersList")
                 allLettersList.data.forEach { letter ->
                     Log.d(TAG, "letter : $letter")
                 }
-                binding.recyclerViewStorageBox.adapter = StorageBoxAdapter(allLettersList.data)
+                binding.recyclerViewStorageBox.adapter = StorageBoxAdapter(counselorIdList, allLettersList.data)
             }
 
             result.onFailure { error ->

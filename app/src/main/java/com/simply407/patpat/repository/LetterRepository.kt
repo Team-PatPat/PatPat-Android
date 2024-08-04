@@ -9,4 +9,7 @@ class LetterRepository {
 
     suspend fun createLetter(accessToken: String, createLetterRequest: CreateLetterRequest) =
         patApi.createLetter(accessToken, createLetterRequest)
+
+    suspend fun getAllLetters(accessToken: String, page: Int, size: Int, isLiked: Boolean) =
+        patApi.getAllLetters(accessToken, page, size, isLiked)
 }

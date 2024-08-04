@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simply407.patpat.data.model.CreateLetterRequest
 import com.simply407.patpat.data.model.CreateLetterResponse
+import com.simply407.patpat.data.model.GetAllLettersResponse
 import com.simply407.patpat.repository.LetterRepository
 import kotlinx.coroutines.launch
 
@@ -16,6 +17,9 @@ class LetterViewModel: ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
+
+    private val _allLettersList = MutableLiveData<Result<GetAllLettersResponse>>()
+    val allLettersList: LiveData<Result<GetAllLettersResponse>> get() = _allLettersList
 
     // SingleLiveEvent 사용
     private val _createLetterResult = SingleLiveEvent<Result<CreateLetterResponse>>()
@@ -37,6 +41,24 @@ class LetterViewModel: ViewModel() {
                 _createLetterResult.postValue(Result.failure(e))
             } finally {
                 _isLoading.postValue(false)
+            }
+        }
+    }
+
+    fun getAllLetters(accessToken: String, page: Int, size: Int, isLiked: Boolean) {
+        viewModelScope.launch {
+            try {
+                val response = letterRepository.getAllLetters(accessToken, page, size, isLiked)
+                Log.d("LetterViewModel", "getAllLetters 응답: $response")
+
+                if (response.isSuccessful) {
+                    _allLettersList.postValue(Result.success(response.body()!!))
+                } else {
+                    _allLettersList.postValue(Result.failure(Exception("Error: ${response.errorBody()?.string()}")))
+                }
+
+            } catch (e: Exception) {
+                _allLettersList.postValue(Result.failure(e))
             }
         }
     }

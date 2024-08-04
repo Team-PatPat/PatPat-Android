@@ -8,6 +8,7 @@ import com.simply407.patpat.data.ChatGetAll
 import com.simply407.patpat.data.model.ChattingRoomInfo
 import com.simply407.patpat.data.model.CreateLetterRequest
 import com.simply407.patpat.data.model.CreateLetterResponse
+import com.simply407.patpat.data.model.GetAllLettersResponse
 import com.simply407.patpat.data.model.GetCounselorResponse
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LetterResponse
@@ -108,6 +109,14 @@ interface patApi {
         @Header("Authorization") accessToken: String,
         @Body createLetterRequest: CreateLetterRequest
     ): Response<CreateLetterResponse>
+
+    @GET("api/v1/letters")
+    suspend fun getAllLetters(
+        @Header("Authorization") accessToken: String,
+        @Query("page") page: Int,
+        @Query("size") size: Int,
+        @Query("isLiked") isLiked: Boolean
+    ): Response<GetAllLettersResponse>
 }
 
 

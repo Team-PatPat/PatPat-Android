@@ -12,8 +12,8 @@ import java.util.Date
 import java.util.Locale
 
 class StorageBoxAdapter(
-    private val counselorList: List<String>,
-    private val allLettersDataList: List<CreateLetterResponse>
+    private var counselorList: List<String>,
+    private var allLettersDataList: List<CreateLetterResponse>
 ) : RecyclerView.Adapter<StorageBoxAdapter.StorageBoxViewHolder>() {
 
     inner class StorageBoxViewHolder(private val binding: ItemStorageBoxBinding) : RecyclerView.ViewHolder(binding.root){
@@ -79,6 +79,12 @@ class StorageBoxAdapter(
         } catch (e: Exception) {
             dateString // 변환 실패 시 원본 문자열 반환
         }
+    }
+
+    fun updateData(newCounselorList: List<String>, newLettersDataList: List<CreateLetterResponse>) {
+        counselorList = newCounselorList
+        allLettersDataList = newLettersDataList
+        notifyDataSetChanged()
     }
 
 }

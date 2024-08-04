@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentStorageBoxBinding
+import com.simply407.patpat.ui.letter.LetterViewModel
 import com.simply407.patpat.ui.main.MainActivity
 
 
@@ -17,6 +20,8 @@ class StorageBoxFragment : Fragment() {
 
     private lateinit var mainActivity: MainActivity
     private lateinit var binding: FragmentStorageBoxBinding
+
+    private lateinit var letterViewModel: LetterViewModel
 
     val TAG = "StorageBoxFragment"
 
@@ -28,7 +33,12 @@ class StorageBoxFragment : Fragment() {
         mainActivity = activity as MainActivity
         binding = FragmentStorageBoxBinding.inflate(layoutInflater, container, false)
 
+        letterViewModel = ViewModelProvider(this)[LetterViewModel::class.java]
+
+        letterViewModel.getAllLetters(SharedPreferencesManager.getUserAccessToken()!!, 1, 100, false)
+
         initUi()
+        observeData()
 
         return binding.root
     }
@@ -60,5 +70,16 @@ class StorageBoxFragment : Fragment() {
         }
     }
 
+    private fun observeData() {
+        letterViewModel.allLettersList.observe(viewLifecycleOwner) { result ->
+            result.onSuccess { allLettersList ->
+                mainActivity.logLongMessage(TAG, "getAllLetters 성공: $allLettersList")
+            }
+
+            result.onFailure { error ->
+                mainActivity.logLongMessage(TAG, "getAllLetters 실패: $error")
+            }
+        }
+    }
 
 }

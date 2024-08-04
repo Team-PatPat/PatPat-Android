@@ -52,6 +52,7 @@ class StorageBoxFragment : Fragment() {
 
         initUi()
         observeData()
+        swipeRefresh()
 
         return binding.root
     }
@@ -147,6 +148,14 @@ class StorageBoxFragment : Fragment() {
             allLettersDataList
         }
         (binding.recyclerViewStorageBox.adapter as StorageBoxAdapter).updateData(counselorIdList, filteredLetters)
+    }
+
+    private fun swipeRefresh() {
+        binding.swipeRefreshLayoutStorageBox.setOnRefreshListener {
+            currentSize = 20
+            letterViewModel.getAllLetters(SharedPreferencesManager.getUserAccessToken()!!, 1, currentSize, false)
+            binding.swipeRefreshLayoutStorageBox.isRefreshing = false
+        }
     }
 
 }

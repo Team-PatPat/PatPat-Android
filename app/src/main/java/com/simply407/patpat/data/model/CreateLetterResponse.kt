@@ -6,7 +6,7 @@ data class CreateLetterResponse (
     val footer: String?,
     val counselorId: String,
     val userId: String,
-    val isLiked: Boolean,
+    var isLiked: Boolean,
     val createdAt: String,
     val updatedAt: String
 )

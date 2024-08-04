@@ -93,4 +93,7 @@ dependencies {
 
     // lottie
     implementation(libs.lottie)
+
+    // swiperefreshlayout
+    implementation(libs.androidx.swiperefreshlayout)
 }

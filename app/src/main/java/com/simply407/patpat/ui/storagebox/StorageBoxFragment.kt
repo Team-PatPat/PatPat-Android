@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.CreateLetterResponse
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentStorageBoxBinding
 import com.simply407.patpat.ui.home.HomeViewModel
@@ -26,6 +27,7 @@ class StorageBoxFragment : Fragment() {
     private lateinit var letterViewModel: LetterViewModel
 
     private var counselorIdList: MutableList<String> = mutableListOf()
+    private var allLettersDataList: List<CreateLetterResponse> = mutableListOf()
 
     val TAG = "StorageBoxFragment"
 
@@ -60,9 +62,11 @@ class StorageBoxFragment : Fragment() {
                     if (isChecked) {
                         textViewAllStorageBox.setTextColor(ContextCompat.getColor(requireContext(), R.color.grayScale400))
                         textViewFavoriteStorageBox.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+                        updateRecyclerView(true)
                     } else {
                         textViewAllStorageBox.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
                         textViewFavoriteStorageBox.setTextColor(ContextCompat.getColor(requireContext(), R.color.grayScale400))
+                        updateRecyclerView(false)
                     }
                 }
             }
@@ -95,13 +99,23 @@ class StorageBoxFragment : Fragment() {
                 allLettersList.data.forEach { letter ->
                     Log.d(TAG, "letter : $letter")
                 }
-                binding.recyclerViewStorageBox.adapter = StorageBoxAdapter(counselorIdList, allLettersList.data)
+                allLettersDataList = allLettersList.data
+                updateRecyclerView(binding.switchStorageBox.isChecked)
             }
 
             result.onFailure { error ->
                 mainActivity.logLongMessage(TAG, "getAllLetters 실패: $error")
             }
         }
+    }
+
+    private fun updateRecyclerView(isLiked: Boolean) {
+        val filteredLetters = if (isLiked) {
+            allLettersDataList.filter { it.isLiked }
+        } else {
+            allLettersDataList
+        }
+        binding.recyclerViewStorageBox.adapter = StorageBoxAdapter(counselorIdList, filteredLetters)
     }
 
 }

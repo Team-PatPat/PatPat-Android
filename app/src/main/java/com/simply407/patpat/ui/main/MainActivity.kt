@@ -74,17 +74,6 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
-
-        if(currentFocus is TextInputEditText) {
-            currentFocus!!.clearFocus()
-        }
-
-        return super.dispatchTouchEvent(ev)
-    }
-
     fun bottomNavigation() {
         binding.bottomNavigationViewMain.run {
 
@@ -167,6 +156,12 @@ class MainActivity : AppCompatActivity() {
 
     fun hideBottomNavigation() {
         binding.bottomNavigationViewMain.visibility = View.GONE
+    }
+
+    fun selectBottomNavigationItem(itemId: Int) {
+        Handler(Looper.getMainLooper()).post {
+            binding.bottomNavigationViewMain.selectedItemId = itemId
+        }
     }
 
     fun logLongMessage(tag: String, message: String) {

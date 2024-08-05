@@ -29,7 +29,6 @@ class ChattingFragment : Fragment() {
     private lateinit var chattingAdapter: ChattingAdapter
 
     private lateinit var chattingViewModel: ChattingViewModel
-    private lateinit var letterViewModel: LetterViewModel
 
     private var currentPageIndex: Int = 0
     private var counselorId: String = ""
@@ -48,7 +47,6 @@ class ChattingFragment : Fragment() {
         counselorId = arguments?.getString("counselorId") ?: ""
 
         chattingViewModel = ViewModelProvider(this)[ChattingViewModel::class.java]
-        letterViewModel = ViewModelProvider(requireActivity())[LetterViewModel::class.java]
 
         chattingViewModel.getAllChattingRoomInfo(SharedPreferencesManager.getUserAccessToken()!!, counselorId, 1, 100)
 
@@ -162,9 +160,9 @@ class ChattingFragment : Fragment() {
 
             val bundle = Bundle()
             bundle.putInt("currentPageIndex", currentPageIndex)
+            bundle.putString("counselorId", counselorId)
 
             Log.d(TAG, "counselorId : $counselorId")
-            letterViewModel.createLetter(SharedPreferencesManager.getUserAccessToken()!!, CreateLetterRequest(counselorId))
 
             mainActivity.addFragment(MainActivity.LETTER_FRAGMENT, true, bundle)
             dialog.dismiss()

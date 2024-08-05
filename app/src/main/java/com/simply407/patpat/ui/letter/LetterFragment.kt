@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
@@ -13,7 +14,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.CreateLetterRequest
 import com.simply407.patpat.data.model.CreateLetterResponse
+import com.simply407.patpat.data.model.LikeLetterRequest
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentLetter2Binding
 import com.simply407.patpat.databinding.ItemLoadingLetterBinding
@@ -28,6 +31,8 @@ class LetterFragment : Fragment() {
     private lateinit var letterViewModel: LetterViewModel
 
     private var currentPageIndex: Int = 0
+    private var currentLetterId: String = ""
+    private var counselorId: String = ""
 
     private lateinit var loadingDialog: AlertDialog
 
@@ -42,11 +47,24 @@ class LetterFragment : Fragment() {
         binding = FragmentLetter2Binding.inflate(layoutInflater)
 
         currentPageIndex = arguments?.getInt("currentPageIndex") ?: 0
+        counselorId = arguments?.getString("counselorId") ?: ""
 
-        letterViewModel = ViewModelProvider(requireActivity())[LetterViewModel::class.java]
+        letterViewModel = ViewModelProvider(this)[LetterViewModel::class.java]
+
+        letterViewModel.createLetter(SharedPreferencesManager.getUserAccessToken()!!, CreateLetterRequest(counselorId))
+
+        // 뒤로 가기 콜백 설정
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                mainActivity.selectBottomNavigationItem(R.id.home_menu_item)
+                isEnabled = false
+                requireActivity().onBackPressed()
+            }
+        })
 
         initUi(currentPageIndex)
         observeData()
+        likeLetter()
 
         return binding.root
     }
@@ -104,7 +122,7 @@ class LetterFragment : Fragment() {
 
             materialToolbarLetter.run {
                 setNavigationOnClickListener {
-                    mainActivity.removeAllBackStack()
+                    mainActivity.selectBottomNavigationItem(R.id.home_menu_item)
                 }
 
                 subtitle = subtitles.getOrNull(index) ?: "기본 제목"
@@ -171,12 +189,37 @@ class LetterFragment : Fragment() {
         letterViewModel.createLetterResult.observe(viewLifecycleOwner) { result ->
             result.onSuccess { createLetterResponse ->
                 mainActivity.logLongMessage(TAG, "createLetter 성공: $createLetterResponse")
+                currentLetterId = createLetterResponse.id
                 settingUi(createLetterResponse)
             }
             result.onFailure { error ->
                 mainActivity.logLongMessage(TAG, "createLetter 실패: $error")
                 mainActivity.removeFragment(MainActivity.LETTER_FRAGMENT)
                 Snackbar.make(binding.root, "편지 생성에 실패했습니다.", Snackbar.LENGTH_SHORT).show()
+            }
+        }
+
+        letterViewModel.likeLetterResult.observe(viewLifecycleOwner) { result ->
+            val include = binding.includeLetterFunction
+
+            result.onSuccess { createLetterResponse ->
+                mainActivity.logLongMessage(TAG, "likeLetter 성공: $createLetterResponse")
+
+                include.imageViewLikeLetterFunction.isSelected = !include.imageViewLikeLetterFunction.isSelected
+                if (include.imageViewLikeLetterFunction.isSelected) {
+                    include.imageViewLikeLetterFunction.setImageResource(R.drawable.ic_letter_full_star)
+                } else {
+                    include.imageViewLikeLetterFunction.setImageResource(R.drawable.ic_letter_star)
+                }
+            }
+            result.onFailure { error ->
+                mainActivity.logLongMessage(TAG, "likeLetter 실패: $error")
+
+                if (include.imageViewLikeLetterFunction.isSelected) {
+                    include.imageViewLikeLetterFunction.setImageResource(R.drawable.ic_letter_star)
+                } else {
+                    include.imageViewLikeLetterFunction.setImageResource(R.drawable.ic_letter_full_star)
+                }
             }
         }
 
@@ -217,6 +260,15 @@ class LetterFragment : Fragment() {
         builder.setCancelable(false)
 
         loadingDialog = builder.create()
+    }
+
+    private fun likeLetter() {
+        val include = binding.includeLetterFunction
+        include.imageViewLikeLetterFunction.setOnClickListener {
+            val isLiked = !include.imageViewLikeLetterFunction.isSelected
+            val likeLetterRequest = LikeLetterRequest(isLiked)
+            letterViewModel.likeLetter(SharedPreferencesManager.getUserAccessToken()!!, currentLetterId, likeLetterRequest)
+        }
     }
 
     override fun onDestroyView() {

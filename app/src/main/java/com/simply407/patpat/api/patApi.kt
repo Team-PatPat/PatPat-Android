@@ -12,6 +12,7 @@ import com.simply407.patpat.data.model.GetAllLettersResponse
 import com.simply407.patpat.data.model.GetCounselorResponse
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LetterResponse
+import com.simply407.patpat.data.model.LikeLetterRequest
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.LoginResponse
 import com.simply407.patpat.data.model.MessageInfo
@@ -117,6 +118,13 @@ interface patApi {
         @Query("size") size: Int,
         @Query("isLiked") isLiked: Boolean
     ): Response<GetAllLettersResponse>
+
+    @PUT("api/v1/letters/{letterId}")
+    suspend fun likeLetter(
+        @Header("Authorization") accessToken: String,
+        @Path("letterId") letterId: String,
+        @Body likeLetterRequest: LikeLetterRequest
+    ): Response<CreateLetterResponse>
 }
 
 

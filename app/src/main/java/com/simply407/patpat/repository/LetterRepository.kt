@@ -2,6 +2,7 @@ package com.simply407.patpat.repository
 
 import com.simply407.patpat.api.RetrofitInstance
 import com.simply407.patpat.data.model.CreateLetterRequest
+import com.simply407.patpat.data.model.LikeLetterRequest
 
 class LetterRepository {
 
@@ -12,4 +13,10 @@ class LetterRepository {
 
     suspend fun getAllLetters(accessToken: String, page: Int, size: Int, isLiked: Boolean) =
         patApi.getAllLetters(accessToken, page, size, isLiked)
+
+    suspend fun likeLetter(
+        accessToken: String,
+        letterId: String,
+        likeLetterRequest: LikeLetterRequest
+    ) = patApi.likeLetter(accessToken, letterId, likeLetterRequest)
 }

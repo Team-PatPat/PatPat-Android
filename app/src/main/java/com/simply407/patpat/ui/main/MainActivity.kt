@@ -169,6 +169,12 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationViewMain.visibility = View.GONE
     }
 
+    fun selectBottomNavigationItem(itemId: Int) {
+        Handler(Looper.getMainLooper()).post {
+            binding.bottomNavigationViewMain.selectedItemId = itemId
+        }
+    }
+
     fun logLongMessage(tag: String, message: String) {
         val maxLogSize = 1000
         for (i in 0..message.length / maxLogSize) {

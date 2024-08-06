@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textView_title_dialog_change_mbti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="변경하실 MBTI를 선택해주세요"
+        android:textAppearance="@style/Typography.Bold18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <GridLayout
+            android:id="@+id/gridLayout_mbti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:columnCount="2"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_istj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ISTJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_isfj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ISFJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_infj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="INFJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_intj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="INTJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_istp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ISTP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_isfp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ISFP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_infp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="INFP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_intp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="INTP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_estp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ESTP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_esfp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ESFP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_enfp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ENFP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_entp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ENTP"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_estj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ESTJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_esfj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ESFJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_enfj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ENFJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+            <CheckBox
+                android:id="@+id/checkbox_entj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:text="ENTJ"
+                android:textAppearance="@style/Typography.Regular14"
+                app:buttonTint="@color/checkbox_button_color" />
+
+        </GridLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_cancel_dialog_change_mbti"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_orange_r12"
+            android:stateListAnimator="@null"
+            android:text="취소"
+            android:textAppearance="@style/Typography.Medium14"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_change_dialog_change_mbti"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_white_orange_r12"
+            android:stateListAnimator="@null"
+            android:text="확인"
+            android:textAppearance="@style/Typography.Medium14"
+            android:textColor="@color/mainColor" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

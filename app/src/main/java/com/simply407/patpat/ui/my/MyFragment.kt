@@ -6,12 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.CheckBox
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.NewUserInfo
 import com.simply407.patpat.data.model.SharedPreferencesManager
+import com.simply407.patpat.databinding.DialogChangeMbtiBinding
 import com.simply407.patpat.databinding.DialogChangeNicknameBinding
 import com.simply407.patpat.databinding.FragmentMyBinding
 import com.simply407.patpat.databinding.ItemSaveLetterBinding
@@ -29,6 +33,7 @@ class MyFragment : Fragment() {
     private lateinit var joinViewModel: JoinViewModel
 
     private var userName = ""
+    private var userMbti = ""
 
     val TAG = "MyFragment"
 
@@ -62,6 +67,7 @@ class MyFragment : Fragment() {
                     .into(binding.imageViewUserProfileMy)
 
                 userName = userInfoResponse.name
+                userMbti = userInfoResponse.mbti
             }
             result.onFailure { error ->
                 // 로그인 실패 처리
@@ -84,6 +90,9 @@ class MyFragment : Fragment() {
         binding.linearLayoutChangeNicknameMy.setOnClickListener {
             changeNickname()
         }
+        binding.linearLayoutChangeMbtiMy.setOnClickListener {
+            changeMbti()
+        }
     }
 
     // 닉네임 변경
@@ -104,12 +113,62 @@ class MyFragment : Fragment() {
             val newUserName = dialogChangeNicknameBinding.textInputEditTextDialogChangeNickName.text.toString()
 
             if (newUserName.isNotEmpty()) {
-                val newUserInfo = NewUserInfo(newUserName, "")
+                val newUserInfo = NewUserInfo(newUserName, userMbti)
                 joinViewModel.putUserInfo(SharedPreferencesManager.getUserAccessToken()!!, newUserInfo)
 
                 dialog.dismiss()
             }
 
+        }
+
+        dialog.show()
+    }
+
+    // MBTI 변경
+    private fun changeMbti() {
+        val dialogChangeMbtiBinding = DialogChangeMbtiBinding.inflate(layoutInflater)
+        val builder = MaterialAlertDialogBuilder(mainActivity)
+        builder.setView(dialogChangeMbtiBinding.root)
+
+        val dialog = builder.create()
+
+        // CheckBoxes를 리스트에 추가
+        val checkboxes = listOf(
+            dialogChangeMbtiBinding.checkboxIstj,
+            dialogChangeMbtiBinding.checkboxIsfj,
+            dialogChangeMbtiBinding.checkboxInfj,
+            dialogChangeMbtiBinding.checkboxIntj,
+            dialogChangeMbtiBinding.checkboxIstp,
+            dialogChangeMbtiBinding.checkboxIsfp,
+            dialogChangeMbtiBinding.checkboxInfp,
+            dialogChangeMbtiBinding.checkboxIntp,
+            dialogChangeMbtiBinding.checkboxEstp,
+            dialogChangeMbtiBinding.checkboxEsfp,
+            dialogChangeMbtiBinding.checkboxEnfp,
+            dialogChangeMbtiBinding.checkboxEntp,
+            dialogChangeMbtiBinding.checkboxEstj,
+            dialogChangeMbtiBinding.checkboxEsfj,
+            dialogChangeMbtiBinding.checkboxEnfj,
+            dialogChangeMbtiBinding.checkboxEntj
+        )
+
+        // 단일 선택 로직 구현
+        for (checkbox in checkboxes) {
+            checkbox.setOnClickListener {
+                for (cb in checkboxes) {
+                    if (cb != checkbox) {
+                        cb.isChecked = false
+                    }
+                }
+            }
+        }
+
+        dialogChangeMbtiBinding.buttonCancelDialogChangeMbti.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialogChangeMbtiBinding.buttonChangeDialogChangeMbti.setOnClickListener {
+            dialog.dismiss()
         }
 
         dialog.show()

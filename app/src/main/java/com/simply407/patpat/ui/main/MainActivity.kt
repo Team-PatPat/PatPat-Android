@@ -22,6 +22,7 @@ import com.simply407.patpat.ui.chatting.ChattingFragment
 import com.simply407.patpat.ui.home.HomeDetailFragment
 import com.simply407.patpat.ui.home.HomeFragment
 import com.simply407.patpat.ui.letter.LetterFragment
+import com.simply407.patpat.ui.my.MyFragment
 import com.simply407.patpat.ui.storagebox.StorageBoxDetailFragment
 import com.simply407.patpat.ui.storagebox.StorageBoxFragment
 
@@ -94,6 +95,8 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.user_menu_item -> {
+                        removeAllBackStack()
+                        addFragment(MY_FRAGMENT, false, null)
                         return@setOnItemSelectedListener true
                     }
 
@@ -125,6 +128,7 @@ class MainActivity : AppCompatActivity() {
                 CHATTING_FRAGMENT -> ChattingFragment()
                 LETTER_FRAGMENT -> LetterFragment()
                 STORAGE_BOX_DETAIL_FRAGMENT -> StorageBoxDetailFragment()
+                MY_FRAGMENT -> MyFragment()
                 else -> Fragment()
             }
             // 새 프래그먼트를 추가합니다. 태그를 사용하여 찾을 수 있도록 합니다.
@@ -182,5 +186,6 @@ class MainActivity : AppCompatActivity() {
         const val CHATTING_FRAGMENT = "ChattingFragment"
         const val LETTER_FRAGMENT = "LetterFragment"
         const val STORAGE_BOX_DETAIL_FRAGMENT = "StorageBoxDetailFragment"
+        const val MY_FRAGMENT = "MyFragment"
     }
 }

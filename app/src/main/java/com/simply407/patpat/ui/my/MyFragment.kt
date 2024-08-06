@@ -152,6 +152,14 @@ class MyFragment : Fragment() {
             dialogChangeMbtiBinding.checkboxEntj
         )
 
+        // userMbti 값에 따라 체크박스 체크
+        for (checkbox in checkboxes) {
+            if (checkbox.text.toString().equals(userMbti, ignoreCase = true)) {
+                checkbox.isChecked = true
+                break
+            }
+        }
+
         // 단일 선택 로직 구현
         for (checkbox in checkboxes) {
             checkbox.setOnClickListener {
@@ -168,7 +176,21 @@ class MyFragment : Fragment() {
         }
 
         dialogChangeMbtiBinding.buttonChangeDialogChangeMbti.setOnClickListener {
-            dialog.dismiss()
+
+            var isChecked = false
+            for (checkbox in checkboxes) {
+                if (checkbox.isChecked) {
+                    isChecked = true
+                    userMbti = checkbox.text.toString()
+                    break
+                }
+            }
+            if (isChecked) {
+                val newUserInfo = NewUserInfo(userName, userMbti)
+                joinViewModel.putUserInfo(SharedPreferencesManager.getUserAccessToken()!!, newUserInfo)
+
+                dialog.dismiss()
+            }
         }
 
         dialog.show()

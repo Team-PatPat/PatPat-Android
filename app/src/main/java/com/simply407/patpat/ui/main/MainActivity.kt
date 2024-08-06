@@ -106,10 +106,12 @@ class MainActivity : AppCompatActivity() {
     fun addFragment(name: String, addToBackStack: Boolean, bundle: Bundle?) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
 
-        // 현재 추가된 모든 프래그먼트를 숨깁니다.
+        // 현재 보이는 프래그먼트만 숨기기
         val currentFragments = supportFragmentManager.fragments
         for (fragment in currentFragments) {
-            fragmentTransaction.hide(fragment)
+            if (fragment.isVisible) {
+                fragmentTransaction.hide(fragment)
+            }
         }
 
         // 이름에 따라 새 프래그먼트를 찾거나 생성합니다.

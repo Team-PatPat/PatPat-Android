@@ -10,9 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.NewUserInfo
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.DialogChangeNicknameBinding
 import com.simply407.patpat.databinding.FragmentMyBinding
 import com.simply407.patpat.databinding.ItemSaveLetterBinding
+import com.simply407.patpat.ui.join.JoinViewModel
 import com.simply407.patpat.ui.login.LoginViewModel
 import com.simply407.patpat.ui.main.MainActivity
 
@@ -23,6 +26,7 @@ class MyFragment : Fragment() {
     private lateinit var binding: FragmentMyBinding
 
     private lateinit var loginViewModel: LoginViewModel
+    private lateinit var joinViewModel: JoinViewModel
 
     private var userName = ""
 
@@ -37,6 +41,7 @@ class MyFragment : Fragment() {
         binding = FragmentMyBinding.inflate(layoutInflater)
 
         loginViewModel = ViewModelProvider(requireActivity())[LoginViewModel::class.java]
+        joinViewModel = ViewModelProvider(this)[JoinViewModel::class.java]
 
         observeData()
         linearLayoutFunction()
@@ -63,6 +68,16 @@ class MyFragment : Fragment() {
                 Log.d(TAG, "유저 정보 실패: $error")
             }
         }
+
+        joinViewModel.userInfoResult.observe(viewLifecycleOwner) { result ->
+            result.onSuccess { userInfoResponse ->
+                Log.d(TAG, "유저 정보 변경 성공: $userInfoResponse")
+                loginViewModel.getUserInfo(SharedPreferencesManager.getUserAccessToken()!!)
+            }
+            result.onFailure { error ->
+                Log.d(TAG, "유저 정보 변경 실패: $error")
+            }
+        }
     }
 
     private fun linearLayoutFunction() {
@@ -85,7 +100,16 @@ class MyFragment : Fragment() {
         }
 
         dialogChangeNicknameBinding.buttonChangeDialogChangeNickName.setOnClickListener {
-            dialog.dismiss()
+
+            val newUserName = dialogChangeNicknameBinding.textInputEditTextDialogChangeNickName.text.toString()
+
+            if (newUserName.isNotEmpty()) {
+                val newUserInfo = NewUserInfo(newUserName, "")
+                joinViewModel.putUserInfo(SharedPreferencesManager.getUserAccessToken()!!, newUserInfo)
+
+                dialog.dismiss()
+            }
+
         }
 
         dialog.show()

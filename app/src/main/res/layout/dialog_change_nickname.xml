@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/textView_title_dialog_change_nick_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="변경하실 닉네임을 입력해주세요"
+        android:textAppearance="@style/Typography.Bold18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout_dialog_change_nick_name"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:boxStrokeColor="@color/text_input_line"
+        app:boxStrokeWidth="2dp"
+        app:endIconMode="clear_text"
+        app:helperTextTextAppearance="@style/Typography.Medium12"
+        app:helperTextTextColor="@color/grayScale400"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@+id/textView_title_dialog_change_nick_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText_dialog_change_nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:ellipsize="end"
+            android:hint="@string/nick_name_hint"
+            android:maxLength="15"
+            android:paddingStart="0dp"
+            android:paddingTop="12dp"
+            android:textAppearance="@style/Typography.SemiBold16"
+            android:textColorHint="@color/grayScale300" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout_dialog_change_nick_name">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_cancel_dialog_change_nick_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_orange_r12"
+            android:stateListAnimator="@null"
+            android:text="취소"
+            android:textAppearance="@style/Typography.Medium14"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_change_dialog_change_nick_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_white_orange_r12"
+            android:stateListAnimator="@null"
+            android:text="확인"
+            android:textAppearance="@style/Typography.Medium14"
+            android:textColor="@color/mainColor" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

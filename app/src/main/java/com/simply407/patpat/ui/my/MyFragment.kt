@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import com.kakao.sdk.user.UserApiClient
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.NewUserInfo
 import com.simply407.patpat.data.model.SharedPreferencesManager
@@ -92,6 +93,8 @@ class MyFragment : Fragment() {
         loginViewModel.logoutResult.observe(viewLifecycleOwner) { isSuccess ->
             if (isSuccess) {
                 // 로그아웃 성공 처리
+                SharedPreferencesManager.clearAllExceptOnboarding()
+
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()
@@ -231,8 +234,20 @@ class MyFragment : Fragment() {
 
         // 네
         dialogLogoutBinding.buttonYesDialogLogout.setOnClickListener {
-            loginViewModel.userLogout(SharedPreferencesManager.getUserAccessToken()!!)
-            dialog.dismiss()
+
+            // 카카오톡 로그아웃
+            UserApiClient.instance.logout { error ->
+                if (error != null) {
+                    Log.d(TAG, "로그아웃 실패. SDK에서 토큰 삭제됨", error)
+                }
+                else {
+                    Log.d(TAG, "로그아웃 성공. SDK에서 토큰 삭제됨")
+
+                    loginViewModel.userLogout(SharedPreferencesManager.getUserAccessToken()!!)
+                    dialog.dismiss()
+                }
+            }
+
         }
 
         dialog.show()

@@ -1,5 +1,6 @@
 package com.simply407.patpat.ui.my
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,14 +13,17 @@ import android.widget.CheckBox
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.simply407.patpat.R
 import com.simply407.patpat.data.model.NewUserInfo
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.DialogChangeMbtiBinding
 import com.simply407.patpat.databinding.DialogChangeNicknameBinding
+import com.simply407.patpat.databinding.DialogLogoutBinding
 import com.simply407.patpat.databinding.FragmentMyBinding
 import com.simply407.patpat.databinding.ItemSaveLetterBinding
 import com.simply407.patpat.ui.join.JoinViewModel
+import com.simply407.patpat.ui.login.LoginActivity
 import com.simply407.patpat.ui.login.LoginViewModel
 import com.simply407.patpat.ui.main.MainActivity
 
@@ -84,6 +88,19 @@ class MyFragment : Fragment() {
                 Log.d(TAG, "유저 정보 변경 실패: $error")
             }
         }
+
+        loginViewModel.logoutResult.observe(viewLifecycleOwner) { isSuccess ->
+            if (isSuccess) {
+                // 로그아웃 성공 처리
+                val intent = Intent(requireContext(), LoginActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            } else {
+                // 로그아웃 실패 처리
+                Snackbar.make(binding.root, "로그 아웃에 실패 했습니다.", Snackbar.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
     private fun linearLayoutFunction() {
@@ -92,6 +109,9 @@ class MyFragment : Fragment() {
         }
         binding.linearLayoutChangeMbtiMy.setOnClickListener {
             changeMbti()
+        }
+        binding.linearLayoutLogoutMy.setOnClickListener {
+            userLogOut()
         }
     }
 
@@ -191,6 +211,28 @@ class MyFragment : Fragment() {
 
                 dialog.dismiss()
             }
+        }
+
+        dialog.show()
+    }
+
+    private fun userLogOut() {
+
+        val dialogLogoutBinding = DialogLogoutBinding.inflate(layoutInflater)
+        val builder = MaterialAlertDialogBuilder(mainActivity)
+        builder.setView(dialogLogoutBinding.root)
+
+        val dialog = builder.create()
+
+        // 아니오
+        dialogLogoutBinding.buttonNoDialogLogout.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        // 네
+        dialogLogoutBinding.buttonYesDialogLogout.setOnClickListener {
+            loginViewModel.userLogout(SharedPreferencesManager.getUserAccessToken()!!)
+            dialog.dismiss()
         }
 
         dialog.show()

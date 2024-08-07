@@ -125,6 +125,9 @@ interface patApi {
         @Path("letterId") letterId: String,
         @Body likeLetterRequest: LikeLetterRequest
     ): Response<CreateLetterResponse>
+
+    @POST("api/v1/logout")
+    suspend fun userLogout(@Header("Authorization") accessToken: String): Response<Void>
 }
 
 

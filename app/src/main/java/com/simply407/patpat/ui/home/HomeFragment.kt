@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.MBTIRepository
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentHomeBinding
 import com.simply407.patpat.databinding.ItemCounselorBinding
@@ -55,6 +56,8 @@ class HomeFragment : Fragment() {
                 Log.d(TAG, "유저 정보 성공: $userInfoResponse")
                 binding.textViewNameHome.text = userInfoResponse.name + "님,\n누구와 대화해 볼까요?"
                 SharedPreferencesManager.setUserName(userInfoResponse.name)
+
+                counselorRecommendation(userInfoResponse.mbti)
             }
             result.onFailure { error ->
                 // 로그인 실패 처리
@@ -116,12 +119,6 @@ class HomeFragment : Fragment() {
 
             val cocoCounselorBinding = ItemCounselorBinding.bind(binding.includeCocoHome.root)
             cocoCounselorBinding.imageViewCounselor.setImageResource(R.drawable.ic_coco)
-
-            // 임시 화면 설정
-            doctorCounselorBinding.imageViewStateCounselor.setImageResource(R.drawable.ic_thumbs_up)
-            doctorCounselorBinding.textViewStateCounselor.text = "MBTI 추천"
-            kwakCounselorBinding.linearLayoutStateCounselor.visibility = View.GONE
-            cocoCounselorBinding.linearLayoutStateCounselor.visibility = View.GONE
         }
     }
 
@@ -158,6 +155,70 @@ class HomeFragment : Fragment() {
 
                 mainActivity.addFragment(MainActivity.HOME_DETAIL_FRAGMENT, true, bundle)
             }
+        }
+    }
+
+    // 유저의 mbti 를 토대로 상담사 추천
+    private fun counselorRecommendation(userMbti: String) {
+        // 사용자의 MBTI와 일치하는 상담사 찾기
+        val recommendedCounselor = MBTIRepository.CounselorMbtiDataList.find { counselorInfo ->
+            counselorInfo.mbtiList.contains(userMbti)
+        }
+
+        Log.d(TAG, "recommendedCounselor: $recommendedCounselor")
+        if (recommendedCounselor != null) {
+            Log.d(TAG, "추천 상담사: ${recommendedCounselor.name}")
+            SharedPreferencesManager.setCounselorRecommendation(recommendedCounselor.name)
+            // UI 업데이트 등 필요한 작업 수행
+            when (recommendedCounselor.name) {
+                "복남이" -> {
+                    binding.includeBoknamHome.imageViewStateCounselor.setImageResource(R.drawable.ic_thumbs_up)
+                    binding.includeBoknamHome.textViewStateCounselor.text = "MBTI 추천"
+                    binding.includeBoknamHome.linearLayoutStateCounselor.visibility = View.VISIBLE
+
+                    // 나머지는 안보이게 처리
+                    binding.includeDoctorHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeKwakHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeCocoHome.linearLayoutStateCounselor.visibility = View.GONE
+                }
+                "닥터 냉철한" -> {
+                    binding.includeDoctorHome.imageViewStateCounselor.setImageResource(R.drawable.ic_thumbs_up)
+                    binding.includeDoctorHome.textViewStateCounselor.text = "MBTI 추천"
+                    binding.includeDoctorHome.linearLayoutStateCounselor.visibility = View.VISIBLE
+
+                    // 나머지는 안보이게 처리
+                    binding.includeBoknamHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeKwakHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeCocoHome.linearLayoutStateCounselor.visibility = View.GONE
+                }
+                "곽두팔" -> {
+                    binding.includeKwakHome.imageViewStateCounselor.setImageResource(R.drawable.ic_thumbs_up)
+                    binding.includeKwakHome.textViewStateCounselor.text = "MBTI 추천"
+                    binding.includeKwakHome.linearLayoutStateCounselor.visibility = View.VISIBLE
+
+                    // 나머지는 안보이게 처리
+                    binding.includeBoknamHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeDoctorHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeCocoHome.linearLayoutStateCounselor.visibility = View.GONE
+                }
+                "코코" -> {
+                    binding.includeCocoHome.imageViewStateCounselor.setImageResource(R.drawable.ic_thumbs_up)
+                    binding.includeCocoHome.textViewStateCounselor.text = "MBTI 추천"
+                    binding.includeCocoHome.linearLayoutStateCounselor.visibility = View.VISIBLE
+
+                    // 나머지는 안보이게 처리
+                    binding.includeBoknamHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeDoctorHome.linearLayoutStateCounselor.visibility = View.GONE
+                    binding.includeKwakHome.linearLayoutStateCounselor.visibility = View.GONE
+                }
+            }
+
+        } else {
+            Log.d(TAG, "추천할 상담사가 없습니다.")
+            binding.includeBoknamHome.linearLayoutStateCounselor.visibility = View.GONE
+            binding.includeDoctorHome.linearLayoutStateCounselor.visibility = View.GONE
+            binding.includeKwakHome.linearLayoutStateCounselor.visibility = View.GONE
+            binding.includeCocoHome.linearLayoutStateCounselor.visibility = View.GONE
         }
     }
 

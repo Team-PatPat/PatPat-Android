@@ -10,6 +10,7 @@ object SharedPreferencesManager {
     private const val KEY_USER_ACCESS_TOKEN = "accessToken"
     private const val KEY_USER_NAME = "user_name"
     private const val KEY_KAKAO_ACCESS_TOKEN = "kakao_access_token"
+    private const val KEY_COUNSELOR_RECOMMENDATION = "counselor_recommendation"
 
     private lateinit var sharedPref: SharedPreferences
 
@@ -54,8 +55,17 @@ object SharedPreferencesManager {
             remove(KEY_USER_ACCESS_TOKEN)
             remove(KEY_USER_NAME)
             remove(KEY_KAKAO_ACCESS_TOKEN)
+            remove(KEY_COUNSELOR_RECOMMENDATION)
             apply()
         }
+    }
+
+    fun setCounselorRecommendation(mbti: String) {
+        sharedPref.edit().putString(KEY_COUNSELOR_RECOMMENDATION, mbti).apply()
+    }
+
+    fun getCounselorRecommendation(): String? {
+        return sharedPref.getString(KEY_COUNSELOR_RECOMMENDATION, null)
     }
 
 }

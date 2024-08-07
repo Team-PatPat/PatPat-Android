@@ -77,9 +77,17 @@ class SplashActivity : AppCompatActivity() {
 
     private fun checkOnboardingShown() {
         if (SharedPreferencesManager.isOnboardingShown()) {
-            kakaoTokenValidation()
+            checkSettingUserName()
         } else {
             moveToOnboarding()
+        }
+    }
+
+    private fun checkSettingUserName() {
+        if (SharedPreferencesManager.getUserName() != null) {
+            kakaoTokenValidation()
+        } else {
+            moveToLogin()
         }
     }
 

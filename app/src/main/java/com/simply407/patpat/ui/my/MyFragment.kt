@@ -21,6 +21,7 @@ import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.DialogChangeMbtiBinding
 import com.simply407.patpat.databinding.DialogChangeNicknameBinding
 import com.simply407.patpat.databinding.DialogLogoutBinding
+import com.simply407.patpat.databinding.DialogWithdrawalBinding
 import com.simply407.patpat.databinding.FragmentMyBinding
 import com.simply407.patpat.databinding.ItemSaveLetterBinding
 import com.simply407.patpat.ui.join.JoinViewModel
@@ -104,6 +105,20 @@ class MyFragment : Fragment() {
             }
         }
 
+        loginViewModel.withdrawalResult.observe(viewLifecycleOwner) { isSuccess ->
+            if (isSuccess) {
+                // 회원 탈퇴 성공 처리
+                SharedPreferencesManager.clearAllExceptOnboarding()
+
+                val intent = Intent(requireContext(), LoginActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            } else {
+                // 회원 탈퇴 실패 처리
+                Snackbar.make(binding.root, "회원 탈퇴에 실패 했습니다.", Snackbar.LENGTH_SHORT).show()
+            }
+        }
+
     }
 
     private fun linearLayoutFunction() {
@@ -115,6 +130,9 @@ class MyFragment : Fragment() {
         }
         binding.linearLayoutLogoutMy.setOnClickListener {
             userLogOut()
+        }
+        binding.linearLayoutWithdrawalMy.setOnClickListener {
+            userWithdrawal()
         }
     }
 
@@ -248,6 +266,28 @@ class MyFragment : Fragment() {
                 }
             }
 
+        }
+
+        dialog.show()
+    }
+
+    // 탈퇴하기
+    private fun userWithdrawal() {
+        val dialogWithdrawalBinding = DialogWithdrawalBinding.inflate(layoutInflater)
+        val builder = MaterialAlertDialogBuilder(mainActivity)
+        builder.setView(dialogWithdrawalBinding.root)
+
+        val dialog = builder.create()
+
+        // 아니오
+        dialogWithdrawalBinding.buttonNoDialogWithdrawal.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        // 네
+        dialogWithdrawalBinding.buttonYesDialogWithdrawal.setOnClickListener {
+            loginViewModel.userWithdrawal(SharedPreferencesManager.getUserAccessToken()!!)
+            dialog.dismiss()
         }
 
         dialog.show()

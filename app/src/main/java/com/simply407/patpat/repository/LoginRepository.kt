@@ -11,4 +11,6 @@ class LoginRepository {
     suspend fun postLogin(loginRequest: LoginRequest) = patApi.postLogin(loginRequest)
 
     suspend fun userLogout(accessToken: String) = patApi.userLogout(accessToken)
+
+    suspend fun userWithdrawal(accessToken: String) = patApi.userWithdrawal(accessToken)
 }

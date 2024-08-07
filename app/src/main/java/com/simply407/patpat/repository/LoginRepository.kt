@@ -9,4 +9,8 @@ class LoginRepository {
     val patApi = RetrofitInstance.getInstance().create(com.simply407.patpat.api.patApi::class.java)
 
     suspend fun postLogin(loginRequest: LoginRequest) = patApi.postLogin(loginRequest)
+
+    suspend fun userLogout(accessToken: String) = patApi.userLogout(accessToken)
+
+    suspend fun userWithdrawal(accessToken: String) = patApi.userWithdrawal(accessToken)
 }

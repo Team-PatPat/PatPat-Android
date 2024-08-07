@@ -7,10 +7,10 @@ object SharedPreferencesManager {
 
     const val FILE_NAME = "user_info"
     private const val KEY_ONBOARDING_SHOWN = "onboarding_shown"
-    private const val KEY_USER_IS_LOGGED_IN = "user_is_logged_in"
-    private const val KEY_FIRST_JOIN_COMPLETE = "first_join_complete"
     private const val KEY_USER_ACCESS_TOKEN = "accessToken"
     private const val KEY_USER_NAME = "user_name"
+    private const val KEY_KAKAO_ACCESS_TOKEN = "kakao_access_token"
+    private const val KEY_COUNSELOR_RECOMMENDATION = "counselor_recommendation"
 
     private lateinit var sharedPref: SharedPreferences
 
@@ -24,22 +24,6 @@ object SharedPreferencesManager {
 
     fun isOnboardingShown(): Boolean {
         return sharedPref.getBoolean(KEY_ONBOARDING_SHOWN, false)
-    }
-
-    fun setUserIsLoggedIn(shown: Boolean) {
-        sharedPref.edit().putBoolean(KEY_USER_IS_LOGGED_IN, shown).apply()
-    }
-
-    fun isUserLoggedIn(): Boolean {
-        return sharedPref.getBoolean(KEY_USER_IS_LOGGED_IN, false)
-    }
-
-    fun setFirstJoinComplete(shown: Boolean) {
-        sharedPref.edit().putBoolean(KEY_FIRST_JOIN_COMPLETE, shown).apply()
-    }
-
-    fun isFirstJoinComplete(): Boolean {
-        return sharedPref.getBoolean(KEY_FIRST_JOIN_COMPLETE, false)
     }
 
     fun setUserAccessToken(accessToken: String) {
@@ -56,6 +40,32 @@ object SharedPreferencesManager {
 
     fun getUserName(): String? {
         return sharedPref.getString(KEY_USER_NAME, null)
+    }
+
+    fun setKakaoAccessToken(accessToken: String) {
+        sharedPref.edit().putString(KEY_KAKAO_ACCESS_TOKEN, accessToken).apply()
+    }
+
+    fun getKakaoAccessToken(): String? {
+        return sharedPref.getString(KEY_KAKAO_ACCESS_TOKEN, null)
+    }
+
+    fun clearAllExceptOnboarding() {
+        sharedPref.edit().apply {
+            remove(KEY_USER_ACCESS_TOKEN)
+            remove(KEY_USER_NAME)
+            remove(KEY_KAKAO_ACCESS_TOKEN)
+            remove(KEY_COUNSELOR_RECOMMENDATION)
+            apply()
+        }
+    }
+
+    fun setCounselorRecommendation(mbti: String) {
+        sharedPref.edit().putString(KEY_COUNSELOR_RECOMMENDATION, mbti).apply()
+    }
+
+    fun getCounselorRecommendation(): String? {
+        return sharedPref.getString(KEY_COUNSELOR_RECOMMENDATION, null)
     }
 
 }

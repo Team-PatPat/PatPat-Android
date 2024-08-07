@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
             // 카카오계정으로 로그인 성공
             Log.d(TAG, "카카오계정으로 로그인 성공 ${token.accessToken}")
 
-            SharedPreferencesManager.setUserIsLoggedIn(true)
+            SharedPreferencesManager.setKakaoAccessToken(token.accessToken)
 
             val loginRequest = LoginRequest("KAKAO", token.accessToken)
             viewModel.postLogin(loginRequest)
@@ -85,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
                         // 카카오톡으로 로그인 성공
                         Log.d(TAG, "카카오톡으로 로그인 성공 ${token.accessToken}")
 
-                        SharedPreferencesManager.setUserIsLoggedIn(true)
+                        SharedPreferencesManager.setKakaoAccessToken(token.accessToken)
 
                         val loginRequest = LoginRequest("KAKAO", token.accessToken)
                         viewModel.postLogin(loginRequest)

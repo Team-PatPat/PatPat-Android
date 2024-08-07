@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.simply407.patpat.R
+import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.ItemCounselorsDetailBinding
 
 class HomeDetailAdapter : RecyclerView.Adapter<HomeDetailAdapter.HomeDetailViewHolder>() {
@@ -21,28 +22,62 @@ class HomeDetailAdapter : RecyclerView.Adapter<HomeDetailAdapter.HomeDetailViewH
                     binding.imageViewCounselorsDetail.setImageResource(R.drawable.img_doctor_detail)
                     binding.textViewNameCounselorsDetail.text = "닥터 냉철한"
                     binding.textViewIntroductionCounselor.text = binding.root.context.getString(R.string.doctor_introduction_detail)
-
-                    // 임시 화면 설정
-                    binding.imageViewStateCounselorsDetail.setImageResource(R.drawable.ic_thumbs_up)
-                    binding.textViewStateCounselorsDetail.text = "MBTI 추천"
                 }
                 2 -> {
                     binding.imageViewCounselorsDetail.setImageResource(R.drawable.img_kwak_detail)
                     binding.textViewNameCounselorsDetail.text = "곽두팔"
                     binding.textViewIntroductionCounselor.text = binding.root.context.getString(R.string.kwak_introduction_detail)
 
-                    // 임시 화면 설정
-                    binding.linearLayoutStateCounselorsDetail.visibility = View.GONE
                 }
                 3 -> {
                     binding.imageViewCounselorsDetail.setImageResource(R.drawable.img_coco_detail)
                     binding.textViewNameCounselorsDetail.text = "코코"
                     binding.textViewIntroductionCounselor.text = binding.root.context.getString(R.string.coco_introduction_detail)
-
-                    // 임시 화면 설정
-                    binding.linearLayoutStateCounselorsDetail.visibility = View.GONE
                 }
             }
+
+            // 추천 상담사 정보 가져오기
+            val recommendationCounselor = SharedPreferencesManager.getCounselorRecommendation()
+
+            // 추천 상담사에 따른 추가 UI 설정
+            if (recommendationCounselor != null) {
+                when (recommendationCounselor) {
+                    "복남이" -> {
+                        if (index == 0) {
+                            binding.imageViewStateCounselorsDetail.setImageResource(R.drawable.ic_thumbs_up)
+                            binding.textViewStateCounselorsDetail.text = "MBTI 추천"
+                            binding.linearLayoutStateCounselorsDetail.visibility = View.VISIBLE
+                        }
+                    }
+                    "닥터 냉철한" -> {
+                        if (index == 1) {
+                            binding.imageViewStateCounselorsDetail.setImageResource(R.drawable.ic_thumbs_up)
+                            binding.textViewStateCounselorsDetail.text = "MBTI 추천"
+                            binding.linearLayoutStateCounselorsDetail.visibility = View.VISIBLE
+                        }
+                    }
+                    "곽두팔" -> {
+                        if (index == 2) {
+                            binding.imageViewStateCounselorsDetail.setImageResource(R.drawable.ic_thumbs_up)
+                            binding.textViewStateCounselorsDetail.text = "MBTI 추천"
+                            binding.linearLayoutStateCounselorsDetail.visibility = View.VISIBLE
+                        }
+                    }
+                    "코코" -> {
+                        if (index == 3) {
+                            binding.imageViewStateCounselorsDetail.setImageResource(R.drawable.ic_thumbs_up)
+                            binding.textViewStateCounselorsDetail.text = "MBTI 추천"
+                            binding.linearLayoutStateCounselorsDetail.visibility = View.VISIBLE
+                        }
+                    }
+                    else -> {
+                        binding.linearLayoutStateCounselorsDetail.visibility = View.GONE
+                    }
+                }
+            } else {
+                binding.linearLayoutStateCounselorsDetail.visibility = View.GONE
+            }
+
         }
     }
 

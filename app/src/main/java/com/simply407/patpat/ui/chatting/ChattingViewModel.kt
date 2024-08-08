@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.simply407.patpat.data.model.ChattingRoomInfo
 import com.simply407.patpat.data.model.MessageInfo
 import com.simply407.patpat.data.model.PostMessageRequest
-import com.simply407.patpat.repository.ChattingRepository
+import com.simply407.patpat.data.repository.ChattingRepository
 import kotlinx.coroutines.launch
 
 class ChattingViewModel : ViewModel() {

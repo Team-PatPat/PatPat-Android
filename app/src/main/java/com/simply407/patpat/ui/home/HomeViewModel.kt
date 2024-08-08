@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simply407.patpat.data.model.GetCounselorResponse
-import com.simply407.patpat.repository.CounselorRepository
+import com.simply407.patpat.data.repository.CounselorRepository
 import kotlinx.coroutines.launch
 
 class HomeViewModel: ViewModel() {

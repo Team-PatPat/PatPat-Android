@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.NewUserInfo
-import com.simply407.patpat.repository.UserInfoRepository
+import com.simply407.patpat.data.repository.UserInfoRepository
 import kotlinx.coroutines.launch
 
 class JoinViewModel : ViewModel() {

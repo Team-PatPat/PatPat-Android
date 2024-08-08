@@ -1,4 +1,4 @@
-package com.simply407.patpat.api
+package com.simply407.patpat.data.api
 
 import com.simply407.patpat.data.model.ChattingRoomInfo
 import com.simply407.patpat.data.model.CreateLetterRequest

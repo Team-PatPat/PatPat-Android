@@ -9,7 +9,7 @@ import com.simply407.patpat.data.model.CreateLetterRequest
 import com.simply407.patpat.data.model.CreateLetterResponse
 import com.simply407.patpat.data.model.GetAllLettersResponse
 import com.simply407.patpat.data.model.LikeLetterRequest
-import com.simply407.patpat.repository.LetterRepository
+import com.simply407.patpat.data.repository.LetterRepository
 import kotlinx.coroutines.launch
 
 class LetterViewModel: ViewModel() {

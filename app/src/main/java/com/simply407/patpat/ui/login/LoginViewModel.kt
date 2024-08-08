@@ -8,8 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.simply407.patpat.data.model.GetUserInfoResponse
 import com.simply407.patpat.data.model.LoginRequest
 import com.simply407.patpat.data.model.LoginResponse
-import com.simply407.patpat.repository.LoginRepository
-import com.simply407.patpat.repository.UserInfoRepository
+import com.simply407.patpat.data.repository.LoginRepository
+import com.simply407.patpat.data.repository.UserInfoRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {

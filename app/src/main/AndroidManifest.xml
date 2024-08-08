@@ -59,15 +59,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.chat.ChattingActivity"
-            android:exported="false">
-
-        </activity>
-
-        <activity android:name=".ui.letter.LetterActivity"
-            android:exported="false"/>
-
     </application>
 
 </manifest>

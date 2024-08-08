@@ -14,7 +14,6 @@ import com.simply407.patpat.R
 import com.simply407.patpat.data.model.GetCounselorResponse
 import com.simply407.patpat.data.model.SharedPreferencesManager
 import com.simply407.patpat.databinding.FragmentHomeDetailBinding
-import com.simply407.patpat.ui.chat.ChattingActivity
 import com.simply407.patpat.ui.main.MainActivity
 
 
